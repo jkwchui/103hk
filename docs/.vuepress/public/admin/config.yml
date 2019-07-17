@@ -1,0 +1,56 @@
+backend:
+  name: github
+  repo: jkwchui/chem-jon-hk
+  branch: master
+
+media_folder: "docs/.vuepress/public/images"
+public_folder: "docs/.vuepress/dist/"
+collections:
+  - name: "docs" # Used in routes, e.g., /admin/collections/blog
+    label: "Docs" # Used in the UI
+    folder: "docs" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
+  - name: "docs/jon" # Used in routes, e.g., /admin/collections/blog
+    label: "Jon" # Used in the UI
+    folder: "docs/jon" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
+  # - name: "docs/chem/IA" # Used in routes, e.g., /admin/collections/blog
+  #   label: "Chem -> IA" # Used in the UI
+  #   folder: "docs/chem/IA" # The path to the folder where the documents are stored
+  #   create: true # Allow users to create new documents in this collection
+  #   slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+  #   fields: # The fields for each document, usually in front matter
+  #     - {label: "Title", name: "title", widget: "string"}
+  #     - {label: "Body", name: "body", widget: "markdown"}
+  # - name: "docs/chem/course" # Used in routes, e.g., /admin/collections/blog
+  #   label: "Chem -> Course" # Used in the UI
+  #   folder: "docs/chem/course" # The path to the folder where the documents are stored
+  #   create: true # Allow users to create new documents in this collection
+  #   slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+  #   fields: # The fields for each document, usually in front matter
+  #     - {label: "Title", name: "title", widget: "string"}
+  #     - {label: "Body", name: "body", widget: "markdown"}
+  # - name: "docs/chem/topic" # Used in routes, e.g., /admin/collections/blog
+  #   label: "Topics" # Used in the UI
+  #   folder: "docs/chem/topic" # The path to the folder where the documents are stored
+  #   create: true # Allow users to create new documents in this collection
+  #   slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+  #   fields: # The fields for each document, usually in front matter
+  #     - {label: "Title", name: "title", widget: "string"}
+  #     - {label: "Body", name: "body", widget: "markdown"}
+  # - name: "docs/jon/teaching" # Used in routes, e.g., /admin/collections/blog
+  #   label: "Jon -> Teaching" # Used in the UI
+  #   folder: "docs/jon/teaching" # The path to the folder where the documents are stored
+  #   create: true # Allow users to create new documents in this collection
+  #   slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+  #   fields: # The fields for each document, usually in front matter
+  #     - {label: "Title", name: "title", widget: "string"}
+  #     - {label: "Body", name: "body", widget: "markdown"}

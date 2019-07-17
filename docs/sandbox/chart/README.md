@@ -1,0 +1,2 @@
+# ChartJs example
+<Chart/>

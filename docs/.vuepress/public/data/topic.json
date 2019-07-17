@@ -1,0 +1,290 @@
+[
+  {
+    "ID": 1,
+    "Name": "stoichiometric relationships",
+    "Name (es)": "relaciones estequiométricas",
+    "level": "core",
+    "option": "",
+    "subtopic": "1.1,1.2,1.3",
+    "hours": 13.5
+  },
+  {
+    "ID": 2,
+    "Name": "atomic structure",
+    "Name (es)": "estructura atómica",
+    "level": "core",
+    "option": "",
+    "subtopic": "2.1,2.2",
+    "hours": 6
+  },
+  {
+    "ID": 3,
+    "Name": "periodicity",
+    "Name (es)": "periodicidad",
+    "level": "core",
+    "option": "",
+    "subtopic": "3.1,3.2",
+    "hours": 6
+  },
+  {
+    "ID": 4,
+    "Name": "chemical bonding and structure",
+    "Name (es)": "enlace químico y estructura",
+    "level": "core",
+    "option": "",
+    "subtopic": "4.1,4.2,4.3,4.4,4.5",
+    "hours": 13.5
+  },
+  {
+    "ID": 5,
+    "Name": "energetics / thermochemistry",
+    "Name (es)": "energía / termoquímica",
+    "level": "core",
+    "option": "",
+    "subtopic": "5.1,5.2,5.3",
+    "hours": 9
+  },
+  {
+    "ID": 6,
+    "Name": "chemical kinetics",
+    "Name (es)": "cinética química",
+    "level": "core",
+    "option": "",
+    "subtopic": 6.1,
+    "hours": 7
+  },
+  {
+    "ID": 7,
+    "Name": "equilibrium",
+    "Name (es)": "equilibrio",
+    "level": "core",
+    "option": "",
+    "subtopic": 7.1,
+    "hours": 4.5
+  },
+  {
+    "ID": 8,
+    "Name": "acids and bases",
+    "Name (es)": "Ácidos y bases",
+    "level": "core",
+    "option": "",
+    "subtopic": "8.1,8.2,8.3,8.4,8.5",
+    "hours": 6.5
+  },
+  {
+    "ID": 9,
+    "Name": "redox processes",
+    "Name (es)": "procesos rédox",
+    "level": "core",
+    "option": "",
+    "subtopic": "9.1,9.2",
+    "hours": 8
+  },
+  {
+    "ID": 10,
+    "Name": "organic chemistry",
+    "Name (es)": "química orgánica",
+    "level": "core",
+    "option": "",
+    "subtopic": "10.1,10.2",
+    "hours": 11
+  },
+  {
+    "ID": "11a",
+    "Name": "measurement and data processing",
+    "Name (es)": "medición y procesamiento de datos",
+    "level": "core",
+    "option": "",
+    "subtopic": "11.1,11.2",
+    "hours": 4
+  },
+  {
+    "ID": "11b",
+    "Name": "spectroscopic identification of organic compounds",
+    "Name (es)": "identificación espectroscópica de compuestos orgánicos",
+    "level": "core",
+    "option": "",
+    "subtopic": 11.3,
+    "hours": 6
+  },
+  {
+    "ID": "A (core)",
+    "Name": "materials",
+    "Name (es)": "materiales",
+    "level": "core",
+    "option": "checked",
+    "subtopic": "A.1,A.2,A.3,A.4,A.5,A.6,A.7",
+    "hours": 15
+  },
+  {
+    "ID": "B (core)",
+    "Name": "biochemistry",
+    "Name (es)": "bioquímica",
+    "level": "core",
+    "option": "checked",
+    "subtopic": "B.1,B.2,B.3,B.4,B.5,B.6",
+    "hours": 15
+  },
+  {
+    "ID": "C (core)",
+    "Name": "energy",
+    "Name (es)": "energía",
+    "level": "core",
+    "option": "checked",
+    "subtopic": "C.1,C.2,C.3,C.4,C.5",
+    "hours": 15
+  },
+  {
+    "ID": "D (core)",
+    "Name": "medicinal chemistry",
+    "Name (es)": "química medicinal",
+    "level": "core",
+    "option": "checked",
+    "subtopic": "D.1,D.2,D.3,D.4,D.5,D.6",
+    "hours": 15
+  },
+  {
+    "ID": 12,
+    "Name": "atomic structure",
+    "Name (es)": "estructura atómica",
+    "level": "HL",
+    "option": "",
+    "subtopic": 12.1,
+    "hours": 2
+  },
+  {
+    "ID": 13,
+    "Name": "the periodic table - the transition metals",
+    "Name (es)": "la tabla periódica : metales de transición",
+    "level": "HL",
+    "option": "",
+    "subtopic": "13.1,13.2",
+    "hours": 4
+  },
+  {
+    "ID": 14,
+    "Name": "chemical bonding and structure",
+    "Name (es)": "enlace químico y estructura",
+    "level": "HL",
+    "option": "",
+    "subtopic": "14.1,14.2",
+    "hours": 7
+  },
+  {
+    "ID": 15,
+    "Name": "energetics / thermochemistry",
+    "Name (es)": "energía / termoquímica",
+    "level": "HL",
+    "option": "",
+    "subtopic": "15.1,15.2",
+    "hours": 7
+  },
+  {
+    "ID": 16,
+    "Name": "chemical kinetics",
+    "Name (es)": "cinética química",
+    "level": "HL",
+    "option": "",
+    "subtopic": "16.1,16.2",
+    "hours": 6
+  },
+  {
+    "ID": 17,
+    "Name": "equilibrium",
+    "Name (es)": "equilibrio",
+    "level": "HL",
+    "option": "",
+    "subtopic": 17.1,
+    "hours": 4
+  },
+  {
+    "ID": 18,
+    "Name": "acids and bases",
+    "Name (es)": "Ácidos y bases",
+    "level": "HL",
+    "option": "",
+    "subtopic": "18.1,18.2,18.3",
+    "hours": 10
+  },
+  {
+    "ID": 19,
+    "Name": "redox processes",
+    "Name (es)": "procesos rédox",
+    "level": "HL",
+    "option": "",
+    "subtopic": 19.1,
+    "hours": 6
+  },
+  {
+    "ID": 20,
+    "Name": "organic chemistry",
+    "Name (es)": "química orgánica",
+    "level": "HL",
+    "option": "",
+    "subtopic": "20.1,20.2,20.3",
+    "hours": 12
+  },
+  {
+    "ID": 21,
+    "Name": "spectroscopic identification of organic compounds",
+    "Name (es)": "identificación espectroscópica de compuestos orgánicos",
+    "level": "HL",
+    "option": "",
+    "subtopic": 21.1,
+    "hours": 2
+  },
+  {
+    "ID": "A (HL)",
+    "Name": "materials",
+    "Name (es)": "materiales",
+    "level": "HL",
+    "option": "checked",
+    "subtopic": "A.8,A.9,A.10",
+    "hours": 10
+  },
+  {
+    "ID": "B (HL)",
+    "Name": "biochemistry",
+    "Name (es)": "bioquímica",
+    "level": "HL",
+    "option": "checked",
+    "subtopic": "B.7,B.8,B.9,B.10",
+    "hours": 10
+  },
+  {
+    "ID": "C (HL)",
+    "Name": "energy",
+    "Name (es)": "energía",
+    "level": "HL",
+    "option": "checked",
+    "subtopic": "C.6,C.7,C.8",
+    "hours": 10
+  },
+  {
+    "ID": "D (HL)",
+    "Name": "medicinal chemistry",
+    "Name (es)": "química medicinal",
+    "level": "HL",
+    "option": "checked",
+    "subtopic": "D.7,D.8,D.9",
+    "hours": 10
+  },
+  {
+    "ID": 0,
+    "Name": "",
+    "Name (es)": "",
+    "level": "",
+    "option": "",
+    "subtopic": "",
+    "hours": 0
+  },
+  {
+    "ID": 5,
+    "Name": "",
+    "Name (es)": "",
+    "level": "",
+    "option": "",
+    "subtopic": "",
+    "hours": 0
+  }
+]

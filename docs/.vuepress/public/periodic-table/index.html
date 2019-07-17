@@ -1,0 +1,3651 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>A digital periodic table by Matthew E. Lopper</title>
+<style>
+
+/* Style the periodic table */
+.periodicTable {
+    width: 98%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    empty-cells: hide;
+    webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Style the table cells */
+td {
+    text-align: center;
+    vertical-align: middle;
+    padding: 1px;
+}
+
+/* Style the table cells that contain elements */
+.elementCell {
+    background-color: rgb(255, 255, 240);
+    position: relative;
+    width: 5.4%;
+    height: 67px;
+    border: 1px solid black;
+    transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+/* Style the table cells that contain Lanthanide or Actinide placeholders */
+.LnAcCell {
+    background-color: rgb(255, 255, 240);
+    width: 5.4%;
+    height: 67px;
+    border: 1px solid black;
+}
+
+/* Style the table cells that contain group labels */
+.groupLabelCell {
+    position: relative;
+    width: 5.4%;
+    height: 28px;
+    padding: 3px;
+    vertical-align: bottom;
+    z-index: 1;
+}
+
+/* Style the table cells that contain row labels */
+.rowLabelCell {
+    position: relative;
+    width: 2%;
+    height: 67px;
+    padding-right: 10px;
+    z-index: 1;
+}
+
+/* Style the atomic symbols */
+.symbol {
+    display:block;
+    font-family: Arial;
+    font-size: 22px;
+    font-weight: bold;
+    color: black;
+    cursor: default;
+}
+
+/* Style the atomic numbers */
+.atomicNum {
+    display:block;
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: bold;
+    color: firebrick;
+    cursor: default;
+}
+
+/* Style the atomic weights, Pauling electronegativities, first ionization energies, and covalent atomic radii */
+.weight, .eNeg, .ionizationE1, .radius {
+    font-family: Arial;
+    font-size: 17px;
+    font-weight: bold;
+    color: black;
+    cursor: default;
+}
+
+/* Style the partial electron configurations */
+.eConfig {
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    max-height: 20px;
+    cursor: default;
+}
+
+/* Style the EM spectrum category labels */
+.EMcat {
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    cursor: default;
+}
+
+/* Style the EM spectrum wavelength labels */
+.EMlab {
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    cursor: default;
+}
+
+/* Style the superscripts */
+sup {
+    font-size: 12px;
+}
+
+/* Style the dropdown menus */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Style the main menu */
+.mainMenu a {
+    position: absolute;
+    top: -410px;    /* Sets position of retracted menu; add -35px for each additional main menu item */
+    left: 342px;
+    transition: 0.4s;
+    transition-delay: 0.4s;
+    width: 350px;
+    font-family: Arial;
+    font-size: 16px;
+    text-align: left;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: #000000;
+    border: 0px;
+    border-radius: 0 0 20px 20px;
+    z-index: 100;
+}
+
+/* Dropdown the main menu on mouseover and change its color */
+.mainMenu a:hover {
+    top: 0;
+    transition-delay: 0s;
+    background-color: #555555;
+}
+
+/* Style the main menu items */
+ul {
+    list-style-type: none;
+    margin: 5px;
+    padding: 8px;
+}
+
+/* Style the color of the main menu items on mouseover */
+ul:hover {
+    background-color: #212121;
+}
+
+/* Style the main menu 3-bar icon */
+.menuIcon {
+    width: 36px;
+    height: 4px;
+    border-radius: 4px;
+    background-color: #888888;
+    margin: 6px 157px 6px 157px;    /* (Width of main menu - width of menu 3-bar icon)/2 = left and right margin px */
+}
+
+/* Style the group and row labels */
+.groupLabel, .rowLabel {
+    font-family: Arial;
+    font-size: 25px;
+    font-weight: bold;
+    color: #FFFFF0;
+    cursor: default;
+}
+
+/* Style the group labels for transition elements, Lanthanides, and Actinides */
+.groupLabel2 {
+    font-family: Arial;
+    font-size: 25px;
+    font-weight: bold;
+    color: #FFFFF0;
+    cursor: default;
+}
+
+/* Hide display elements */
+.hide {
+    display: none;
+}
+
+/* Style the modals */
+.modal {
+    display: none;
+    position: fixed;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.85);
+    cursor: default;
+}
+
+/* Style the modal content */
+.modal-content {
+    background-color: #000000;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #FFFFFF;
+    width: 80%;
+}
+
+/* Style the modal's close button */
+.close {
+    color: #FFFFFF;
+    float: right;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+/* Control how the modal is closed */
+.close:hover, .close:focus {
+    color: #4169E1;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Style the EM spectrum table */
+.spectrumTable {
+    width: 100%;
+    margin-left: 0%;
+    margin-right: 0%;
+    border-spacing: 0px;
+    border-collapse: collapse;
+    empty-cells: hide;
+    webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Style the continous EM spectrum title */
+#spectrumContinuousTitle {
+    font-family: Arial;
+    font-size: 26px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Style the Hydrogen line spectrum title */
+#spectrumHTitle {
+    font-family: Arial;
+    font-size: 26px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Style the Helium line spectrum title */
+#spectrumHeTitle {
+    font-family: Arial;
+    font-size: 26px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Style the continuous EM spectrum colors */
+#spectrumContinuous {
+    height: 50px;
+    margin: auto;
+    left: 50%;
+    width: 85%;
+    background: linear-gradient(to right,
+    #000000,
+    #040004,#080008,#0C000C,#0F000F,#130013,#170017,#1B001B,#1F001F,#230023,#260026,#2A002A,#2E002E,#320032,#360036,#3A003A,#3E003E,#410041,#450045,#490049,
+    #4D004D,
+    #490056,#45005F,#410068,#3E0071,#3A007A,#360082,#32008B,#2E0094,#2A009D,#2600A6,#2300AF,#1F00B8,#1B00C1,#1700CA,#1300D2,#0F00DB,#0C00E4,#0800ED,#0400F6,
+    #0000FF,
+    #000DF2,#001AE6,#0026D9,#0033CC,#0040BF,#004CB2,#0059A6,#006699,#00738C,#008080,#008C73,#009966,#00A659,#00B24D,#00BF40,#00CC33,#00D926,#00E619,#00F20D,
+    #00FF00,
+    #0DFF00,#1AFF00,#26FF00,#33FF00,#40FF00,#4CFF00,#59FF00,#66FF00,#73FF00,#80FF00,#8CFF00,#99FF00,#A6FF00,#B2FF00,#BFFF00,#CCFF00,#D9FF00,#E6FF00,#F2FF00,
+    #FFFF00,
+    #FFFA00,#FFF600,#FFF200,#FFED00,#FFE800,#FFE400,#FFE000,#FFDB00,#FFD600,#FFD200,#FFCE00,#FFC900,#FFC400,#FFC000,#FFBC00,#FFB700,#FFB200,#FFAE00,#FFAA00,
+    #FFA500,
+    #FF9D00,#FF9400,#FF8C00,#FF8400,#FF7C00,#FF7300,#FF6B00,#FF6300,#FF5B00,#FF5200,#FF4A00,#FF4200,#FF3A00,#FF3200,#FF2900,#FF2100,#FF1900,#FF1000,#FF0800,
+    #FF0000,
+    #F20000,#E60000,#D90000,#CC0000,#BF0000,#B20000,#A60000,#990000,#8C0000,#800000,#730000,#660000,#590000,#4D0000,#400000,#330000,#260000,#190000,#0D0000,
+    #000000);
+}
+
+/* Style the small continuous EM spectrum colors */
+#spectrumSmall {
+    height: 50px;
+    margin: auto;
+    left: 50%;
+    width: 40%;
+    background: linear-gradient(to right, #800080, #4D4DFF, #00FF00, #FFFF00, #FFA500, #E60000);
+}
+
+/* Style the Hydrogen line spectrum (Balmer series) */
+/* Linear gradient parameters are based on a 380 nm - 720 nm continuous spectrum */
+/* n(3) -> n(2): 656.3 nm */
+/* n(4) -> n(2): 486.1 nm */
+/* n(5) -> n(2): 434.0 nm */
+/* n(6) -> n(2): 410.2 nm */
+/* n(7) -> n(2): 397.0 nm */
+#spectrumH {
+    height: 50px;
+    margin: auto;
+    left: 50%;
+    width: 85%;
+    background: linear-gradient(to right,
+      transparent 4.5%, #4D004D 5%, transparent 5.5%,
+      transparent 8.4%, #4D004D 8.9%, transparent 9.4%,
+      transparent 15.4%, #800080 15.9%, transparent 16.4%,
+      transparent 30.7%, #4D4DFF 31.2%, transparent 31.7%,
+      transparent 80.75%, #FF4000 81.25%, transparent 81.75%);
+}
+
+/* Style the Helium line spectrum */
+/* Linear gradient parameters are based on a 380 nm - 720 nm continuous spectrum */
+/* 706.5 nm */
+/* 686.7 nm */
+/* 667.8 nm */
+/* 587.5 nm */
+/* 504.7 nm */
+/* 501.5 nm */
+/* 492.1 nm */
+/* 471.3 nm */
+/* 447.1 nm */
+/* 388.8 nm */
+#spectrumHe {
+    height: 50px;
+    margin: auto;
+    left: 50%;
+    width: 85%;
+    background: linear-gradient(to right,
+      transparent 2.1%, #4D004D 2.6%, transparent 3.1%,
+      transparent 19.2%, #3A00A7 19.7%, transparent 20.2%,
+      transparent 26.4%, #4D4DFF 26.9%, transparent 27.4%,
+      transparent 32.5%, #008080 33%, transparent 33.5%,
+      transparent 35.2%, #00A060 35.7%, transparent 36.2%,
+      transparent 36.2%, #00A060 36.7%, transparent 37.2%,
+      transparent 60.5%, #FFFF00 61%, transparent 61.5%,
+      transparent 84.1%, #E60000 84.6%, transparent 85.1%,
+      transparent 89.7%, #CC0000 90.2%, transparent 90.7%,
+      transparent 95.5%, #990000 96%, transparent 96.5%);
+}
+
+/* Style the Pauling electronegativity colors (data from the CRC Handbook) */
+/* Calculate RGB values as follows:                                        */
+/* Red=ABS((((eNegValue-0.7)/(3.98-0.7))*55)-250)                          */
+/* Green=ABS((((eNegValue-0.7)/(3.98-0.7))*140)-250)                       */
+/* Blue=255                                                                */
+.eNeg_1 {background-color: rgb(225, 186, 255);}           /*    2.2     */
+.eNeg_2 {background-color: rgb(255, 255, 255);}           /*    -       */
+.eNeg_3 {background-color: rgb(245, 238, 255);}           /*    0.98    */
+.eNeg_4 {background-color: rgb(235, 213, 255);}           /*    1.57    */
+.eNeg_5 {background-color: rgb(228, 193, 255);}           /*    2.04    */
+.eNeg_6 {background-color: rgb(219, 171, 255);}           /*    2.55    */
+.eNeg_7 {background-color: rgb(211, 150, 255);}           /*    3.04    */
+.eNeg_8 {background-color: rgb(204, 133, 255);}           /*    3.44    */
+.eNeg_9 {background-color: rgb(195, 110, 255);}           /*    3.98    */
+.eNeg_10 {background-color: rgb(255, 255, 255);}          /*    -       */
+.eNeg_11 {background-color: rgb(246, 240, 255);}          /*    0.93    */
+.eNeg_12 {background-color: rgb(240, 224, 255);}          /*    1.31    */
+.eNeg_13 {background-color: rgb(235, 211, 255);}          /*    1.61    */
+.eNeg_14 {background-color: rgb(230, 199, 255);}          /*    1.9     */
+.eNeg_15 {background-color: rgb(225, 186, 255);}          /*    2.19    */
+.eNeg_16 {background-color: rgb(218, 170, 255);}          /*    2.58    */
+.eNeg_17 {background-color: rgb(209, 145, 255);}          /*    3.16    */
+.eNeg_18 {background-color: rgb(255, 255, 255);}          /*    -       */
+.eNeg_19 {background-color: rgb(248, 245, 255);}          /*    0.82    */
+.eNeg_20 {background-color: rgb(245, 237, 255);}          /*    1       */
+.eNeg_21 {background-color: rgb(239, 222, 255);}          /*    1.36    */
+.eNeg_22 {background-color: rgb(236, 214, 255);}          /*    1.54    */
+.eNeg_23 {background-color: rgb(234, 210, 255);}          /*    1.63    */
+.eNeg_24 {background-color: rgb(234, 209, 255);}          /*    1.66    */
+.eNeg_25 {background-color: rgb(236, 214, 255);}          /*    1.55    */
+.eNeg_26 {background-color: rgb(231, 202, 255);}          /*    1.83    */
+.eNeg_27 {background-color: rgb(230, 200, 255);}          /*    1.88    */
+.eNeg_28 {background-color: rgb(230, 198, 255);}          /*    1.91    */
+.eNeg_29 {background-color: rgb(230, 199, 255);}          /*    1.9     */
+.eNeg_30 {background-color: rgb(234, 209, 255);}          /*    1.65    */
+.eNeg_31 {background-color: rgb(231, 203, 255);}          /*    1.81    */
+.eNeg_32 {background-color: rgb(228, 194, 255);}          /*    2.01    */
+.eNeg_33 {background-color: rgb(228, 194, 255);}          /*    2.01    */
+.eNeg_34 {background-color: rgb(219, 171, 255);}          /*    2.55    */
+.eNeg_35 {background-color: rgb(212, 154, 255);}          /*    2.96    */
+.eNeg_36 {background-color: rgb(255, 255, 255);}          /*    -       */
+.eNeg_37 {background-color: rgb(248, 245, 255);}          /*    0.82    */
+.eNeg_38 {background-color: rgb(246, 239, 255);}          /*    0.95    */
+.eNeg_39 {background-color: rgb(241, 228, 255);}          /*    1.22    */
+.eNeg_40 {background-color: rgb(239, 223, 255);}          /*    1.33    */
+.eNeg_41 {background-color: rgb(235, 212, 255);}          /*    1.6     */
+.eNeg_42 {background-color: rgb(226, 188, 255);}          /*    2.16    */
+.eNeg_43 {background-color: rgb(227, 190, 255);}          /*    2.1     */
+.eNeg_44 {background-color: rgb(225, 186, 255);}          /*    2.2     */
+.eNeg_45 {background-color: rgb(224, 183, 255);}          /*    2.28    */
+.eNeg_46 {background-color: rgb(225, 186, 255);}          /*    2.2     */
+.eNeg_47 {background-color: rgb(229, 198, 255);}          /*    1.93    */
+.eNeg_48 {background-color: rgb(233, 208, 255);}          /*    1.69    */
+.eNeg_49 {background-color: rgb(232, 204, 255);}          /*    1.78    */
+.eNeg_50 {background-color: rgb(229, 196, 255);}          /*    1.96    */
+.eNeg_51 {background-color: rgb(227, 192, 255);}          /*    2.05    */
+.eNeg_52 {background-color: rgb(227, 190, 255);}          /*    2.1     */
+.eNeg_53 {background-color: rgb(217, 166, 255);}          /*    2.66    */
+.eNeg_54 {background-color: rgb(218, 169, 255);}          /*    2.6     */
+.eNeg_55 {background-color: rgb(248, 246, 255);}          /*    0.79    */
+.eNeg_56 {background-color: rgb(247, 242, 255);}          /*    0.89    */
+.eNeg_57 {background-color: rgb(243, 233, 255);}          /*    1.1     */
+.eNeg_58 {background-color: rgb(243, 232, 255);}          /*    1.12    */
+.eNeg_59 {background-color: rgb(243, 232, 255);}          /*    1.13    */
+.eNeg_60 {background-color: rgb(243, 231, 255);}          /*    1.14    */
+.eNeg_61 {background-color: rgb(255, 255, 255);}          /*    -       */
+.eNeg_62 {background-color: rgb(242, 230, 255);}          /*    1.17    */
+.eNeg_63 {background-color: rgb(255, 255, 255);}          /*    -       */
+.eNeg_64 {background-color: rgb(242, 229, 255);}          /*    1.2     */
+.eNeg_65 {background-color: rgb(255, 255, 255);}          /*    -       */
+.eNeg_66 {background-color: rgb(241, 228, 255);}          /*    1.22    */
+.eNeg_67 {background-color: rgb(241, 227, 255);}          /*    1.23    */
+.eNeg_68 {background-color: rgb(241, 227, 255);}          /*    1.24    */
+.eNeg_69 {background-color: rgb(241, 227, 255);}          /*    1.25    */
+.eNeg_70 {background-color: rgb(255, 255, 255);}          /*    -       */
+.eNeg_71 {background-color: rgb(245, 237, 255);}          /*    1       */
+.eNeg_72 {background-color: rgb(240, 224, 255);}          /*    1.3     */
+.eNeg_73 {background-color: rgb(237, 216, 255);}          /*    1.5     */
+.eNeg_74 {background-color: rgb(233, 207, 255);}          /*    1.7     */
+.eNeg_75 {background-color: rgb(230, 199, 255);}          /*    1.9     */
+.eNeg_76 {background-color: rgb(225, 186, 255);}          /*    2.2     */
+.eNeg_77 {background-color: rgb(225, 186, 255);}          /*    2.2     */
+.eNeg_78 {background-color: rgb(225, 186, 255);}          /*    2.2     */
+.eNeg_79 {background-color: rgb(221, 177, 255);}          /*    2.4     */
+.eNeg_80 {background-color: rgb(230, 199, 255);}          /*    1.9     */
+.eNeg_81 {background-color: rgb(232, 203, 255);}          /*    1.8     */
+.eNeg_82 {background-color: rgb(232, 203, 255);}          /*    1.8     */
+.eNeg_83 {background-color: rgb(230, 199, 255);}          /*    1.9     */
+.eNeg_84 {background-color: rgb(228, 195, 255);}          /*    2       */
+.eNeg_85 {background-color: rgb(225, 186, 255);}          /*    2.2     */
+.eNeg_86 {background-color: rgb(255, 255, 255);}          /*    -       */
+.eNeg_87 {background-color: rgb(250, 250, 255);}          /*    0.7     */
+.eNeg_88 {background-color: rgb(247, 241, 255);}          /*    0.9     */
+.eNeg_89 {background-color: rgb(243, 233, 255);}          /*    1.1     */
+.eNeg_90 {background-color: rgb(240, 224, 255);}          /*    1.3     */
+.eNeg_91 {background-color: rgb(237, 216, 255);}          /*    1.5     */
+.eNeg_92 {background-color: rgb(233, 207, 255);}          /*    1.7     */
+.eNeg_93 {background-color: rgb(240, 224, 255);}          /*    1.3     */
+.eNeg_94 {background-color: rgb(240, 224, 255);}          /*    1.3     */
+.eNeg_95 {background-color: rgb(255, 255, 255);}          /*    -       */
+.eNeg_96 {background-color: rgb(255, 255, 255);}          /*    -       */
+.eNeg_97 {background-color: rgb(255, 255, 255);}          /*    -       */
+.eNeg_98 {background-color: rgb(255, 255, 255);}          /*    -       */
+.eNeg_99 {background-color: rgb(255, 255, 255);}          /*    -       */
+.eNeg_100 {background-color: rgb(255, 255, 255);}         /*    -       */
+.eNeg_101 {background-color: rgb(255, 255, 255);}         /*    -       */
+.eNeg_102 {background-color: rgb(255, 255, 255);}         /*    -       */
+.eNeg_103 {background-color: rgb(255, 255, 255);}         /*    -       */
+.eNeg_104 {background-color: rgb(255, 255, 255);}         /*    -       */
+.eNeg_105 {background-color: rgb(255, 255, 255);}         /*    -       */
+.eNeg_106 {background-color: rgb(255, 255, 255);}         /*    -       */
+.eNeg_107 {background-color: rgb(255, 255, 255);}         /*    -       */
+.eNeg_108 {background-color: rgb(255, 255, 255);}         /*    -       */
+.eNeg_109 {background-color: rgb(255, 255, 255);}         /*    -       */
+.eNeg_110 {background-color: rgb(255, 255, 255);}         /*    -       */
+.eNeg_111 {background-color: rgb(255, 255, 255);}         /*    -       */
+.eNeg_112 {background-color: rgb(255, 255, 255);}         /*    -       */
+.eNeg_113 {background-color: rgb(255, 255, 255);}         /*    -       */
+.eNeg_114 {background-color: rgb(255, 255, 255);}         /*    -       */
+.eNeg_115 {background-color: rgb(255, 255, 255);}         /*    -       */
+.eNeg_116 {background-color: rgb(255, 255, 255);}         /*    -       */
+.eNeg_117 {background-color: rgb(255, 255, 255);}         /*    -       */
+.eNeg_118 {background-color: rgb(255, 255, 255);}         /*    -       */
+
+/* Style the first ionization energy colors (data from the CRC Handbook) */
+/* Units are kJ/mol                                                      */
+/* Calculate RGB values as follows:                                      */
+/* Red=255                                                               */
+/* Green=ABS((((ionizationE1Value-375.7)/(2372.3-375.7))*250)-250)       */
+/* Blue=ABS((((ionizationE1Value-375.7)/(2372.3-375.7))*250)-250)        */
+.ionizationE1_1 {background-color: rgb(255, 133, 133);}           /*    1312.0    */
+.ionizationE1_2 {background-color: rgb(255, 0, 0);}               /*    2372.3    */
+.ionizationE1_3 {background-color: rgb(255, 232, 232);}           /*    520.2     */
+.ionizationE1_4 {background-color: rgb(255, 184, 184);}           /*    899.5     */
+.ionizationE1_5 {background-color: rgb(255, 197, 197);}           /*    800.6     */
+.ionizationE1_6 {background-color: rgb(255, 161, 161);}           /*    1086.5    */
+.ionizationE1_7 {background-color: rgb(255, 121, 121);}           /*    1402.3    */
+.ionizationE1_8 {background-color: rgb(255, 133, 133);}           /*    1313.9    */
+.ionizationE1_9 {background-color: rgb(255, 87, 87);}             /*    1681.0    */
+.ionizationE1_10 {background-color: rgb(255, 37, 37);}            /*    2080.7    */
+.ionizationE1_11 {background-color: rgb(255, 235, 235);}          /*    495.8     */
+.ionizationE1_12 {background-color: rgb(255, 205, 205);}          /*    737.7     */
+.ionizationE1_13 {background-color: rgb(255, 225, 225);}          /*    577.5     */
+.ionizationE1_14 {background-color: rgb(255, 199, 199);}          /*    786.5     */
+.ionizationE1_15 {background-color: rgb(255, 170, 170);}          /*    1011.8    */
+.ionizationE1_16 {background-color: rgb(255, 172, 172);}          /*    999.6     */
+.ionizationE1_17 {background-color: rgb(255, 140, 140);}          /*    1251.2    */
+.ionizationE1_18 {background-color: rgb(255, 107, 107);}          /*    1520.6    */
+.ionizationE1_19 {background-color: rgb(255, 245, 245);}          /*    418.8     */
+.ionizationE1_20 {background-color: rgb(255, 223, 223);}          /*    589.8     */
+.ionizationE1_21 {background-color: rgb(255, 218, 218);}          /*    633.1     */
+.ionizationE1_22 {background-color: rgb(255, 215, 215);}          /*    658.8     */
+.ionizationE1_23 {background-color: rgb(255, 216, 216);}          /*    650.9     */
+.ionizationE1_24 {background-color: rgb(255, 215, 215);}          /*    652.9     */
+.ionizationE1_25 {background-color: rgb(255, 207, 207);}          /*    717.3     */
+.ionizationE1_26 {background-color: rgb(255, 202, 202);}          /*    762.5     */
+.ionizationE1_27 {background-color: rgb(255, 202, 202);}          /*    760.4     */
+.ionizationE1_28 {background-color: rgb(255, 205, 205);}          /*    737.1     */
+.ionizationE1_29 {background-color: rgb(255, 204, 204);}          /*    745.5     */
+.ionizationE1_30 {background-color: rgb(255, 184, 184);}          /*    906.4     */
+.ionizationE1_31 {background-color: rgb(255, 225, 225);}          /*    578.8     */
+.ionizationE1_32 {background-color: rgb(255, 202, 202);}          /*    762.2     */
+.ionizationE1_33 {background-color: rgb(255, 179, 179);}          /*    944.5     */
+.ionizationE1_34 {background-color: rgb(255, 179, 179);}          /*    941.0     */
+.ionizationE1_35 {background-color: rgb(255, 154, 154);}          /*    1139.9    */
+.ionizationE1_36 {background-color: rgb(255, 128, 128);}          /*    1350.8    */
+.ionizationE1_37 {background-color: rgb(255, 247, 247);}          /*    403.0     */
+.ionizationE1_38 {background-color: rgb(255, 228, 228);}          /*    549.5     */
+.ionizationE1_39 {background-color: rgb(255, 222, 222);}          /*    599.9     */
+.ionizationE1_40 {background-color: rgb(255, 217, 217);}          /*    640.1     */
+.ionizationE1_41 {background-color: rgb(255, 215, 215);}          /*    652.1     */
+.ionizationE1_42 {background-color: rgb(255, 211, 211);}          /*    684.3     */
+.ionizationE1_43 {background-color: rgb(255, 209, 209);}          /*    702.4     */
+.ionizationE1_44 {background-color: rgb(255, 208, 208);}          /*    710.2     */
+.ionizationE1_45 {background-color: rgb(255, 207, 207);}          /*    719.7     */
+.ionizationE1_46 {background-color: rgb(255, 196, 196);}          /*    804.4     */
+.ionizationE1_47 {background-color: rgb(255, 206, 206);}          /*    731.0     */
+.ionizationE1_48 {background-color: rgb(255, 188, 188);}          /*    867.8     */
+.ionizationE1_49 {background-color: rgb(255, 227, 227);}          /*    558.3     */
+.ionizationE1_50 {background-color: rgb(255, 208, 208);}          /*    708.6     */
+.ionizationE1_51 {background-color: rgb(255, 193, 193);}          /*    830.6     */
+.ionizationE1_52 {background-color: rgb(255, 188, 188);}          /*    869.3     */
+.ionizationE1_53 {background-color: rgb(255, 171, 171);}          /*    1008.4    */
+.ionizationE1_54 {background-color: rgb(255, 150, 150);}          /*    1170.3    */
+.ionizationE1_55 {background-color: rgb(255, 250, 250);}          /*    375.7     */
+.ionizationE1_56 {background-color: rgb(255, 234, 234);}          /*    502.8     */
+.ionizationE1_57 {background-color: rgb(255, 230, 230);}          /*    538.1     */
+.ionizationE1_58 {background-color: rgb(255, 230, 230);}          /*    534.4     */
+.ionizationE1_59 {background-color: rgb(255, 231, 231);}          /*    528.1     */
+.ionizationE1_60 {background-color: rgb(255, 230, 230);}          /*    533.1     */
+.ionizationE1_61 {background-color: rgb(255, 230, 230);}          /*    538.6     */
+.ionizationE1_62 {background-color: rgb(255, 229, 229);}          /*    544.5     */
+.ionizationE1_63 {background-color: rgb(255, 229, 229);}          /*    547.1     */
+.ionizationE1_64 {background-color: rgb(255, 223, 223);}          /*    593.4     */
+.ionizationE1_65 {background-color: rgb(255, 226, 226);}          /*    565.8     */
+.ionizationE1_66 {background-color: rgb(255, 225, 225);}          /*    573.0     */
+.ionizationE1_67 {background-color: rgb(255, 224, 224);}          /*    581.0     */
+.ionizationE1_68 {background-color: rgb(255, 223, 223);}          /*    589.3     */
+.ionizationE1_69 {background-color: rgb(255, 222, 222);}          /*    596.7     */
+.ionizationE1_70 {background-color: rgb(255, 221, 221);}          /*    603.4     */
+.ionizationE1_71 {background-color: rgb(255, 231, 231);}          /*    523.5     */
+.ionizationE1_72 {background-color: rgb(255, 215, 215);}          /*    658.5     */
+.ionizationE1_73 {background-color: rgb(255, 206, 206);}          /*    728.4     */
+.ionizationE1_74 {background-color: rgb(255, 202, 202);}          /*    758.8     */
+.ionizationE1_75 {background-color: rgb(255, 202, 202);}          /*    755.8     */
+.ionizationE1_76 {background-color: rgb(255, 195, 195);}          /*    814.2     */
+.ionizationE1_77 {background-color: rgb(255, 189, 189);}          /*    865.2     */
+.ionizationE1_78 {background-color: rgb(255, 189, 189);}          /*    864.4     */
+.ionizationE1_79 {background-color: rgb(255, 186, 186);}          /*    890.1     */
+.ionizationE1_80 {background-color: rgb(255, 171, 171);}          /*    1007.1    */
+.ionizationE1_81 {background-color: rgb(255, 223, 223);}          /*    589.3     */
+.ionizationE1_82 {background-color: rgb(255, 207, 207);}          /*    715.6     */
+.ionizationE1_83 {background-color: rgb(255, 209, 209);}          /*    702.9     */
+.ionizationE1_84 {background-color: rgb(255, 195, 195);}          /*    811.8     */
+.ionizationE1_85 {background-color: rgb(255, 255, 255);}          /*    -         */
+.ionizationE1_86 {background-color: rgb(255, 167, 167);}          /*    1037.1    */
+.ionizationE1_87 {background-color: rgb(255, 248, 248);}          /*    393.0     */
+.ionizationE1_88 {background-color: rgb(255, 233, 233);}          /*    509.3     */
+.ionizationE1_89 {background-color: rgb(255, 235, 235);}          /*    498.8     */
+.ionizationE1_90 {background-color: rgb(255, 221, 221);}          /*    608.5     */
+.ionizationE1_91 {background-color: rgb(255, 226, 226);}          /*    568.3     */
+.ionizationE1_92 {background-color: rgb(255, 222, 222);}          /*    597.6     */
+.ionizationE1_93 {background-color: rgb(255, 221, 221);}          /*    604.5     */
+.ionizationE1_94 {background-color: rgb(255, 224, 224);}          /*    581.4     */
+.ionizationE1_95 {background-color: rgb(255, 225, 225);}          /*    576.4     */
+.ionizationE1_96 {background-color: rgb(255, 225, 225);}          /*    578.1     */
+.ionizationE1_97 {background-color: rgb(255, 222, 222);}          /*    598.0     */
+.ionizationE1_98 {background-color: rgb(255, 221, 221);}          /*    606.1     */
+.ionizationE1_99 {background-color: rgb(255, 219, 219);}          /*    619.4     */
+.ionizationE1_100 {background-color: rgb(255, 219, 219);}         /*    627.2     */
+.ionizationE1_101 {background-color: rgb(255, 218, 218);}         /*    634.9     */
+.ionizationE1_102 {background-color: rgb(255, 217, 217);}         /*    641.6     */
+.ionizationE1_103 {background-color: rgb(255, 238, 238);}         /*    472.8     */
+.ionizationE1_104 {background-color: rgb(255, 225, 225);}         /*    578.9     */
+.ionizationE1_105 {background-color: rgb(255, 255, 255);}         /*    -         */
+.ionizationE1_106 {background-color: rgb(255, 255, 255);}         /*    -         */
+.ionizationE1_107 {background-color: rgb(255, 255, 255);}         /*    -         */
+.ionizationE1_108 {background-color: rgb(255, 255, 255);}         /*    -         */
+.ionizationE1_109 {background-color: rgb(255, 255, 255);}         /*    -         */
+.ionizationE1_110 {background-color: rgb(255, 255, 255);}         /*    -         */
+.ionizationE1_111 {background-color: rgb(255, 255, 255);}         /*    -         */
+.ionizationE1_112 {background-color: rgb(255, 255, 255);}         /*    -         */
+.ionizationE1_113 {background-color: rgb(255, 255, 255);}         /*    -         */
+.ionizationE1_114 {background-color: rgb(255, 255, 255);}         /*    -         */
+.ionizationE1_115 {background-color: rgb(255, 255, 255);}         /*    -         */
+.ionizationE1_116 {background-color: rgb(255, 255, 255);}         /*    -         */
+.ionizationE1_117 {background-color: rgb(255, 255, 255);}         /*    -         */
+.ionizationE1_118 {background-color: rgb(255, 255, 255);}         /*    -         */
+
+/* Style the covalent atomic radii images (data from the CRC Handbook) */
+/* Units are pm, 1 pm = 0.124 px                                       */
+/* Calculate radial-gradient values as follows: 124*(radius/1000)      */
+.radius_1 {background-image: radial-gradient(circle, white, #FFBD3D 4.0px, transparent 4.0px)!important;}             /*    32 pm     */
+.radius_2 {background-image: radial-gradient(circle, white, #FFBD3D 4.6px, transparent 4.6px)!important;}             /*    37 pm     */
+.radius_3 {background-image: radial-gradient(circle, white, #FFBD3D 16.1px, transparent 16.1px)!important;}           /*    130 pm    */
+.radius_4 {background-image: radial-gradient(circle, white, #FFBD3D 12.3px, transparent 12.3px)!important;}           /*    99 pm     */
+.radius_5 {background-image: radial-gradient(circle, white, #FFBD3D 10.4px, transparent 10.4px)!important;}           /*    84 pm     */
+.radius_6 {background-image: radial-gradient(circle, white, #FFBD3D 9.3px, transparent 9.3px)!important;}             /*    75 pm     */
+.radius_7 {background-image: radial-gradient(circle, white, #FFBD3D 8.8px, transparent 8.8px)!important;}             /*    71 pm     */
+.radius_8 {background-image: radial-gradient(circle, white, #FFBD3D 7.9px, transparent 7.9px)!important;}             /*    64 pm     */
+.radius_9 {background-image: radial-gradient(circle, white, #FFBD3D 7.4px, transparent 7.4px)!important;}             /*    60 pm     */
+.radius_10 {background-image: radial-gradient(circle, white, #FFBD3D 7.7px, transparent 7.7px)!important;}            /*    62 pm     */
+.radius_11 {background-image: radial-gradient(circle, white, #FFBD3D 19.8px, transparent 19.8px)!important;}          /*    160 pm    */
+.radius_12 {background-image: radial-gradient(circle, white, #FFBD3D 17.4px, transparent 17.4px)!important;}          /*    140 pm    */
+.radius_13 {background-image: radial-gradient(circle, white, #FFBD3D 15.4px, transparent 15.4px)!important;}          /*    124 pm    */
+.radius_14 {background-image: radial-gradient(circle, white, #FFBD3D 14.1px, transparent 14.1px)!important;}          /*    114 pm    */
+.radius_15 {background-image: radial-gradient(circle, white, #FFBD3D 13.5px, transparent 13.5px)!important;}          /*    109 pm    */
+.radius_16 {background-image: radial-gradient(circle, white, #FFBD3D 12.9px, transparent 12.9px)!important;}          /*    104 pm    */
+.radius_17 {background-image: radial-gradient(circle, white, #FFBD3D 12.4px, transparent 12.4px)!important;}          /*    100 pm    */
+.radius_18 {background-image: radial-gradient(circle, white, #FFBD3D 12.5px, transparent 12.5px)!important;}          /*    101 pm    */
+.radius_19 {background-image: radial-gradient(circle, white, #FFBD3D 24.8px, transparent 24.8px)!important;}          /*    200 pm    */
+.radius_20 {background-image: radial-gradient(circle, white, #FFBD3D 21.6px, transparent 21.6px)!important;}          /*    174 pm    */
+.radius_21 {background-image: radial-gradient(circle, white, #FFBD3D 19.7px, transparent 19.7px)!important;}          /*    159 pm    */
+.radius_22 {background-image: radial-gradient(circle, white, #FFBD3D 18.4px, transparent 18.4px)!important;}          /*    148 pm    */
+.radius_23 {background-image: radial-gradient(circle, white, #FFBD3D 17.9px, transparent 17.9px)!important;}          /*    144 pm    */
+.radius_24 {background-image: radial-gradient(circle, white, #FFBD3D 16.1px, transparent 16.1px)!important;}          /*    130 pm    */
+.radius_25 {background-image: radial-gradient(circle, white, #FFBD3D 16.0px, transparent 16.0px)!important;}          /*    129 pm    */
+.radius_26 {background-image: radial-gradient(circle, white, #FFBD3D 15.4px, transparent 15.4px)!important;}          /*    124 pm    */
+.radius_27 {background-image: radial-gradient(circle, white, #FFBD3D 14.6px, transparent 14.6px)!important;}          /*    118 pm    */
+.radius_28 {background-image: radial-gradient(circle, white, #FFBD3D 14.5px, transparent 14.5px)!important;}          /*    117 pm    */
+.radius_29 {background-image: radial-gradient(circle, white, #FFBD3D 15.1px, transparent 15.1px)!important;}          /*    122 pm    */
+.radius_30 {background-image: radial-gradient(circle, white, #FFBD3D 14.9px, transparent 14.9px)!important;}          /*    120 pm    */
+.radius_31 {background-image: radial-gradient(circle, white, #FFBD3D 15.3px, transparent 15.3px)!important;}          /*    123 pm    */
+.radius_32 {background-image: radial-gradient(circle, white, #FFBD3D 14.9px, transparent 14.9px)!important;}          /*    120 pm    */
+.radius_33 {background-image: radial-gradient(circle, white, #FFBD3D 14.9px, transparent 14.9px)!important;}          /*    120 pm    */
+.radius_34 {background-image: radial-gradient(circle, white, #FFBD3D 14.6px, transparent 14.6px)!important;}          /*    118 pm    */
+.radius_35 {background-image: radial-gradient(circle, white, #FFBD3D 14.5px, transparent 14.5px)!important;}          /*    117 pm    */
+.radius_36 {background-image: radial-gradient(circle, white, #FFBD3D 14.4px, transparent 14.4px)!important;}          /*    116 pm    */
+.radius_37 {background-image: radial-gradient(circle, white, #FFBD3D 26.7px, transparent 26.7px)!important;}          /*    215 pm    */
+.radius_38 {background-image: radial-gradient(circle, white, #FFBD3D 23.6px, transparent 23.6px)!important;}          /*    190 pm    */
+.radius_39 {background-image: radial-gradient(circle, white, #FFBD3D 21.8px, transparent 21.8px)!important;}          /*    176 pm    */
+.radius_40 {background-image: radial-gradient(circle, white, #FFBD3D 20.3px, transparent 20.3px)!important;}          /*    164 pm    */
+.radius_41 {background-image: radial-gradient(circle, white, #FFBD3D 19.3px, transparent 19.3px)!important;}          /*    156 pm    */
+.radius_42 {background-image: radial-gradient(circle, white, #FFBD3D 18.1px, transparent 18.1px)!important;}          /*    146 pm    */
+.radius_43 {background-image: radial-gradient(circle, white, #FFBD3D 17.1px, transparent 17.1px)!important;}          /*    138 pm    */
+.radius_44 {background-image: radial-gradient(circle, white, #FFBD3D 16.9px, transparent 16.9px)!important;}          /*    136 pm    */
+.radius_45 {background-image: radial-gradient(circle, white, #FFBD3D 16.6px, transparent 16.6px)!important;}          /*    134 pm    */
+.radius_46 {background-image: radial-gradient(circle, white, #FFBD3D 16.1px, transparent 16.1px)!important;}          /*    130 pm    */
+.radius_47 {background-image: radial-gradient(circle, white, #FFBD3D 16.9px, transparent 16.9px)!important;}          /*    136 pm    */
+.radius_48 {background-image: radial-gradient(circle, white, #FFBD3D 17.4px, transparent 17.4px)!important;}          /*    140 pm    */
+.radius_49 {background-image: radial-gradient(circle, white, #FFBD3D 17.6px, transparent 17.6px)!important;}          /*    142 pm    */
+.radius_50 {background-image: radial-gradient(circle, white, #FFBD3D 17.4px, transparent 17.4px)!important;}          /*    140 pm    */
+.radius_51 {background-image: radial-gradient(circle, white, #FFBD3D 17.4px, transparent 17.4px)!important;}          /*    140 pm    */
+.radius_52 {background-image: radial-gradient(circle, white, #FFBD3D 17.0px, transparent 17.0px)!important;}          /*    137 pm    */
+.radius_53 {background-image: radial-gradient(circle, white, #FFBD3D 16.9px, transparent 16.9px)!important;}          /*    136 pm    */
+.radius_54 {background-image: radial-gradient(circle, white, #FFBD3D 16.9px, transparent 16.9px)!important;}          /*    136 pm    */
+.radius_55 {background-image: radial-gradient(circle, white, #FFBD3D 29.5px, transparent 29.5px)!important;}          /*    238 pm    */
+.radius_56 {background-image: radial-gradient(circle, white, #FFBD3D 25.5px, transparent 25.5px)!important;}          /*    206 pm    */
+.radius_57 {background-image: radial-gradient(circle, white, #FFBD3D 24.1px, transparent 24.1px)!important;}          /*    194 pm    */
+.radius_58 {background-image: radial-gradient(circle, white, #FFBD3D 22.8px, transparent 22.8px)!important;}          /*    184 pm    */
+.radius_59 {background-image: radial-gradient(circle, white, #FFBD3D 23.6px, transparent 23.6px)!important;}          /*    190 pm    */
+.radius_60 {background-image: radial-gradient(circle, white, #FFBD3D 23.3px, transparent 23.3px)!important;}          /*    188 pm    */
+.radius_61 {background-image: radial-gradient(circle, white, #FFBD3D 23.1px, transparent 23.1px)!important;}          /*    186 pm    */
+.radius_62 {background-image: radial-gradient(circle, white, #FFBD3D 22.9px, transparent 22.9px)!important;}          /*    185 pm    */
+.radius_63 {background-image: radial-gradient(circle, white, #FFBD3D 22.7px, transparent 22.7px)!important;}          /*    183 pm    */
+.radius_64 {background-image: radial-gradient(circle, white, #FFBD3D 22.6px, transparent 22.6px)!important;}          /*    182 pm    */
+.radius_65 {background-image: radial-gradient(circle, white, #FFBD3D 22.4px, transparent 22.4px)!important;}          /*    181 pm    */
+.radius_66 {background-image: radial-gradient(circle, white, #FFBD3D 22.3px, transparent 22.3px)!important;}          /*    180 pm    */
+.radius_67 {background-image: radial-gradient(circle, white, #FFBD3D 22.2px, transparent 22.2px)!important;}          /*    179 pm    */
+.radius_68 {background-image: radial-gradient(circle, white, #FFBD3D 21.9px, transparent 21.9px)!important;}          /*    177 pm    */
+.radius_69 {background-image: radial-gradient(circle, white, #FFBD3D 21.9px, transparent 21.9px)!important;}          /*    177 pm    */
+.radius_70 {background-image: radial-gradient(circle, white, #FFBD3D 22.1px, transparent 22.1px)!important;}          /*    178 pm    */
+.radius_71 {background-image: radial-gradient(circle, white, #FFBD3D 21.6px, transparent 21.6px)!important;}          /*    174 pm    */
+.radius_72 {background-image: radial-gradient(circle, white, #FFBD3D 20.3px, transparent 20.3px)!important;}          /*    164 pm    */
+.radius_73 {background-image: radial-gradient(circle, white, #FFBD3D 19.6px, transparent 19.6px)!important;}          /*    158 pm    */
+.radius_74 {background-image: radial-gradient(circle, white, #FFBD3D 18.6px, transparent 18.6px)!important;}          /*    150 pm    */
+.radius_75 {background-image: radial-gradient(circle, white, #FFBD3D 17.5px, transparent 17.5px)!important;}          /*    141 pm    */
+.radius_76 {background-image: radial-gradient(circle, white, #FFBD3D 16.9px, transparent 16.9px)!important;}          /*    136 pm    */
+.radius_77 {background-image: radial-gradient(circle, white, #FFBD3D 16.4px, transparent 16.4px)!important;}          /*    132 pm    */
+.radius_78 {background-image: radial-gradient(circle, white, #FFBD3D 16.1px, transparent 16.1px)!important;}          /*    130 pm    */
+.radius_79 {background-image: radial-gradient(circle, white, #FFBD3D 16.1px, transparent 16.1px)!important;}          /*    130 pm    */
+.radius_80 {background-image: radial-gradient(circle, white, #FFBD3D 16.4px, transparent 16.4px)!important;}          /*    132 pm    */
+.radius_81 {background-image: radial-gradient(circle, white, #FFBD3D 17.9px, transparent 17.9px)!important;}          /*    144 pm    */
+.radius_82 {background-image: radial-gradient(circle, white, #FFBD3D 18.0px, transparent 18.0px)!important;}          /*    145 pm    */
+.radius_83 {background-image: radial-gradient(circle, white, #FFBD3D 18.6px, transparent 18.6px)!important;}          /*    150 pm    */
+.radius_84 {background-image: radial-gradient(circle, white, #FFBD3D 17.6px, transparent 17.6px)!important;}          /*    142 pm    */
+.radius_85 {background-image: radial-gradient(circle, white, #FFBD3D 18.4px, transparent 18.4px)!important;}          /*    148 pm    */
+.radius_86 {background-image: radial-gradient(circle, white, #FFBD3D 18.1px, transparent 18.1px)!important;}          /*    146 pm    */
+.radius_87 {background-image: radial-gradient(circle, white, #FFBD3D 30.0px, transparent 30.0px)!important;}          /*    242 pm    */
+.radius_88 {background-image: radial-gradient(circle, white, #FFBD3D 26.2px, transparent 26.2px)!important;}          /*    211 pm    */
+.radius_89 {background-image: radial-gradient(circle, white, #FFBD3D 24.9px, transparent 24.9px)!important;}          /*    201 pm    */
+.radius_90 {background-image: radial-gradient(circle, white, #FFBD3D 23.6px, transparent 23.6px)!important;}          /*    190 pm    */
+.radius_91 {background-image: radial-gradient(circle, white, #FFBD3D 22.8px, transparent 22.8px)!important;}          /*    184 pm    */
+.radius_92 {background-image: radial-gradient(circle, white, #FFBD3D 22.7px, transparent 22.7px)!important;}          /*    183 pm    */
+.radius_93 {background-image: radial-gradient(circle, white, #FFBD3D 22.3px, transparent 22.3px)!important;}          /*    180 pm    */
+.radius_94 {background-image: radial-gradient(circle, white, #FFBD3D 22.3px, transparent 22.3px)!important;}          /*    180 pm    */
+.radius_95 {background-image: radial-gradient(circle, white, #FFBD3D 21.5px, transparent 21.5px)!important;}          /*    173 pm    */
+.radius_96 {background-image: radial-gradient(circle, white, #FFBD3D 20.8px, transparent 20.8px)!important;}          /*    168 pm    */
+.radius_97 {background-image: radial-gradient(circle, white, #FFBD3D 20.8px, transparent 20.8px)!important;}          /*    168 pm    */
+.radius_98 {background-image: radial-gradient(circle, white, #FFBD3D 20.8px, transparent 20.8px)!important;}          /*    168 pm    */
+.radius_99 {background-image: radial-gradient(circle, white, #FFBD3D 20.5px, transparent 20.5px)!important;}          /*    165 pm    */
+.radius_100 {background-image: radial-gradient(circle, white, #FFBD3D 20.7px, transparent 20.7px)!important;}         /*    167 pm    */
+.radius_101 {background-image: radial-gradient(circle, white, #FFBD3D 21.5px, transparent 21.5px)!important;}         /*    173 pm    */
+.radius_102 {background-image: radial-gradient(circle, white, #FFBD3D 21.8px, transparent 21.8px)!important;}         /*    176 pm    */
+.radius_103 {background-image: radial-gradient(circle, white, #FFBD3D 20.0px, transparent 20.0px)!important;}         /*    161 pm    */
+.radius_104 {background-image: radial-gradient(circle, white, #FFBD3D 19.5px, transparent 19.5px)!important;}         /*    157 pm    */
+.radius_105 {background-image: radial-gradient(circle, white, #FFBD3D 18.5px, transparent 18.5px)!important;}         /*    149 pm    */
+.radius_106 {background-image: radial-gradient(circle, white, #FFBD3D 17.7px, transparent 17.7px)!important;}         /*    143 pm    */
+.radius_107 {background-image: radial-gradient(circle, white, #FFBD3D 17.5px, transparent 17.5px)!important;}         /*    141 pm    */
+.radius_108 {background-image: radial-gradient(circle, white, #FFBD3D 16.6px, transparent 16.6px)!important;}         /*    134 pm    */
+.radius_109 {background-image: radial-gradient(circle, white, #FFBD3D 16.0px, transparent 16.0px)!important;}         /*    129 pm    */
+.radius_110 {background-image: radial-gradient(circle, white, #FFBD3D 15.9px, transparent 15.9px)!important;}         /*    128 pm    */
+.radius_111 {background-image: radial-gradient(circle, white, #FFBD3D 15.0px, transparent 15.0px)!important;}         /*    121 pm    */
+.radius_112 {background-image: radial-gradient(circle, white, #FFBD3D 15.1px, transparent 15.1px)!important;}         /*    122 pm    */
+.radius_113 {background-image: radial-gradient(circle, white, #FFBD3D 16.9px, transparent 16.9px)!important;}         /*    136 pm    */
+.radius_114 {background-image: radial-gradient(circle, white, #FFBD3D 17.7px, transparent 17.7px)!important;}         /*    143 pm    */
+.radius_115 {background-image: radial-gradient(circle, white, #FFBD3D 20.1px, transparent 20.1px)!important;}         /*    162 pm    */
+.radius_116 {background-image: radial-gradient(circle, white, #FFBD3D 21.7px, transparent 21.7px)!important;}         /*    175 pm    */
+.radius_117 {background-image: radial-gradient(circle, white, #FFBD3D 20.5px, transparent 20.5px)!important;}         /*    165 pm    */
+.radius_118 {background-image: radial-gradient(circle, white, #FFBD3D 19.5px, transparent 19.5px)!important;}         /*    157 pm    */
+
+/* Style the metals color */
+.metalsColor {
+    background-color: rgb(188, 188, 188);
+}
+
+/* Style the metalloids color */
+.metalloidsColor {
+    background-color: rgb(122, 142, 229);
+}
+
+/* Style the nonmetals color */
+.nonmetalsColor {
+    background-color: rgb(210, 180, 140);
+}
+
+/* Style the cell highlight color */
+.highlight {
+    background-color: rgb(255, 255, 0);
+}
+
+</style>
+
+<script type="text/JavaScript">
+
+/* This function resets the periodic table to its default settings */
+function resetCells() {location.reload(true);}
+
+/* This function toggles the group label notation */
+function toggleGroupLabels() {
+    for (var i = 0;i < document.getElementsByClassName('groupLabel').length;i++){
+    document.getElementsByClassName('groupLabel')[i].classList.toggle('hide');}
+}
+
+/* This function toggles the highlighting of individual elements */
+function highlight(id) {
+    document.getElementById(id).classList.toggle('highlight');
+}
+
+/* This function removes the highlighting from all elements */
+function removeHighlight() {
+    for (var i = 0;i < document.getElementsByClassName('elementCell').length;i++){
+    document.getElementsByClassName('elementCell')[i].classList.remove('highlight');}
+    for (var i = 0;i < document.getElementsByClassName('LnAcCell').length;i++){
+    document.getElementsByClassName('LnAcCell')[i].classList.remove('highlight');}
+    group1counter = 0;
+    group2counter = 0;
+    group3counter = 0;
+    group4counter = 0;
+    group5counter = 0;
+    group6counter = 0;
+    group7counter = 0;
+    group8counter = 0;
+    group9counter = 0;
+    group10counter = 0;
+    group11counter = 0;
+    group12counter = 0;
+    group13counter = 0;
+    group14counter = 0;
+    group15counter = 0;
+    group16counter = 0;
+    group17counter = 0;
+    group18counter = 0;
+    row1counter = 0;
+    row2counter = 0;
+    row3counter = 0;
+    row4counter = 0;
+    row5counter = 0;
+    row6counter = 0;
+    row7counter = 0;
+    groupMaincounter = 0;
+    groupTransitioncounter = 0;
+    groupLanthanidescounter = 0;
+    groupActinidescounter = 0;
+}
+
+/* This function toggles the highlighting of group 1 elements */
+    var group1counter = 0;
+function group1Highlight() {
+    if (group1counter%2 == 0){
+    document.getElementById('id1').classList.add('highlight');
+    document.getElementById('id3').classList.add('highlight');
+    document.getElementById('id11').classList.add('highlight');
+    document.getElementById('id19').classList.add('highlight');
+    document.getElementById('id37').classList.add('highlight');
+    document.getElementById('id55').classList.add('highlight');
+    document.getElementById('id87').classList.add('highlight');}
+    else {
+    document.getElementById('id1').classList.remove('highlight');
+    document.getElementById('id3').classList.remove('highlight');
+    document.getElementById('id11').classList.remove('highlight');
+    document.getElementById('id19').classList.remove('highlight');
+    document.getElementById('id37').classList.remove('highlight');
+    document.getElementById('id55').classList.remove('highlight');
+    document.getElementById('id87').classList.remove('highlight');}
+    group1counter = group1counter + 1;
+}
+
+/* This function toggles the highlighting of group 2 elements */
+    var group2counter = 0;
+function group2Highlight() {
+    if (group2counter%2 == 0){
+    document.getElementById('id4').classList.add('highlight');
+    document.getElementById('id12').classList.add('highlight');
+    document.getElementById('id20').classList.add('highlight');
+    document.getElementById('id38').classList.add('highlight');
+    document.getElementById('id56').classList.add('highlight');
+    document.getElementById('id88').classList.add('highlight');}
+    else {
+    document.getElementById('id4').classList.remove('highlight');
+    document.getElementById('id12').classList.remove('highlight');
+    document.getElementById('id20').classList.remove('highlight');
+    document.getElementById('id38').classList.remove('highlight');
+    document.getElementById('id56').classList.remove('highlight');
+    document.getElementById('id88').classList.remove('highlight');}
+    group2counter = group2counter + 1;
+}
+
+/* This function toggles the highlighting of group 3 elements */
+    var group3counter = 0;
+function group3Highlight() {
+    if (group3counter%2 == 0){
+    document.getElementById('id21').classList.add('highlight');
+    document.getElementById('id39').classList.add('highlight');
+    document.getElementById('idLn').classList.add('highlight');
+    document.getElementById('idAc').classList.add('highlight');}
+    else {
+    document.getElementById('id21').classList.remove('highlight');
+    document.getElementById('id39').classList.remove('highlight');
+    document.getElementById('idLn').classList.remove('highlight');
+    document.getElementById('idAc').classList.remove('highlight');}
+    group3counter = group3counter + 1;
+}
+
+/* This function toggles the highlighting of group 4 elements */
+    var group4counter = 0;
+function group4Highlight() {
+    if (group4counter%2 == 0){
+    document.getElementById('id22').classList.add('highlight');
+    document.getElementById('id40').classList.add('highlight');
+    document.getElementById('id72').classList.add('highlight');
+    document.getElementById('id104').classList.add('highlight');}
+    else {
+    document.getElementById('id22').classList.remove('highlight');
+    document.getElementById('id40').classList.remove('highlight');
+    document.getElementById('id72').classList.remove('highlight');
+    document.getElementById('id104').classList.remove('highlight');}
+    group4counter = group4counter + 1;
+}
+
+/* This function toggles the highlighting of group 5 elements */
+    var group5counter = 0;
+function group5Highlight() {
+    if (group5counter%2 == 0){
+    document.getElementById('id23').classList.add('highlight');
+    document.getElementById('id41').classList.add('highlight');
+    document.getElementById('id73').classList.add('highlight');
+    document.getElementById('id105').classList.add('highlight');}
+    else {
+    document.getElementById('id23').classList.remove('highlight');
+    document.getElementById('id41').classList.remove('highlight');
+    document.getElementById('id73').classList.remove('highlight');
+    document.getElementById('id105').classList.remove('highlight');}
+    group5counter = group5counter + 1;
+}
+
+/* This function toggles the highlighting of group 6 elements */
+    var group6counter = 0;
+function group6Highlight() {
+    if (group6counter%2 == 0){
+    document.getElementById('id24').classList.add('highlight');
+    document.getElementById('id42').classList.add('highlight');
+    document.getElementById('id74').classList.add('highlight');
+    document.getElementById('id106').classList.add('highlight');}
+    else {
+    document.getElementById('id24').classList.remove('highlight');
+    document.getElementById('id42').classList.remove('highlight');
+    document.getElementById('id74').classList.remove('highlight');
+    document.getElementById('id106').classList.remove('highlight');}
+    group6counter = group6counter + 1;
+}
+
+/* This function toggles the highlighting of group 7 elements */
+    var group7counter = 0;
+function group7Highlight() {
+    if (group7counter%2 == 0){
+    document.getElementById('id25').classList.add('highlight');
+    document.getElementById('id43').classList.add('highlight');
+    document.getElementById('id75').classList.add('highlight');
+    document.getElementById('id107').classList.add('highlight');}
+    else {
+    document.getElementById('id25').classList.remove('highlight');
+    document.getElementById('id43').classList.remove('highlight');
+    document.getElementById('id75').classList.remove('highlight');
+    document.getElementById('id107').classList.remove('highlight');}
+    group7counter = group7counter + 1;
+}
+
+/* This function toggles the highlighting of group 8 elements */
+    var group8counter = 0;
+function group8Highlight() {
+    if (group8counter%2 == 0){
+    document.getElementById('id26').classList.add('highlight');
+    document.getElementById('id44').classList.add('highlight');
+    document.getElementById('id76').classList.add('highlight');
+    document.getElementById('id108').classList.add('highlight');}
+    else {
+    document.getElementById('id26').classList.remove('highlight');
+    document.getElementById('id44').classList.remove('highlight');
+    document.getElementById('id76').classList.remove('highlight');
+    document.getElementById('id108').classList.remove('highlight');}
+    group8counter = group8counter + 1;
+}
+
+/* This function toggles the highlighting of group 9 elements */
+    var group9counter = 0;
+function group9Highlight() {
+    if (group9counter%2 == 0){
+    document.getElementById('id27').classList.add('highlight');
+    document.getElementById('id45').classList.add('highlight');
+    document.getElementById('id77').classList.add('highlight');
+    document.getElementById('id109').classList.add('highlight');}
+    else {
+    document.getElementById('id27').classList.remove('highlight');
+    document.getElementById('id45').classList.remove('highlight');
+    document.getElementById('id77').classList.remove('highlight');
+    document.getElementById('id109').classList.remove('highlight');}
+    group9counter = group9counter + 1;
+}
+
+/* This function toggles the highlighting of group 10 elements */
+    var group10counter = 0;
+function group10Highlight() {
+    if (group10counter%2 == 0){
+    document.getElementById('id28').classList.add('highlight');
+    document.getElementById('id46').classList.add('highlight');
+    document.getElementById('id78').classList.add('highlight');
+    document.getElementById('id110').classList.add('highlight');}
+    else {
+    document.getElementById('id28').classList.remove('highlight');
+    document.getElementById('id46').classList.remove('highlight');
+    document.getElementById('id78').classList.remove('highlight');
+    document.getElementById('id110').classList.remove('highlight');}
+    group10counter = group10counter + 1;
+}
+
+/* This function toggles the highlighting of group 11 elements */
+    var group11counter = 0;
+function group11Highlight() {
+    if (group11counter%2 == 0){
+    document.getElementById('id29').classList.add('highlight');
+    document.getElementById('id47').classList.add('highlight');
+    document.getElementById('id79').classList.add('highlight');
+    document.getElementById('id111').classList.add('highlight');}
+    else {
+    document.getElementById('id29').classList.remove('highlight');
+    document.getElementById('id47').classList.remove('highlight');
+    document.getElementById('id79').classList.remove('highlight');
+    document.getElementById('id111').classList.remove('highlight');}
+    group11counter = group11counter + 1;
+}
+
+/* This function toggles the highlighting of group 12 elements */
+    var group12counter = 0;
+function group12Highlight() {
+    if (group12counter%2 == 0){
+    document.getElementById('id30').classList.add('highlight');
+    document.getElementById('id48').classList.add('highlight');
+    document.getElementById('id80').classList.add('highlight');
+    document.getElementById('id112').classList.add('highlight');}
+    else {
+    document.getElementById('id30').classList.remove('highlight');
+    document.getElementById('id48').classList.remove('highlight');
+    document.getElementById('id80').classList.remove('highlight');
+    document.getElementById('id112').classList.remove('highlight');}
+    group12counter = group12counter + 1;
+}
+
+/* This function toggles the highlighting of group 13 elements */
+    var group13counter = 0;
+function group13Highlight() {
+    if (group13counter%2 == 0){
+    document.getElementById('id5').classList.add('highlight');
+    document.getElementById('id13').classList.add('highlight');
+    document.getElementById('id31').classList.add('highlight');
+    document.getElementById('id49').classList.add('highlight');
+    document.getElementById('id81').classList.add('highlight');
+    document.getElementById('id113').classList.add('highlight');}
+    else {
+    document.getElementById('id5').classList.remove('highlight');
+    document.getElementById('id13').classList.remove('highlight');
+    document.getElementById('id31').classList.remove('highlight');
+    document.getElementById('id49').classList.remove('highlight');
+    document.getElementById('id81').classList.remove('highlight');
+    document.getElementById('id113').classList.remove('highlight');}
+    group13counter = group13counter + 1;
+}
+
+/* This function toggles the highlighting of group 14 elements */
+    var group14counter = 0;
+function group14Highlight() {
+    if (group14counter%2 == 0){
+    document.getElementById('id6').classList.add('highlight');
+    document.getElementById('id14').classList.add('highlight');
+    document.getElementById('id32').classList.add('highlight');
+    document.getElementById('id50').classList.add('highlight');
+    document.getElementById('id82').classList.add('highlight');
+    document.getElementById('id114').classList.add('highlight');}
+    else {
+    document.getElementById('id6').classList.remove('highlight');
+    document.getElementById('id14').classList.remove('highlight');
+    document.getElementById('id32').classList.remove('highlight');
+    document.getElementById('id50').classList.remove('highlight');
+    document.getElementById('id82').classList.remove('highlight');
+    document.getElementById('id114').classList.remove('highlight');}
+    group14counter = group14counter + 1;
+}
+
+/* This function toggles the highlighting of group 15 elements */
+    var group15counter = 0;
+function group15Highlight() {
+    if (group15counter%2 == 0){
+    document.getElementById('id7').classList.add('highlight');
+    document.getElementById('id15').classList.add('highlight');
+    document.getElementById('id33').classList.add('highlight');
+    document.getElementById('id51').classList.add('highlight');
+    document.getElementById('id83').classList.add('highlight');
+    document.getElementById('id115').classList.add('highlight');}
+    else {
+    document.getElementById('id7').classList.remove('highlight');
+    document.getElementById('id15').classList.remove('highlight');
+    document.getElementById('id33').classList.remove('highlight');
+    document.getElementById('id51').classList.remove('highlight');
+    document.getElementById('id83').classList.remove('highlight');
+    document.getElementById('id115').classList.remove('highlight');}
+    group15counter = group15counter + 1;
+}
+
+/* This function toggles the highlighting of group 16 elements */
+    var group16counter = 0;
+function group16Highlight() {
+    if (group16counter%2 == 0){
+    document.getElementById('id8').classList.add('highlight');
+    document.getElementById('id16').classList.add('highlight');
+    document.getElementById('id34').classList.add('highlight');
+    document.getElementById('id52').classList.add('highlight');
+    document.getElementById('id84').classList.add('highlight');
+    document.getElementById('id116').classList.add('highlight');}
+    else {
+    document.getElementById('id8').classList.remove('highlight');
+    document.getElementById('id16').classList.remove('highlight');
+    document.getElementById('id34').classList.remove('highlight');
+    document.getElementById('id52').classList.remove('highlight');
+    document.getElementById('id84').classList.remove('highlight');
+    document.getElementById('id116').classList.remove('highlight');}
+    group16counter = group16counter + 1;
+}
+
+/* This function toggles the highlighting of group 17 elements */
+    var group17counter = 0;
+function group17Highlight() {
+    if (group17counter%2 == 0){
+    document.getElementById('id9').classList.add('highlight');
+    document.getElementById('id17').classList.add('highlight');
+    document.getElementById('id35').classList.add('highlight');
+    document.getElementById('id53').classList.add('highlight');
+    document.getElementById('id85').classList.add('highlight');
+    document.getElementById('id117').classList.add('highlight');}
+    else {
+    document.getElementById('id9').classList.remove('highlight');
+    document.getElementById('id17').classList.remove('highlight');
+    document.getElementById('id35').classList.remove('highlight');
+    document.getElementById('id53').classList.remove('highlight');
+    document.getElementById('id85').classList.remove('highlight');
+    document.getElementById('id117').classList.remove('highlight');}
+    group17counter = group17counter + 1;
+}
+
+/* This function toggles the highlighting of group 18 elements */
+    var group18counter = 0;
+function group18Highlight() {
+    if (group18counter%2 == 0){
+    document.getElementById('id2').classList.add('highlight');
+    document.getElementById('id10').classList.add('highlight');
+    document.getElementById('id18').classList.add('highlight');
+    document.getElementById('id36').classList.add('highlight');
+    document.getElementById('id54').classList.add('highlight');
+    document.getElementById('id86').classList.add('highlight');
+    document.getElementById('id118').classList.add('highlight');}
+    else {
+    document.getElementById('id2').classList.remove('highlight');
+    document.getElementById('id10').classList.remove('highlight');
+    document.getElementById('id18').classList.remove('highlight');
+    document.getElementById('id36').classList.remove('highlight');
+    document.getElementById('id54').classList.remove('highlight');
+    document.getElementById('id86').classList.remove('highlight');
+    document.getElementById('id118').classList.remove('highlight');}
+    group18counter = group18counter + 1;
+}
+
+/* This function toggles the highlighting of row 1 elements */
+    var row1counter = 0;
+function row1Highlight() {
+    if (row1counter%2 == 0){
+    document.getElementById('id1').classList.add('highlight');
+    document.getElementById('id2').classList.add('highlight');}
+    else {
+    document.getElementById('id1').classList.remove('highlight');
+    document.getElementById('id2').classList.remove('highlight');}
+    row1counter = row1counter + 1;
+}
+
+/* This function toggles the highlighting of row 2 elements */
+    var row2counter = 0;
+function row2Highlight() {
+    if (row2counter%2 == 0){
+    document.getElementById('id3').classList.add('highlight');
+    document.getElementById('id4').classList.add('highlight');
+    document.getElementById('id5').classList.add('highlight');
+    document.getElementById('id6').classList.add('highlight');
+    document.getElementById('id7').classList.add('highlight');
+    document.getElementById('id8').classList.add('highlight');
+    document.getElementById('id9').classList.add('highlight');
+    document.getElementById('id10').classList.add('highlight');}
+    else {
+    document.getElementById('id3').classList.remove('highlight');
+    document.getElementById('id4').classList.remove('highlight');
+    document.getElementById('id5').classList.remove('highlight');
+    document.getElementById('id6').classList.remove('highlight');
+    document.getElementById('id7').classList.remove('highlight');
+    document.getElementById('id8').classList.remove('highlight');
+    document.getElementById('id9').classList.remove('highlight');
+    document.getElementById('id10').classList.remove('highlight');}
+    row2counter = row2counter + 1;
+}
+
+/* This function toggles the highlighting of row 3 elements */
+    var row3counter = 0;
+function row3Highlight() {
+    if (row3counter%2 == 0){
+    document.getElementById('id11').classList.add('highlight');
+    document.getElementById('id12').classList.add('highlight');
+    document.getElementById('id13').classList.add('highlight');
+    document.getElementById('id14').classList.add('highlight');
+    document.getElementById('id15').classList.add('highlight');
+    document.getElementById('id16').classList.add('highlight');
+    document.getElementById('id17').classList.add('highlight');
+    document.getElementById('id18').classList.add('highlight');}
+    else {
+    document.getElementById('id11').classList.remove('highlight');
+    document.getElementById('id12').classList.remove('highlight');
+    document.getElementById('id13').classList.remove('highlight');
+    document.getElementById('id14').classList.remove('highlight');
+    document.getElementById('id15').classList.remove('highlight');
+    document.getElementById('id16').classList.remove('highlight');
+    document.getElementById('id17').classList.remove('highlight');
+    document.getElementById('id18').classList.remove('highlight');}
+    row3counter = row3counter + 1;
+}
+
+/* This function toggles the highlighting of row 4 elements */
+    var row4counter = 0;
+function row4Highlight() {
+    if (row4counter%2 == 0){
+    document.getElementById('id19').classList.add('highlight');
+    document.getElementById('id20').classList.add('highlight');
+    document.getElementById('id21').classList.add('highlight');
+    document.getElementById('id22').classList.add('highlight');
+    document.getElementById('id23').classList.add('highlight');
+    document.getElementById('id24').classList.add('highlight');
+    document.getElementById('id25').classList.add('highlight');
+    document.getElementById('id26').classList.add('highlight');
+    document.getElementById('id27').classList.add('highlight');
+    document.getElementById('id28').classList.add('highlight');
+    document.getElementById('id29').classList.add('highlight');
+    document.getElementById('id30').classList.add('highlight');
+    document.getElementById('id31').classList.add('highlight');
+    document.getElementById('id32').classList.add('highlight');
+    document.getElementById('id33').classList.add('highlight');
+    document.getElementById('id34').classList.add('highlight');
+    document.getElementById('id35').classList.add('highlight');
+    document.getElementById('id36').classList.add('highlight');}
+    else {
+    document.getElementById('id19').classList.remove('highlight');
+    document.getElementById('id20').classList.remove('highlight');
+    document.getElementById('id21').classList.remove('highlight');
+    document.getElementById('id22').classList.remove('highlight');
+    document.getElementById('id23').classList.remove('highlight');
+    document.getElementById('id24').classList.remove('highlight');
+    document.getElementById('id25').classList.remove('highlight');
+    document.getElementById('id26').classList.remove('highlight');
+    document.getElementById('id27').classList.remove('highlight');
+    document.getElementById('id28').classList.remove('highlight');
+    document.getElementById('id29').classList.remove('highlight');
+    document.getElementById('id30').classList.remove('highlight');
+    document.getElementById('id31').classList.remove('highlight');
+    document.getElementById('id32').classList.remove('highlight');
+    document.getElementById('id33').classList.remove('highlight');
+    document.getElementById('id34').classList.remove('highlight');
+    document.getElementById('id35').classList.remove('highlight');
+    document.getElementById('id36').classList.remove('highlight');}
+    row4counter = row4counter + 1;
+}
+
+/* This function toggles the highlighting of row 5 elements */
+    var row5counter = 0;
+function row5Highlight() {
+    if (row5counter%2 == 0){
+    document.getElementById('id37').classList.add('highlight');
+    document.getElementById('id38').classList.add('highlight');
+    document.getElementById('id39').classList.add('highlight');
+    document.getElementById('id40').classList.add('highlight');
+    document.getElementById('id41').classList.add('highlight');
+    document.getElementById('id42').classList.add('highlight');
+    document.getElementById('id43').classList.add('highlight');
+    document.getElementById('id44').classList.add('highlight');
+    document.getElementById('id45').classList.add('highlight');
+    document.getElementById('id46').classList.add('highlight');
+    document.getElementById('id47').classList.add('highlight');
+    document.getElementById('id48').classList.add('highlight');
+    document.getElementById('id49').classList.add('highlight');
+    document.getElementById('id50').classList.add('highlight');
+    document.getElementById('id51').classList.add('highlight');
+    document.getElementById('id52').classList.add('highlight');
+    document.getElementById('id53').classList.add('highlight');
+    document.getElementById('id54').classList.add('highlight');}
+    else {
+    document.getElementById('id37').classList.remove('highlight');
+    document.getElementById('id38').classList.remove('highlight');
+    document.getElementById('id39').classList.remove('highlight');
+    document.getElementById('id40').classList.remove('highlight');
+    document.getElementById('id41').classList.remove('highlight');
+    document.getElementById('id42').classList.remove('highlight');
+    document.getElementById('id43').classList.remove('highlight');
+    document.getElementById('id44').classList.remove('highlight');
+    document.getElementById('id45').classList.remove('highlight');
+    document.getElementById('id46').classList.remove('highlight');
+    document.getElementById('id47').classList.remove('highlight');
+    document.getElementById('id48').classList.remove('highlight');
+    document.getElementById('id49').classList.remove('highlight');
+    document.getElementById('id50').classList.remove('highlight');
+    document.getElementById('id51').classList.remove('highlight');
+    document.getElementById('id52').classList.remove('highlight');
+    document.getElementById('id53').classList.remove('highlight');
+    document.getElementById('id54').classList.remove('highlight');}
+    row5counter = row5counter + 1;
+}
+
+/* This function toggles the highlighting of row 6 elements */
+    var row6counter = 0;
+function row6Highlight() {
+    if (row6counter%2 == 0){
+    document.getElementById('id55').classList.add('highlight');
+    document.getElementById('id56').classList.add('highlight');
+    document.getElementById('idLn').classList.add('highlight');
+    document.getElementById('id72').classList.add('highlight');
+    document.getElementById('id73').classList.add('highlight');
+    document.getElementById('id74').classList.add('highlight');
+    document.getElementById('id75').classList.add('highlight');
+    document.getElementById('id76').classList.add('highlight');
+    document.getElementById('id77').classList.add('highlight');
+    document.getElementById('id78').classList.add('highlight');
+    document.getElementById('id79').classList.add('highlight');
+    document.getElementById('id80').classList.add('highlight');
+    document.getElementById('id81').classList.add('highlight');
+    document.getElementById('id82').classList.add('highlight');
+    document.getElementById('id83').classList.add('highlight');
+    document.getElementById('id84').classList.add('highlight');
+    document.getElementById('id85').classList.add('highlight');
+    document.getElementById('id86').classList.add('highlight');}
+    else {
+    document.getElementById('id55').classList.remove('highlight');
+    document.getElementById('id56').classList.remove('highlight');
+    document.getElementById('idLn').classList.remove('highlight');
+    document.getElementById('id72').classList.remove('highlight');
+    document.getElementById('id73').classList.remove('highlight');
+    document.getElementById('id74').classList.remove('highlight');
+    document.getElementById('id75').classList.remove('highlight');
+    document.getElementById('id76').classList.remove('highlight');
+    document.getElementById('id77').classList.remove('highlight');
+    document.getElementById('id78').classList.remove('highlight');
+    document.getElementById('id79').classList.remove('highlight');
+    document.getElementById('id80').classList.remove('highlight');
+    document.getElementById('id81').classList.remove('highlight');
+    document.getElementById('id82').classList.remove('highlight');
+    document.getElementById('id83').classList.remove('highlight');
+    document.getElementById('id84').classList.remove('highlight');
+    document.getElementById('id85').classList.remove('highlight');
+    document.getElementById('id86').classList.remove('highlight');}
+    row6counter = row6counter + 1;
+}
+
+/* This function toggles the highlighting of row 7 elements */
+    var row7counter = 0;
+function row7Highlight() {
+    if (row7counter%2 == 0){
+    document.getElementById('id87').classList.add('highlight');
+    document.getElementById('id88').classList.add('highlight');
+    document.getElementById('idAc').classList.add('highlight');
+    document.getElementById('id104').classList.add('highlight');
+    document.getElementById('id105').classList.add('highlight');
+    document.getElementById('id106').classList.add('highlight');
+    document.getElementById('id107').classList.add('highlight');
+    document.getElementById('id108').classList.add('highlight');
+    document.getElementById('id109').classList.add('highlight');
+    document.getElementById('id110').classList.add('highlight');
+    document.getElementById('id111').classList.add('highlight');
+    document.getElementById('id112').classList.add('highlight');
+    document.getElementById('id113').classList.add('highlight');
+    document.getElementById('id114').classList.add('highlight');
+    document.getElementById('id115').classList.add('highlight');
+    document.getElementById('id116').classList.add('highlight');
+    document.getElementById('id117').classList.add('highlight');
+    document.getElementById('id118').classList.add('highlight');}
+    else {
+    document.getElementById('id87').classList.remove('highlight');
+    document.getElementById('id88').classList.remove('highlight');
+    document.getElementById('idAc').classList.remove('highlight');
+    document.getElementById('id104').classList.remove('highlight');
+    document.getElementById('id105').classList.remove('highlight');
+    document.getElementById('id106').classList.remove('highlight');
+    document.getElementById('id107').classList.remove('highlight');
+    document.getElementById('id108').classList.remove('highlight');
+    document.getElementById('id109').classList.remove('highlight');
+    document.getElementById('id110').classList.remove('highlight');
+    document.getElementById('id111').classList.remove('highlight');
+    document.getElementById('id112').classList.remove('highlight');
+    document.getElementById('id113').classList.remove('highlight');
+    document.getElementById('id114').classList.remove('highlight');
+    document.getElementById('id115').classList.remove('highlight');
+    document.getElementById('id116').classList.remove('highlight');
+    document.getElementById('id117').classList.remove('highlight');
+    document.getElementById('id118').classList.remove('highlight');}
+    row7counter = row7counter + 1;
+}
+
+/* This function toggles the highlighting of main group elements */
+    var groupMaincounter = 0;
+function mainGroupElementHighlight() {
+    if (groupMaincounter%2 == 0){
+    document.getElementById('id1').classList.add('highlight');
+    document.getElementById('id3').classList.add('highlight');
+    document.getElementById('id11').classList.add('highlight');
+    document.getElementById('id19').classList.add('highlight');
+    document.getElementById('id37').classList.add('highlight');
+    document.getElementById('id55').classList.add('highlight');
+    document.getElementById('id87').classList.add('highlight');
+    document.getElementById('id4').classList.add('highlight');
+    document.getElementById('id12').classList.add('highlight');
+    document.getElementById('id20').classList.add('highlight');
+    document.getElementById('id38').classList.add('highlight');
+    document.getElementById('id56').classList.add('highlight');
+    document.getElementById('id88').classList.add('highlight');
+    document.getElementById('id5').classList.add('highlight');
+    document.getElementById('id13').classList.add('highlight');
+    document.getElementById('id31').classList.add('highlight');
+    document.getElementById('id49').classList.add('highlight');
+    document.getElementById('id81').classList.add('highlight');
+    document.getElementById('id113').classList.add('highlight');
+    document.getElementById('id6').classList.add('highlight');
+    document.getElementById('id14').classList.add('highlight');
+    document.getElementById('id32').classList.add('highlight');
+    document.getElementById('id50').classList.add('highlight');
+    document.getElementById('id82').classList.add('highlight');
+    document.getElementById('id114').classList.add('highlight');
+    document.getElementById('id7').classList.add('highlight');
+    document.getElementById('id15').classList.add('highlight');
+    document.getElementById('id33').classList.add('highlight');
+    document.getElementById('id51').classList.add('highlight');
+    document.getElementById('id83').classList.add('highlight');
+    document.getElementById('id115').classList.add('highlight');
+    document.getElementById('id8').classList.add('highlight');
+    document.getElementById('id16').classList.add('highlight');
+    document.getElementById('id34').classList.add('highlight');
+    document.getElementById('id52').classList.add('highlight');
+    document.getElementById('id84').classList.add('highlight');
+    document.getElementById('id116').classList.add('highlight');
+    document.getElementById('id9').classList.add('highlight');
+    document.getElementById('id17').classList.add('highlight');
+    document.getElementById('id35').classList.add('highlight');
+    document.getElementById('id53').classList.add('highlight');
+    document.getElementById('id85').classList.add('highlight');
+    document.getElementById('id117').classList.add('highlight');
+    document.getElementById('id2').classList.add('highlight');
+    document.getElementById('id10').classList.add('highlight');
+    document.getElementById('id18').classList.add('highlight');
+    document.getElementById('id36').classList.add('highlight');
+    document.getElementById('id54').classList.add('highlight');
+    document.getElementById('id86').classList.add('highlight');
+    document.getElementById('id118').classList.add('highlight');
+    group1counter = 1;
+    group2counter = 1;
+    group13counter = 1;
+    group14counter = 1;
+    group15counter = 1;
+    group16counter = 1;
+    group17counter = 1;
+    group18counter = 1;}
+    else {
+    document.getElementById('id1').classList.remove('highlight');
+    document.getElementById('id3').classList.remove('highlight');
+    document.getElementById('id11').classList.remove('highlight');
+    document.getElementById('id19').classList.remove('highlight');
+    document.getElementById('id37').classList.remove('highlight');
+    document.getElementById('id55').classList.remove('highlight');
+    document.getElementById('id87').classList.remove('highlight');
+    document.getElementById('id4').classList.remove('highlight');
+    document.getElementById('id12').classList.remove('highlight');
+    document.getElementById('id20').classList.remove('highlight');
+    document.getElementById('id38').classList.remove('highlight');
+    document.getElementById('id56').classList.remove('highlight');
+    document.getElementById('id88').classList.remove('highlight');
+    document.getElementById('id5').classList.remove('highlight');
+    document.getElementById('id13').classList.remove('highlight');
+    document.getElementById('id31').classList.remove('highlight');
+    document.getElementById('id49').classList.remove('highlight');
+    document.getElementById('id81').classList.remove('highlight');
+    document.getElementById('id113').classList.remove('highlight');
+    document.getElementById('id6').classList.remove('highlight');
+    document.getElementById('id14').classList.remove('highlight');
+    document.getElementById('id32').classList.remove('highlight');
+    document.getElementById('id50').classList.remove('highlight');
+    document.getElementById('id82').classList.remove('highlight');
+    document.getElementById('id114').classList.remove('highlight');
+    document.getElementById('id7').classList.remove('highlight');
+    document.getElementById('id15').classList.remove('highlight');
+    document.getElementById('id33').classList.remove('highlight');
+    document.getElementById('id51').classList.remove('highlight');
+    document.getElementById('id83').classList.remove('highlight');
+    document.getElementById('id115').classList.remove('highlight');
+    document.getElementById('id8').classList.remove('highlight');
+    document.getElementById('id16').classList.remove('highlight');
+    document.getElementById('id34').classList.remove('highlight');
+    document.getElementById('id52').classList.remove('highlight');
+    document.getElementById('id84').classList.remove('highlight');
+    document.getElementById('id116').classList.remove('highlight');
+    document.getElementById('id9').classList.remove('highlight');
+    document.getElementById('id17').classList.remove('highlight');
+    document.getElementById('id35').classList.remove('highlight');
+    document.getElementById('id53').classList.remove('highlight');
+    document.getElementById('id85').classList.remove('highlight');
+    document.getElementById('id117').classList.remove('highlight');
+    document.getElementById('id2').classList.remove('highlight');
+    document.getElementById('id10').classList.remove('highlight');
+    document.getElementById('id18').classList.remove('highlight');
+    document.getElementById('id36').classList.remove('highlight');
+    document.getElementById('id54').classList.remove('highlight');
+    document.getElementById('id86').classList.remove('highlight');
+    document.getElementById('id118').classList.remove('highlight');
+    group1counter = 0;
+    group2counter = 0;
+    group13counter = 0;
+    group14counter = 0;
+    group15counter = 0;
+    group16counter = 0;
+    group17counter = 0;
+    group18counter = 0;}
+    groupMaincounter = groupMaincounter + 1;
+}
+
+/* This function toggles the highlighting of transition elements */
+    var groupTransitioncounter = 0;
+function transitionElementHighlight() {
+    if (groupTransitioncounter%2 == 0){
+    document.getElementById('id21').classList.add('highlight');
+    document.getElementById('id39').classList.add('highlight');
+    document.getElementById('idLn').classList.add('highlight');
+    document.getElementById('idAc').classList.add('highlight');
+    document.getElementById('id22').classList.add('highlight');
+    document.getElementById('id40').classList.add('highlight');
+    document.getElementById('id72').classList.add('highlight');
+    document.getElementById('id104').classList.add('highlight');
+    document.getElementById('id23').classList.add('highlight');
+    document.getElementById('id41').classList.add('highlight');
+    document.getElementById('id73').classList.add('highlight');
+    document.getElementById('id105').classList.add('highlight');
+    document.getElementById('id24').classList.add('highlight');
+    document.getElementById('id42').classList.add('highlight');
+    document.getElementById('id74').classList.add('highlight');
+    document.getElementById('id106').classList.add('highlight');
+    document.getElementById('id25').classList.add('highlight');
+    document.getElementById('id43').classList.add('highlight');
+    document.getElementById('id75').classList.add('highlight');
+    document.getElementById('id107').classList.add('highlight');
+    document.getElementById('id26').classList.add('highlight');
+    document.getElementById('id44').classList.add('highlight');
+    document.getElementById('id76').classList.add('highlight');
+    document.getElementById('id108').classList.add('highlight');
+    document.getElementById('id27').classList.add('highlight');
+    document.getElementById('id45').classList.add('highlight');
+    document.getElementById('id77').classList.add('highlight');
+    document.getElementById('id109').classList.add('highlight');
+    document.getElementById('id28').classList.add('highlight');
+    document.getElementById('id46').classList.add('highlight');
+    document.getElementById('id78').classList.add('highlight');
+    document.getElementById('id110').classList.add('highlight');
+    document.getElementById('id29').classList.add('highlight');
+    document.getElementById('id47').classList.add('highlight');
+    document.getElementById('id79').classList.add('highlight');
+    document.getElementById('id111').classList.add('highlight');
+    document.getElementById('id30').classList.add('highlight');
+    document.getElementById('id48').classList.add('highlight');
+    document.getElementById('id80').classList.add('highlight');
+    document.getElementById('id112').classList.add('highlight');
+    group3counter = 1;
+    group4counter = 1;
+    group5counter = 1;
+    group6counter = 1;
+    group7counter = 1;
+    group8counter = 1;
+    group9counter = 1;
+    group10counter = 1;
+    group11counter = 1;
+    group12counter = 1;}
+    else {
+    document.getElementById('id21').classList.remove('highlight');
+    document.getElementById('id39').classList.remove('highlight');
+    document.getElementById('idLn').classList.remove('highlight');
+    document.getElementById('idAc').classList.remove('highlight');
+    document.getElementById('id22').classList.remove('highlight');
+    document.getElementById('id40').classList.remove('highlight');
+    document.getElementById('id72').classList.remove('highlight');
+    document.getElementById('id104').classList.remove('highlight');
+    document.getElementById('id23').classList.remove('highlight');
+    document.getElementById('id41').classList.remove('highlight');
+    document.getElementById('id73').classList.remove('highlight');
+    document.getElementById('id105').classList.remove('highlight');
+    document.getElementById('id24').classList.remove('highlight');
+    document.getElementById('id42').classList.remove('highlight');
+    document.getElementById('id74').classList.remove('highlight');
+    document.getElementById('id106').classList.remove('highlight');
+    document.getElementById('id25').classList.remove('highlight');
+    document.getElementById('id43').classList.remove('highlight');
+    document.getElementById('id75').classList.remove('highlight');
+    document.getElementById('id107').classList.remove('highlight');
+    document.getElementById('id26').classList.remove('highlight');
+    document.getElementById('id44').classList.remove('highlight');
+    document.getElementById('id76').classList.remove('highlight');
+    document.getElementById('id108').classList.remove('highlight');
+    document.getElementById('id27').classList.remove('highlight');
+    document.getElementById('id45').classList.remove('highlight');
+    document.getElementById('id77').classList.remove('highlight');
+    document.getElementById('id109').classList.remove('highlight');
+    document.getElementById('id28').classList.remove('highlight');
+    document.getElementById('id46').classList.remove('highlight');
+    document.getElementById('id78').classList.remove('highlight');
+    document.getElementById('id110').classList.remove('highlight');
+    document.getElementById('id29').classList.remove('highlight');
+    document.getElementById('id47').classList.remove('highlight');
+    document.getElementById('id79').classList.remove('highlight');
+    document.getElementById('id111').classList.remove('highlight');
+    document.getElementById('id30').classList.remove('highlight');
+    document.getElementById('id48').classList.remove('highlight');
+    document.getElementById('id80').classList.remove('highlight');
+    document.getElementById('id112').classList.remove('highlight');
+    group3counter = 0;
+    group4counter = 0;
+    group5counter = 0;
+    group6counter = 0;
+    group7counter = 0;
+    group8counter = 0;
+    group9counter = 0;
+    group10counter = 0;
+    group11counter = 0;
+    group12counter = 0;}
+    groupTransitioncounter = groupTransitioncounter + 1;
+}
+
+/* This function toggles the highlighting of Lanthanides */
+    var groupLanthanidescounter = 0;
+function LanthanidesHighlight() {
+    if (groupLanthanidescounter%2 == 0){
+    document.getElementById('id57').classList.add('highlight');
+    document.getElementById('id58').classList.add('highlight');
+    document.getElementById('id59').classList.add('highlight');
+    document.getElementById('id60').classList.add('highlight');
+    document.getElementById('id61').classList.add('highlight');
+    document.getElementById('id62').classList.add('highlight');
+    document.getElementById('id63').classList.add('highlight');
+    document.getElementById('id64').classList.add('highlight');
+    document.getElementById('id65').classList.add('highlight');
+    document.getElementById('id66').classList.add('highlight');
+    document.getElementById('id67').classList.add('highlight');
+    document.getElementById('id68').classList.add('highlight');
+    document.getElementById('id69').classList.add('highlight');
+    document.getElementById('id70').classList.add('highlight');
+    document.getElementById('id71').classList.add('highlight');}
+    else {
+    document.getElementById('id57').classList.remove('highlight');
+    document.getElementById('id58').classList.remove('highlight');
+    document.getElementById('id59').classList.remove('highlight');
+    document.getElementById('id60').classList.remove('highlight');
+    document.getElementById('id61').classList.remove('highlight');
+    document.getElementById('id62').classList.remove('highlight');
+    document.getElementById('id63').classList.remove('highlight');
+    document.getElementById('id64').classList.remove('highlight');
+    document.getElementById('id65').classList.remove('highlight');
+    document.getElementById('id66').classList.remove('highlight');
+    document.getElementById('id67').classList.remove('highlight');
+    document.getElementById('id68').classList.remove('highlight');
+    document.getElementById('id69').classList.remove('highlight');
+    document.getElementById('id70').classList.remove('highlight');
+    document.getElementById('id71').classList.remove('highlight');}
+    groupLanthanidescounter = groupLanthanidescounter + 1;
+}
+
+/* This function toggles the highlighting of Actinides */
+    var groupActinidescounter = 0;
+function ActinidesHighlight() {
+    if (groupActinidescounter%2 == 0){
+    document.getElementById('id89').classList.add('highlight');
+    document.getElementById('id90').classList.add('highlight');
+    document.getElementById('id91').classList.add('highlight');
+    document.getElementById('id92').classList.add('highlight');
+    document.getElementById('id93').classList.add('highlight');
+    document.getElementById('id94').classList.add('highlight');
+    document.getElementById('id95').classList.add('highlight');
+    document.getElementById('id96').classList.add('highlight');
+    document.getElementById('id97').classList.add('highlight');
+    document.getElementById('id98').classList.add('highlight');
+    document.getElementById('id99').classList.add('highlight');
+    document.getElementById('id100').classList.add('highlight');
+    document.getElementById('id101').classList.add('highlight');
+    document.getElementById('id102').classList.add('highlight');
+    document.getElementById('id103').classList.add('highlight');}
+    else {
+    document.getElementById('id89').classList.remove('highlight');
+    document.getElementById('id90').classList.remove('highlight');
+    document.getElementById('id91').classList.remove('highlight');
+    document.getElementById('id92').classList.remove('highlight');
+    document.getElementById('id93').classList.remove('highlight');
+    document.getElementById('id94').classList.remove('highlight');
+    document.getElementById('id95').classList.remove('highlight');
+    document.getElementById('id96').classList.remove('highlight');
+    document.getElementById('id97').classList.remove('highlight');
+    document.getElementById('id98').classList.remove('highlight');
+    document.getElementById('id99').classList.remove('highlight');
+    document.getElementById('id100').classList.remove('highlight');
+    document.getElementById('id101').classList.remove('highlight');
+    document.getElementById('id102').classList.remove('highlight');
+    document.getElementById('id103').classList.remove('highlight');}
+    groupActinidescounter = groupActinidescounter + 1;
+}
+
+/* This function toggles the metals color scheme */
+function metals(id) {
+    document.getElementById(id).classList.toggle('metalsColor');
+}
+
+/* This function toggles the metalloids color scheme */
+function metalloids(id) {
+    document.getElementById(id).classList.toggle('metalloidsColor');
+}
+
+/* This function toggles the nonmetals color scheme */
+function nonmetals(id) {
+    document.getElementById(id).classList.toggle('nonmetalsColor');
+}
+
+/* This function toggles the partial electron configurations (data from Chemistry 10th ed. by Zumdahl, Zumdahl, & DeCoste) */
+function eConfig() {
+    for (var i = 0;i < document.getElementsByClassName('eConfig').length;i++){
+    if (document.getElementsByClassName('eConfig')[i].style.display == "none"){
+    document.getElementsByClassName('weight')[i].style.display="none";
+    document.getElementsByClassName('eConfig')[i].style.display="block";
+    document.getElementsByClassName('eNeg')[i].style.display="none";
+    document.getElementsByClassName('ionizationE1')[i].style.display="none";
+    document.getElementsByClassName('radius')[i].style.display="none";
+    document.getElementsByClassName('elementCell')[i].style.boxShadow=null;
+    document.getElementsByClassName('elementCell')[i].style.transform=null;
+    var j = i + 1;
+    document.getElementById('id' + j).classList.remove('eNeg_' + j);
+    document.getElementById('id' + j).classList.remove('ionizationE1_' + j);
+    document.getElementById('id' + j).classList.remove('radius_' + j);
+}
+    else {
+    document.getElementsByClassName('weight')[i].style.display="block";
+    document.getElementsByClassName('eConfig')[i].style.display="none";
+    document.getElementsByClassName('eNeg')[i].style.display="none";
+    document.getElementsByClassName('ionizationE1')[i].style.display="none";
+    document.getElementsByClassName('radius')[i].style.display="none";
+}}}
+
+/* This function toggles the Pauling electronegativities (data from the CRC Handbook) */
+function eNeg() {
+    for (var i = 0;i < document.getElementsByClassName('eNeg').length;i++){
+    if (document.getElementsByClassName('eNeg')[i].style.display == "none"){
+    document.getElementsByClassName('weight')[i].style.display="none";
+    document.getElementsByClassName('eConfig')[i].style.display="none";
+    document.getElementsByClassName('eNeg')[i].style.display="block";
+    document.getElementsByClassName('ionizationE1')[i].style.display="none";
+    document.getElementsByClassName('radius')[i].style.display="none";
+    var j = i + 1;
+    document.getElementById('id' + j).classList.add('eNeg_' + j);
+    document.getElementById('id' + j).classList.remove('ionizationE1_' + j);
+    document.getElementById('id' + j).classList.remove('radius_' + j);
+    var str1 = '';
+    var str2 = '';
+    var innerText=document.getElementById('id' + j + 'eNeg').innerHTML;
+    if (innerText == "-"){document.getElementById('id' + j).style.boxShadow=null;document.getElementById('id' + j).style.transform=null;}
+    else {
+    var k = innerText*innerText*(innerText*.5);    /* This controls the extent of the 3D effect for table cells that pop out */
+    for (var n = 1;n < k; n++){
+    str1 += "-" + n + "px " + n + "px " + "#6A5085, ";}
+    str2 = "-" + k + "px " + k + "px " + "#6A5085";
+    str3 = str1 + str2;
+    document.getElementById('id' + j).style.boxShadow=str3;
+    var str4 = "translate(" + n + "px,-" + n + "px)";    
+    document.getElementById('id' + j).style.transform=str4;}
+}
+    else {
+    document.getElementsByClassName('weight')[i].style.display="block";
+    document.getElementsByClassName('eConfig')[i].style.display="none";
+    document.getElementsByClassName('eNeg')[i].style.display="none";
+    document.getElementsByClassName('ionizationE1')[i].style.display="none";
+    document.getElementsByClassName('radius')[i].style.display="none";
+    document.getElementsByClassName('elementCell')[i].style.boxShadow=null;
+    document.getElementsByClassName('elementCell')[i].style.transform=null;
+    var j = i + 1;
+    document.getElementById('id' + j).classList.remove('eNeg_' + j);
+}}}
+
+/* This function toggles the first ionization energies (data from the CRC Handbook) */
+function ionizationE1() {
+    for (var i = 0;i < document.getElementsByClassName('ionizationE1').length;i++){
+    if (document.getElementsByClassName('ionizationE1')[i].style.display == "none"){
+    document.getElementsByClassName('weight')[i].style.display="none";
+    document.getElementsByClassName('eConfig')[i].style.display="none";
+    document.getElementsByClassName('eNeg')[i].style.display="none";
+    document.getElementsByClassName('ionizationE1')[i].style.display="block";
+    document.getElementsByClassName('radius')[i].style.display="none";
+    var j = i + 1;
+    document.getElementById('id' + j).classList.add('ionizationE1_' + j);
+    document.getElementById('id' + j).classList.remove('eNeg_' + j);
+    document.getElementById('id' + j).classList.remove('radius_' + j);
+    var str1 = '';
+    var str2 = '';
+    var innerText = document.getElementById('id' + j + 'ionizationE1').innerHTML;
+    if (innerText == "-"){document.getElementById('id' + j).style.boxShadow=null;document.getElementById('id' + j).style.transform=null;}
+    else {
+    var k = (innerText/525)*(innerText/525);    /* This controls the extent of the 3D effect for table cells that pop out */
+    for (var n = 1;n < k;n++){
+    str1 += "-" + n + "px " + n + "px " + "#752500, ";}
+    str2 = "-" + k + "px " + k + "px " + "#752500";
+    str3 = str1 + str2;
+    document.getElementById('id' + j).style.boxShadow=str3;
+    var str4 = "translate(" + n + "px,-" + n + "px)";    
+    document.getElementById('id' + j).style.transform=str4;}
+}
+    else {
+    document.getElementsByClassName('weight')[i].style.display="block";
+    document.getElementsByClassName('eConfig')[i].style.display="none";
+    document.getElementsByClassName('eNeg')[i].style.display="none";
+    document.getElementsByClassName('ionizationE1')[i].style.display="none";
+    document.getElementsByClassName('radius')[i].style.display="none";
+    document.getElementsByClassName('elementCell')[i].style.boxShadow=null;
+    document.getElementsByClassName('elementCell')[i].style.transform=null;
+    var j = i + 1;
+    document.getElementById('id' + j).classList.remove('ionizationE1_' + j);
+}}}
+
+/* This function toggles the covalent atomic radii (data from the CRC Handbook) */
+function radius() {
+    for (var i = 0;i < document.getElementsByClassName('radius').length;i++){
+    if (document.getElementsByClassName('radius')[i].style.display == "none"){
+    document.getElementsByClassName('weight')[i].style.display="none";
+    document.getElementsByClassName('eConfig')[i].style.display="none";
+    document.getElementsByClassName('eNeg')[i].style.display="none";
+    document.getElementsByClassName('ionizationE1')[i].style.display="none";
+    document.getElementsByClassName('radius')[i].style.display="block";
+    document.getElementsByClassName('elementCell')[i].style.boxShadow=null;
+    document.getElementsByClassName('elementCell')[i].style.transform=null;
+    var j = i + 1;
+    document.getElementById('id' + j).classList.add('radius_' + j);
+    document.getElementById('id' + j).classList.remove('eNeg_' + j);
+    document.getElementById('id' + j).classList.remove('ionizationE1_' + j);
+}
+    else {
+    document.getElementsByClassName('weight')[i].style.display="block";
+    document.getElementsByClassName('eConfig')[i].style.display="none";
+    document.getElementsByClassName('eNeg')[i].style.display="none";
+    document.getElementsByClassName('ionizationE1')[i].style.display="none";
+    document.getElementsByClassName('radius')[i].style.display="none";
+    var j = i + 1;
+    document.getElementById('id' + j).classList.remove('radius_' + j);
+}}}
+
+/* This function shows the continuous EM spectrum */
+function continuousSpectrum() {
+    document.getElementById('spectrumContinuous').style.display="block";
+    document.getElementById('spectrumContinuousTitle').style.display="block";
+    document.getElementById('spectrumH').style.display="none";
+    document.getElementById('spectrumHTitle').style.display="none";
+    document.getElementById('spectrumHe').style.display="none";
+    document.getElementById('spectrumHeTitle').style.display="none";
+}
+
+/* This function shows the Hydrogen line spectrum */
+function HlineSpectrum() {
+    document.getElementById('spectrumContinuous').style.display="none";
+    document.getElementById('spectrumContinuousTitle').style.display="none";
+    document.getElementById('spectrumH').style.display="block";
+    document.getElementById('spectrumHTitle').style.display="block";
+    document.getElementById('spectrumHe').style.display="none";
+    document.getElementById('spectrumHeTitle').style.display="none";
+}
+
+/* This function shows the Helium line spectrum */
+function HelineSpectrum() {
+    document.getElementById('spectrumContinuous').style.display="none";
+    document.getElementById('spectrumContinuousTitle').style.display="none";
+    document.getElementById('spectrumH').style.display="none";
+    document.getElementById('spectrumHTitle').style.display="none";
+    document.getElementById('spectrumHe').style.display="block";
+    document.getElementById('spectrumHeTitle').style.display="block";
+}
+
+</script>
+</head>
+
+<body style="background-color:#000000;">
+
+<table class="periodicTable" border="0" unselectable="on">
+
+<tr>    <!-- Begin top-most group label and main menu row -->
+
+<td>
+</td>
+
+<td class="groupLabelCell">
+<div class="groupLabel" onclick="group1Highlight()">1A</div>
+<div class="groupLabel hide" onclick="group1Highlight()">1</div>
+</td>
+
+<td colspan="16" valign="middle">
+
+<div class="mainMenu"><a class="dropdown">
+
+<!-- Add additional menu items within new <ul></ul> tags -->
+
+<ul onclick="resetCells()">Reset periodic table</ul>
+
+<ul onclick="removeHighlight()">Remove all highlighting</ul>
+
+<ul onclick="toggleGroupLabels()">Toggle group label notation</ul>
+
+<ul onclick="mainGroupElementHighlight()">Toggle highlighting of main group elements</ul>
+
+<ul onclick="metals('id3');metals('id4');metals('id11');metals('id12');metals('id13');metals('id19');metals('id20');metals('id21');metals('id22');metals('id23');metals('id24');metals('id25');metals('id26');metals('id27');metals('id28');metals('id29');metals('id30');metals('id31');metals('id37');metals('id38');metals('id39');metals('id40');metals('id41');metals('id42');metals('id43');metals('id44');metals('id45');metals('id46');metals('id47');metals('id48');metals('id49');metals('id50');metals('id55');metals('id56');metals('idLn');metals('id57');metals('id58');metals('id59');metals('id60');metals('id61');metals('id62');metals('id63');metals('id64');metals('id65');metals('id66');metals('id67');metals('id68');metals('id69');metals('id70');metals('id71');metals('id72');metals('id73');metals('id74');metals('id75');metals('id76');metals('id77');metals('id78');metals('id79');metals('id80');metals('id81');metals('id82');metals('id83');metals('id87');metals('id88');metals('idAc');metals('id89');metals('id90');metals('id91');metals('id92');metals('id93');metals('id94');metals('id95');metals('id96');metals('id97');metals('id98');metals('id99');metals('id100');metals('id101');metals('id102');metals('id103');metals('id104');metals('id105');metals('id106');metals('id107');metals('id108');metals('id109');metals('id110');metals('id111');metals('id112');metals('id113');metals('id114');metals('id115');metals('id116');metals('id117');metalloids('id5');metalloids('id14');metalloids('id32');metalloids('id33');metalloids('id51');metalloids('id52');metalloids('id84');metalloids('id85');nonmetals('id1');nonmetals('id2');nonmetals('id6');nonmetals('id7');nonmetals('id8');nonmetals('id9');nonmetals('id10');nonmetals('id15');nonmetals('id16');nonmetals('id17');nonmetals('id18');nonmetals('id34');nonmetals('id35');nonmetals('id36');nonmetals('id53');nonmetals('id54');nonmetals('id86');nonmetals('id118')">Toggle colors for metals and nonmetals</ul>
+
+<!-- To reclassify a metalloid, change "metalloids('idxx')" to either "metals('idxx')" or "nonmetals('idxx')"  -->
+
+<ul onclick="eConfig()">Toggle partial electron configurations</ul>
+
+<ul onclick="eNeg()">Toggle Pauling electronegativities</ul>
+
+<ul onclick="ionizationE1()">Toggle first ionization energies (kJ/mol)</ul>
+
+<ul onclick="radius()">Toggle covalent atomic radii (pm)</ul>
+
+<ul id="EMspectrum">Show spectra</ul>
+
+<!-- Begin EM spectrum modal -->
+
+<div id="EMspectrumModal" class="modal"><div class="modal-content"><div class="close">&times;</div>
+
+<div>
+<button onclick="continuousSpectrum()">Continuous EM spectrum</button>
+<button onclick="HlineSpectrum()">H line spectrum</button>
+<button onclick="HelineSpectrum()">He line spectrum</button>
+</div>
+
+<table class="spectrumTable">
+
+<tr>    <!-- Begin spacer row -->
+
+<td height="20px">    <!-- This puts space between the buttons and the spectrum title -->
+</td>
+
+</tr>    <!-- End spacer row -->
+
+<tr>    <!-- Begin spectra titles row -->
+
+<td width="100%" colspan="100" valign="middle">
+<div id="spectrumContinuousTitle" style="display:block">Continuous Electromagnetic Radiation Spectrum</div>
+<div id="spectrumHTitle" style="display:none">Hydrogen Line Spectrum (Balmer Series)</div>
+<div id="spectrumHeTitle" style="display:none">Helium Line Spectrum</div>
+</td>
+
+</tr>    <!-- End spectra titles row -->
+
+<tr>    <!-- Begin spacer row -->
+
+<td height="50px">    <!-- This puts space between the spectrum title and the spectrum -->
+</td>
+
+</tr>    <!-- End spacer row -->
+
+<tr>    <!-- Begin numerical wavelength labels row -->
+
+<td width="10%" colspan="10" height="20px" valign="middle" style="text-align:center">
+</td>
+
+<td width="8%" colspan="8" height="20px" valign="middle" style="text-align:center"><div class="EMlab">400 nm</div>
+</td>
+
+<td width="4%" colspan="4" height="20px" valign="middle" style="text-align:center">
+</td>
+
+<td width="8%" colspan="8" height="20px" valign="middle" style="text-align:center"><div class="EMlab">450 nm</div>
+</td>
+
+<td width="4%" colspan="4" height="20px" valign="middle" style="text-align:center">
+</td>
+
+<td width="8%" colspan="8" height="20px" valign="middle" style="text-align:center"><div class="EMlab">500 nm</div>
+</td>
+
+<td width="4%" colspan="4" height="20px" valign="middle" style="text-align:center">
+</td>
+
+<td width="8%" colspan="8" height="20px" valign="middle" style="text-align:center"><div class="EMlab">550 nm</div>
+</td>
+
+<td width="4%" colspan="4" height="20px" valign="middle" style="text-align:center">
+</td>
+
+<td width="8%" colspan="8" height="20px" valign="middle" style="text-align:center"><div class="EMlab">600 nm</div>
+</td>
+
+<td width="4%" colspan="4" height="20px" valign="middle" style="text-align:center">
+</td>
+
+<td width="8%" colspan="8" height="20px" valign="middle" style="text-align:center"><div class="EMlab">650 nm</div>
+</td>
+
+<td width="4%" colspan="4" height="20px" valign="middle" style="text-align:center">
+</td>
+
+<td width="8%" colspan="8" height="20px" valign="middle" style="text-align:center"><div class="EMlab">700 nm</div>
+</td>
+
+<td width="10%" colspan="10" height="20px" valign="middle" style="text-align:center">
+</td>
+
+</tr>    <!-- End numerical wavelength labels row -->
+
+<tr>    <!-- Begin wavelength tick marks row -->
+
+<td width="12%" colspan="12" height="8px" valign="middle">
+</td>
+
+<td width="2%" colspan="2" height="8px" valign="middle" style="border-right:2px solid white;">
+</td>
+
+<td width="10%" colspan="10" height="8px" valign="middle">
+</td>
+
+<td width="2%" colspan="2" height="8px" valign="middle" style="border-right:2px solid white;">
+</td>
+
+<td width="10%" colspan="10" height="8px" valign="middle">
+</td>
+
+<td width="2%" colspan="2" height="8px" valign="middle" style="border-right:2px solid white;">
+</td>
+
+<td width="10%" colspan="10" height="8px" valign="middle">
+</td>
+
+<td width="2%" colspan="2" height="8px" valign="middle" style="border-right:2px solid white;">
+</td>
+
+<td width="10%" colspan="10" height="8px" valign="middle">
+</td>
+
+<td width="2%" colspan="2" height="8px" valign="middle" style="border-right:2px solid white;">
+</td>
+
+<td width="10%" colspan="10" height="8px" valign="middle">
+</td>
+
+<td width="2%" colspan="2" height="8px" valign="middle" style="border-right:2px solid white;">
+</td>
+
+<td width="10%" colspan="10" height="8px" valign="middle">
+</td>
+
+<td width="2%" colspan="2" height="8px" valign="middle" style="border-right:2px solid white;">
+</td>
+
+<td width="14%" colspan="14" height="8px" valign="middle">
+</td>
+
+</tr>    <!-- End wavelength tick marks row -->
+
+<tr>    <!-- Begin spectrum colors row -->
+
+<td width="100%" colspan="100">
+<div id="spectrumContinuous" style="display:block"></div>
+<div id="spectrumH" style="display:none"></div>
+<div id="spectrumHe" style="display:none"></div>
+</td>
+
+</tr>    <!-- End spectrum colors row -->
+
+<tr>    <!-- Begin first row of the visible spectrum inset -->
+
+<td width="8%" colspan="8" height="20px">
+</td>
+
+<td width="37%" colspan="37" height="20px" style="border-left:1px solid white;">
+</td>
+
+<td width="2%" height="20px">
+</td>
+
+<td width="45%" colspan="45" height="20px" style="border-right:1px solid white;">
+</td>
+
+<td width="8%" colspan="8" height="20px">
+</td>
+
+</tr>    <!-- End first row of the visible spectrum inset -->
+
+<tr>    <!-- Begin second row of the visible spectrum inset -->
+
+<td width="8%" colspan="8" height="20px">
+</td>
+
+<td width="37%" colspan="37" height="50px" style="background-image:linear-gradient(to top right,transparent 48%,white,transparent 52%);">
+</td>
+
+<td width="2%" height="40px">
+</td>
+
+<td width="45%" colspan="45" height="50px" style="background-image:linear-gradient(to top left,transparent 48%,white,transparent 52%);">
+</td>
+
+<td width="8%" colspan="8" height="50px">
+</td>
+
+</tr>    <!-- End second row of the visible spectrum inset -->
+
+<tr>    <!-- Begin third row of the visible spectrum inset -->
+
+<td width="45%" colspan="45" height="20px" style="border-right:1px solid white;">
+</td>
+
+<td width="2%" height="20px">
+</td>
+
+<td width="53%" colspan="53" height="20px" style="border-left:1px solid white;">
+</td>
+
+</tr>    <!-- End third row of the visible spectrum inset -->
+
+<tr>    <!-- Begin EM spectrum categories row -->
+
+<td width="28%" colspan="28" height="50px" valign="middle" style="text-align:center;background-color:#CCCCCC;border-right:2px solid black;">
+<div class="EMcat">Gamma rays</div>
+</td>
+
+<td width="12%" colspan="12" height="50px" valign="middle" style="text-align:center;background-color:#CCCCCC;border-right:2px solid black;">
+<div class="EMcat">X-rays</div>
+</td>
+
+<td width="4%" colspan="4" height="50px" valign="middle" style="text-align:center;background-color:#CCCCCC;">
+<div class="EMcat">&nbsp; UV</div>
+</td>
+
+<td width="4%" colspan="4" height="50px" valign="middle" style="text-align:center;background-color:#CCCCCC;">
+<div id="spectrumSmall"</div>
+</td>
+
+<td width="12%" colspan="12" height="50px" valign="middle" style="text-align:center;background-color:#CCCCCC;border-right:2px solid black;">
+<div class="EMcat">Infrared &nbsp;&nbsp;&nbsp;</div>
+</td>
+
+<td width="12%" colspan="12" height="50px" valign="middle" style="text-align:center;background-color:#CCCCCC;border-right:2px solid black;">
+<div class="EMcat">Microwaves</div>
+</td>
+
+<td width="28%" colspan="28" height="50px" valign="middle" style="text-align:center;background-color:#CCCCCC;">
+<div class="EMcat">Radio waves</div>
+</td>
+
+</tr>    <!-- End EM spectrum categories row -->
+
+<tr>    <!-- Begin wavelength tick marks row -->
+
+<td width="4%" colspan="4" height="8px" valign="middle">
+</td>
+
+<td width="4%" colspan="4" height="8px" valign="middle" style="border-right:2px solid white;">
+</td>
+
+<td width="4%" colspan="4" height="8px" valign="middle">
+</td>
+
+<td width="4%" colspan="4" height="8px" valign="middle" style="border-right:2px solid white;">
+</td>
+
+<td width="4%" colspan="4" height="8px" valign="middle">
+</td>
+
+<td width="4%" colspan="4" height="8px" valign="middle" style="border-right:2px solid white;">
+</td>
+
+<td width="4%" colspan="4" height="8px" valign="middle">
+</td>
+
+<td width="4%" colspan="4" height="8px" valign="middle" style="border-right:2px solid white;">
+</td>
+
+<td width="4%" colspan="4" height="8px" valign="middle">
+</td>
+
+<td width="4%" colspan="4" height="8px" valign="middle" style="border-right:2px solid white;">
+</td>
+
+<td width="4%" colspan="4" height="8px" valign="middle">
+</td>
+
+<td width="4%" colspan="4" height="8px" valign="middle" style="border-right:2px solid white;">
+</td>
+
+<td width="4%" colspan="4" height="8px" valign="middle">
+</td>
+
+<td width="4%" colspan="4" height="8px" valign="middle" style="border-right:2px solid white;">
+</td>
+
+<td width="4%" colspan="4" height="8px" valign="middle">
+</td>
+
+<td width="4%" colspan="4" height="8px" valign="middle" style="border-right:2px solid white;">
+</td>
+
+<td width="4%" colspan="4" height="8px" valign="middle">
+</td>
+
+<td width="4%" colspan="4" height="8px" valign="middle" style="border-right:2px solid white;">
+</td>
+
+<td width="4%" colspan="4" height="8px" valign="middle">
+</td>
+
+<td width="4%" colspan="4" height="8px" valign="middle" style="border-right:2px solid white;">
+</td>
+
+<td width="4%" colspan="4" height="8px" valign="middle">
+</td>
+
+<td width="4%" colspan="4" height="8px" valign="middle" style="border-right:2px solid white;">
+</td>
+
+<td width="4%" colspan="4" height="8px" valign="middle">
+</td>
+
+<td width="4%" colspan="4" height="8px" valign="middle" style="border-right:2px solid white;">
+</td>
+
+<td width="4%" colspan="4" height="8px" valign="middle">
+</td>
+
+</tr>    <!-- End wavelength tick marks row -->
+
+<tr>    <!-- Begin numerical wavelength labels row -->
+
+<td width="4%" colspan="4" height="20px" valign="middle">
+</td>
+
+<td width="8%" colspan="8" height="20px" valign="middle" style="text-align:center"><div class="EMlab">10<sup>-16</sup></div>
+</td>
+
+<td width="8%" colspan="8" height="20px" valign="middle" style="text-align:center"><div class="EMlab">10<sup>-14</sup></div>
+</td>
+
+<td width="8%" colspan="8" height="20px" valign="middle" style="text-align:center"><div class="EMlab">10<sup>-12</sup></div>
+</td>
+
+<td width="8%" colspan="8" height="20px" valign="middle" style="text-align:center"><div class="EMlab">10<sup>-10</sup></div>
+</td>
+
+<td width="8%" colspan="8" height="20px" valign="middle" style="text-align:center"><div class="EMlab">10<sup>-8</sup></div>
+</td>
+
+<td width="8%" colspan="8" height="20px" valign="middle" style="text-align:center"><div class="EMlab">10<sup>-6</sup></div>
+</td>
+
+<td width="8%" colspan="8" height="20px" valign="middle" style="text-align:center"><div class="EMlab">10<sup>-4</sup></div>
+</td>
+
+<td width="8%" colspan="8" height="20px" valign="middle" style="text-align:center"><div class="EMlab">10<sup>-2</sup></div>
+</td>
+
+<td width="8%" colspan="8" height="20px" valign="middle" style="text-align:center"><div class="EMlab">10<sup>0</sup></div>
+</td>
+
+<td width="8%" colspan="8" height="20px" valign="middle" style="text-align:center"><div class="EMlab">10<sup>2</sup></div>
+</td>
+
+<td width="8%" colspan="8" height="20px" valign="middle" style="text-align:center"><div class="EMlab">10<sup>4</sup></div>
+</td>
+
+<td width="8%" colspan="8" height="20px" valign="middle" style="text-align:center"><div class="EMlab">10<sup>6</sup></div>
+</td>
+
+</tr>    <!-- End numerical wavelength labels row -->
+
+<tr>    <!-- Begin "wavelength (m)" label row -->
+
+<td width="100%" colspan="100" height="40px" style="text-align:center"><div class="EMlab">Wavelength (m)</div>
+</td>
+
+</tr>    <!-- End "wavelength (m)" label row -->
+
+</table>
+</div>
+</div>
+
+<script type="text/JavaScript">
+
+/* This function controls the EM spectrum modal */
+    var modal = document.getElementById('EMspectrumModal');
+    var btn = document.getElementById('EMspectrum');
+    var div = document.getElementsByClassName("close")[0];
+    btn.onclick = function() {modal.style.display = "block";}
+    div.onclick = function() {modal.style.display = "none";}
+    window.onclick = function(event) {if (event.target == modal) {modal.style.display = "none";}}
+
+</script>
+
+<br>    <!-- This places some space between the final menu item and the menu 3-bar icon -->
+
+<div class="menuIcon"></div><div class="menuIcon"></div><div class="menuIcon"></div>
+</a>
+</div>
+</td>
+
+<td class="groupLabelCell">
+<div class="groupLabel" onclick="group18Highlight()">8A</div>
+<div class="groupLabel hide" onclick="group18Highlight()">18</div>
+</td>
+
+</td>
+</tr>    <!-- End top-most group label and main menu row -->
+
+<tr>    <!-- Begin row 1 -->
+
+<td class="rowLabelCell">
+<div class="rowLabel" onclick="row1Highlight()">1</div>
+</td>
+
+<td id="id1" class="elementCell" style="z-index:18" onclick="highlight('id1')">
+<div class="atomicNum">1</div>
+<div class="symbol">H</div>
+<div class="weight" style="display:block">1.008</div>
+<div class="eConfig" style="display:none">1s<sup>1</sup></div>
+<div class="radius" style="display:none">32</div>
+<div id="id1eNeg" class="eNeg" style="display:none">2.20</div>
+<div id="id1ionizationE1" class="ionizationE1" style="display:none">1312.0</div>
+</td>
+
+<td class="groupLabelCell">
+<div class="groupLabel" onclick="group2Highlight()">2A</div>
+<div class="groupLabel hide" onclick="group2Highlight()">2</div>
+</td>
+
+<td colspan="10">
+</td>
+
+<td class="groupLabelCell">
+<div class="groupLabel" onclick="group13Highlight()">3A</div>
+<div class="groupLabel hide" onclick="group13Highlight()">13</div>
+</td>
+
+<td class="groupLabelCell">
+<div class="groupLabel" onclick="group14Highlight()">4A</div>
+<div class="groupLabel hide" onclick="group14Highlight()">14</div>
+</td>
+
+<td class="groupLabelCell">
+<div class="groupLabel" onclick="group15Highlight()">5A</div>
+<div class="groupLabel hide" onclick="group15Highlight()">15</div>
+</td>
+
+<td class="groupLabelCell">
+<div class="groupLabel" onclick="group16Highlight()">6A</div>
+<div class="groupLabel hide" onclick="group16Highlight()">16</div>
+</td>
+
+<td class="groupLabelCell">
+<div class="groupLabel" onclick="group17Highlight()">7A</div>
+<div class="groupLabel hide" onclick="group17Highlight()">17</div>
+
+<td id="id2" class="elementCell" style="z-index:1" onclick="highlight('id2')">
+<div class="atomicNum">2</div>
+<div class="symbol">He</div>
+<div class="weight" style="display:block">4.003</div>
+<div class="eConfig" style="display:none">1s<sup>2</sup></div>
+<div class="radius" style="display:none">37</div>
+<div id="id2eNeg" class="eNeg" style="display:none">-</div>
+<div id="id2ionizationE1" class="ionizationE1" style="display:none">2372.3</div>
+</td>
+
+</tr>    <!-- End row 1 -->
+
+<tr>    <!-- Begin row 2 -->
+
+<td class="rowLabelCell">
+<div class="rowLabel" onclick="row2Highlight()">2</div>
+</td>
+
+<td id="id3" class="elementCell" style="z-index:18" onclick="highlight('id3')">
+<div class="atomicNum">3</div>
+<div class="symbol">Li</div>
+<div class="weight" style="display:block">6.94</div>
+<div class="eConfig" style="display:none">2s<sup>1</sup></div>
+<div class="radius" style="display:none">130</div>
+<div id="id3eNeg" class="eNeg" style="display:none">0.98</div>
+<div id="id3ionizationE1" class="ionizationE1" style="display:none">520.2</div>
+</td>
+
+<td id="id4" class="elementCell" style="z-index:17" onclick="highlight('id4')">
+<div class="atomicNum">4</div>
+<div class="symbol">Be</div>
+<div class="weight" style="display:block">9.012</div>
+<div class="eConfig" style="display:none">2s<sup>2</sup></div>
+<div class="radius" style="display:none">99</div>
+<div id="id4eNeg" class="eNeg" style="display:none">1.57</div>
+<div id="id4ionizationE1" class="ionizationE1" style="display:none">899.5</div>
+</td>
+
+<td colspan="3">
+</td>
+
+<td class="groupLabelCell" width="22.2%" colspan="4">
+<div class="groupLabel2" onclick="transitionElementHighlight()">Transition Elements</div>
+</td>
+
+<td colspan="3">
+</td>
+
+<td id="id5" class="elementCell" style="z-index:6" onclick="highlight('id5')">
+<div class="atomicNum">5</div>
+<div class="symbol">B</div>
+<div class="weight" style="display:block">10.81</div>
+<div class="eConfig" style="display:none">2s<sup>2</sup>2p<sup>1</sup></div>
+<div class="radius" style="display:none">84</div>
+<div id="id5eNeg" class="eNeg" style="display:none">2.04</div>
+<div id="id5ionizationE1" class="ionizationE1" style="display:none">800.6</div>
+</td>
+
+<td id="id6" class="elementCell" style="z-index:5" onclick="highlight('id6')">
+<div class="atomicNum">6</div>
+<div class="symbol">C</div>
+<div class="weight" style="display:block">12.01</div>
+<div class="eConfig" style="display:none">2s<sup>2</sup>2p<sup>2</sup></div>
+<div class="radius" style="display:none">75</div>
+<div id="id6eNeg" class="eNeg" style="display:none">2.55</div>
+<div id="id6ionizationE1" class="ionizationE1" style="display:none">1086.5</div>
+</td>
+
+<td id="id7" class="elementCell" style="z-index:4" onclick="highlight('id7')">
+<div class="atomicNum">7</div>
+<div class="symbol">N</div>
+<div class="weight" style="display:block">14.01</div>
+<div class="eConfig" style="display:none">2s<sup>2</sup>2p<sup>3</sup></div>
+<div class="radius" style="display:none">71</div>
+<div id="id7eNeg" class="eNeg" style="display:none">3.04</div>
+<div id="id7ionizationE1" class="ionizationE1" style="display:none">1402.3</div>
+</td>
+
+<td id="id8" class="elementCell" style="z-index:3" onclick="highlight('id8')">
+<div class="atomicNum">8</div>
+<div class="symbol">O</div>
+<div class="weight" style="display:block">16.00</div>
+<div class="eConfig" style="display:none">2s<sup>2</sup>2p<sup>4</sup></div>
+<div class="radius" style="display:none">64</div>
+<div id="id8eNeg" class="eNeg" style="display:none">3.44</div>
+<div id="id8ionizationE1" class="ionizationE1" style="display:none">1313.9</div>
+</td>
+
+<td id="id9" class="elementCell" style="z-index:2" onclick="highlight('id9')">
+<div class="atomicNum">9</div>
+<div class="symbol">F</div>
+<div class="weight" style="display:block">19.00</div>
+<div class="eConfig" style="display:none">2s<sup>2</sup>2p<sup>5</sup></div>
+<div class="radius" style="display:none">60</div>
+<div id="id9eNeg" class="eNeg" style="display:none">3.98</div>
+<div id="id9ionizationE1" class="ionizationE1" style="display:none">1681.0</div>
+</td>
+
+<td id="id10" class="elementCell" style="z-index:1" onclick="highlight('id10')">
+<div class="atomicNum">10</div>
+<div class="symbol">Ne</div>
+<div class="weight" style="display:block">20.18</div>
+<div class="eConfig" style="display:none">2s<sup>2</sup>2p<sup>6</sup></div>
+<div class="radius" style="display:none">62</div>
+<div id="id10eNeg" class="eNeg" style="display:none">-</div>
+<div id="id10ionizationE1" class="ionizationE1" style="display:none">2080.7</div>
+</td>
+
+</tr>    <!-- End row 2 -->
+
+<tr>    <!-- Begin row 3 -->
+
+<td class="rowLabelCell">
+<div class="rowLabel" onclick="row3Highlight()">3</div>
+</td>
+
+<td id="id11" class="elementCell" style="z-index:18" onclick="highlight('id11')">
+<div class="atomicNum">11</div>
+<div class="symbol">Na</div>
+<div class="weight" style="display:block">22.99</div>
+<div class="eConfig" style="display:none">3s<sup>1</sup></div>
+<div class="radius" style="display:none">160</div>
+<div id="id11eNeg" class="eNeg" style="display:none">0.93</div>
+<div id="id11ionizationE1" class="ionizationE1" style="display:none">495.8</div>
+</td>
+
+<td id="id12" class="elementCell" style="z-index:17" onclick="highlight('id12')">
+<div class="atomicNum">12</div>
+<div class="symbol">Mg</div>
+<div class="weight" style="display:block">24.31</div>
+<div class="eConfig" style="display:none">3s<sup>2</sup></div>
+<div class="radius" style="display:none">140</div>
+<div id="id12eNeg" class="eNeg" style="display:none">1.31</div>
+<div id="id12ionizationE1" class="ionizationE1" style="display:none">737.7</div>
+</td>
+
+<td class="groupLabelCell">
+<div class="groupLabel" onclick="group3Highlight()">3B</div>
+<div class="groupLabel hide" onclick="group3Highlight()">3</div>
+</td>
+
+<td class="groupLabelCell">
+<div class="groupLabel" onclick="group4Highlight()">4B</div>
+<div class="groupLabel hide" onclick="group4Highlight()">4</div>
+</td>
+
+<td class="groupLabelCell">
+<div class="groupLabel" onclick="group5Highlight()">5B</div>
+<div class="groupLabel hide" onclick="group5Highlight()">5</div>
+</td>
+
+<td class="groupLabelCell">
+<div class="groupLabel" onclick="group6Highlight()">6B</div>
+<div class="groupLabel hide" onclick="group6Highlight()">6</div>
+</td>
+
+<td class="groupLabelCell">
+<div class="groupLabel" onclick="group7Highlight()">7B</div>
+<div class="groupLabel hide" onclick="group7Highlight()">7</div>
+</td>
+
+<td class="groupLabelCell">
+<div class="groupLabel" onclick="group8Highlight()">8B</div>
+<div class="groupLabel hide" onclick="group8Highlight()">8</div>
+</td>
+
+<td class="groupLabelCell">
+<div class="groupLabel" onclick="group9Highlight()">8B</div>
+<div class="groupLabel hide" onclick="group9Highlight()">9</div>
+</td>
+
+<td class="groupLabelCell">
+<div class="groupLabel" onclick="group10Highlight()">8B</div>
+<div class="groupLabel hide" onclick="group10Highlight()">10</div>
+</td>
+
+<td class="groupLabelCell">
+<div class="groupLabel" onclick="group11Highlight()">1B</div>
+<div class="groupLabel hide" onclick="group11Highlight()">11</div>
+</td>
+
+<td class="groupLabelCell">
+<div class="groupLabel" onclick="group12Highlight()">2B</div>
+<div class="groupLabel hide" onclick="group12Highlight()">12</div>
+</td>
+
+<td id="id13" class="elementCell" style="z-index:6" onclick="highlight('id13')">
+<div class="atomicNum">13</div>
+<div class="symbol">Al</div>
+<div class="weight" style="display:block">26.98</div>
+<div class="eConfig" style="display:none">3s<sup>2</sup>3p<sup>1</sup></div>
+<div class="radius" style="display:none">124</div>
+<div id="id13eNeg" class="eNeg" style="display:none">1.61</div>
+<div id="id13ionizationE1" class="ionizationE1" style="display:none">577.5</div>
+</td>
+
+<td id="id14" class="elementCell" style="z-index:5" onclick="highlight('id14')">
+<div class="atomicNum">14</div>
+<div class="symbol">Si</div>
+<div class="weight" style="display:block">28.09</div>
+<div class="eConfig" style="display:none">3s<sup>2</sup>3p<sup>2</sup></div>
+<div class="radius" style="display:none">114</div>
+<div id="id14eNeg" class="eNeg" style="display:none">1.90</div>
+<div id="id14ionizationE1" class="ionizationE1" style="display:none">786.5</div>
+</td>
+
+<td id="id15" class="elementCell" style="z-index:4" onclick="highlight('id15')">
+<div class="atomicNum">15</div>
+<div class="symbol">P</div>
+<div class="weight" style="display:block">30.97</div>
+<div class="eConfig" style="display:none">3s<sup>2</sup>3p<sup>3</sup></div>
+<div class="radius" style="display:none">109</div>
+<div id="id15eNeg" class="eNeg" style="display:none">2.19</div>
+<div id="id15ionizationE1" class="ionizationE1" style="display:none">1011.8</div>
+</td>
+
+<td id="id16" class="elementCell" style="z-index:3" onclick="highlight('id16')">
+<div class="atomicNum">16</div>
+<div class="symbol">S</div>
+<div class="weight" style="display:block">32.06</div>
+<div class="eConfig" style="display:none">3s<sup>2</sup>3p<sup>4</sup></div>
+<div class="radius" style="display:none">104</div>
+<div id="id16eNeg" class="eNeg" style="display:none">2.58</div>
+<div id="id16ionizationE1" class="ionizationE1" style="display:none">999.6</div>
+</td>
+
+<td id="id17" class="elementCell" style="z-index:2" onclick="highlight('id17')">
+<div class="atomicNum">17</div>
+<div class="symbol">Cl</div>
+<div class="weight" style="display:block">35.45</div>
+<div class="eConfig" style="display:none">3s<sup>2</sup>3p<sup>5</sup></div>
+<div class="radius" style="display:none">100</div>
+<div id="id17eNeg" class="eNeg" style="display:none">3.16</div>
+<div id="id17ionizationE1" class="ionizationE1" style="display:none">1251.2</div>
+</td>
+
+<td id="id18" class="elementCell" style="z-index:1" onclick="highlight('id18')">
+<div class="atomicNum">18</div>
+<div class="symbol">Ar</div>
+<div class="weight" style="display:block">39.95</div>
+<div class="eConfig" style="display:none">3s<sup>2</sup>3p<sup>6</sup></div>
+<div class="radius" style="display:none">101</div>
+<div id="id18eNeg" class="eNeg" style="display:none">-</div>
+<div id="id18ionizationE1" class="ionizationE1" style="display:none">1520.6</div>
+</td>
+
+</tr>    <!-- End row 3 -->
+
+<tr>    <!-- Begin row 4 -->
+
+<td class="rowLabelCell">
+<div class="rowLabel" onclick="row4Highlight()">4</div>
+</td>
+
+<td id="id19" class="elementCell" style="z-index:18" onclick="highlight('id19')">
+<div class="atomicNum">19</div>
+<div class="symbol">K</div>
+<div class="weight" style="display:block">39.10</div>
+<div class="eConfig" style="display:none">4s<sup>1</sup></div>
+<div class="radius" style="display:none">200</div>
+<div id="id19eNeg" class="eNeg" style="display:none">0.82</div>
+<div id="id19ionizationE1" class="ionizationE1" style="display:none">418.8</div>
+</td>
+
+<td id="id20" class="elementCell" style="z-index:17" onclick="highlight('id20')">
+<div class="atomicNum">20</div>
+<div class="symbol">Ca</div>
+<div class="weight" style="display:block">40.08</div>
+<div class="eConfig" style="display:none">4s<sup>2</sup></div>
+<div class="radius" style="display:none">174</div>
+<div id="id20eNeg" class="eNeg" style="display:none">1.00</div>
+<div id="id20ionizationE1" class="ionizationE1" style="display:none">589.8</div>
+</td>
+
+<td id="id21" class="elementCell" style="z-index:16" onclick="highlight('id21')">
+<div class="atomicNum">21</div>
+<div class="symbol">Sc</div>
+<div class="weight" style="display:block">44.96</div>
+<div class="eConfig" style="display:none">4s<sup>2</sup>3d<sup>1</sup></div>
+<div class="radius" style="display:none">159</div>
+<div id="id21eNeg" class="eNeg" style="display:none">1.36</div>
+<div id="id21ionizationE1" class="ionizationE1" style="display:none">633.1</div>
+</td>
+
+<td id="id22" class="elementCell" style="z-index:15" onclick="highlight('id22')">
+<div class="atomicNum">22</div>
+<div class="symbol">Ti</div>
+<div class="weight" style="display:block">47.88</div>
+<div class="eConfig" style="display:none">4s<sup>2</sup>3d<sup>2</sup></div>
+<div class="radius" style="display:none">148</div>
+<div id="id22eNeg" class="eNeg" style="display:none">1.54</div>
+<div id="id22ionizationE1" class="ionizationE1" style="display:none">658.8</div>
+</td>
+
+<td id="id23" class="elementCell" style="z-index:14" onclick="highlight('id23')">
+<div class="atomicNum">23</div>
+<div class="symbol">V</div>
+<div class="weight" style="display:block">50.94</div>
+<div class="eConfig" style="display:none">4s<sup>2</sup>3d<sup>3</sup></div>
+<div class="radius" style="display:none">144</div>
+<div id="id23eNeg" class="eNeg" style="display:none">1.63</div>
+<div id="id23ionizationE1" class="ionizationE1" style="display:none">650.9</div>
+</td>
+
+<td id="id24" class="elementCell" style="z-index:13" onclick="highlight('id24')">
+<div class="atomicNum">24</div>
+<div class="symbol">Cr</div>
+<div class="weight" style="display:block">52.00</div>
+<div class="eConfig" style="display:none">4s<sup>1</sup>3d<sup>5</sup></div>
+<div class="radius" style="display:none">130</div>
+<div id="id24eNeg" class="eNeg" style="display:none">1.66</div>
+<div id="id24ionizationE1" class="ionizationE1" style="display:none">652.9</div>
+</td>
+
+<td id="id25" class="elementCell" style="z-index:12" onclick="highlight('id25')">
+<div class="atomicNum">25</div>
+<div class="symbol">Mn</div>
+<div class="weight" style="display:block">54.94</div>
+<div class="eConfig" style="display:none">4s<sup>2</sup>3d<sup>5</sup></div>
+<div class="radius" style="display:none">129</div>
+<div id="id25eNeg" class="eNeg" style="display:none">1.55</div>
+<div id="id25ionizationE1" class="ionizationE1" style="display:none">717.3</div>
+</td>
+
+<td id="id26" class="elementCell" style="z-index:11" onclick="highlight('id26')">
+<div class="atomicNum">26</div>
+<div class="symbol">Fe</div>
+<div class="weight" style="display:block">55.85</div>
+<div class="eConfig" style="display:none">4s<sup>2</sup>3d<sup>6</sup></div>
+<div class="radius" style="display:none">124</div>
+<div id="id26eNeg" class="eNeg" style="display:none">1.83</div>
+<div id="id26ionizationE1" class="ionizationE1" style="display:none">762.5</div>
+</td>
+
+<td id="id27" class="elementCell" style="z-index:10" onclick="highlight('id27')">
+<div class="atomicNum">27</div>
+<div class="symbol">Co</div>
+<div class="weight" style="display:block">58.93</div>
+<div class="eConfig" style="display:none">4s<sup>2</sup>3d<sup>7</sup></div>
+<div class="radius" style="display:none">118</div>
+<div id="id27eNeg" class="eNeg" style="display:none">1.88</div>
+<div id="id27ionizationE1" class="ionizationE1" style="display:none">760.4</div>
+</td>
+
+<td id="id28" class="elementCell" style="z-index:9" onclick="highlight('id28')">
+<div class="atomicNum">28</div>
+<div class="symbol">Ni</div>
+<div class="weight" style="display:block">58.69</div>
+<div class="eConfig" style="display:none">4s<sup>2</sup>3d<sup>8</sup></div>
+<div class="radius" style="display:none">117</div>
+<div id="id28eNeg" class="eNeg" style="display:none">1.91</div>
+<div id="id28ionizationE1" class="ionizationE1" style="display:none">737.1</div>
+</td>
+
+<td id="id29" class="elementCell" style="z-index:8" onclick="highlight('id29')">
+<div class="atomicNum">29</div>
+<div class="symbol">Cu</div>
+<div class="weight" style="display:block">63.55</div>
+<div class="eConfig" style="display:none">4s<sup>1</sup>3d<sup>10</sup></div>
+<div class="radius" style="display:none">122</div>
+<div id="id29eNeg" class="eNeg" style="display:none">1.90</div>
+<div id="id29ionizationE1" class="ionizationE1" style="display:none">745.5</div>
+</td>
+
+<td id="id30" class="elementCell" style="z-index:7" onclick="highlight('id30')">
+<div class="atomicNum">30</div>
+<div class="symbol">Zn</div>
+<div class="weight" style="display:block">65.39</div>
+<div class="eConfig" style="display:none">4s<sup>2</sup>3d<sup>10</sup></div>
+<div class="radius" style="display:none">120</div>
+<div id="id30eNeg" class="eNeg" style="display:none">1.65</div>
+<div id="id30ionizationE1" class="ionizationE1" style="display:none">906.4</div>
+</td>
+
+<td id="id31" class="elementCell" style="z-index:6" onclick="highlight('id31')">
+<div class="atomicNum">31</div>
+<div class="symbol">Ga</div>
+<div class="weight" style="display:block">69.72</div>
+<div class="eConfig" style="display:none">4s<sup>2</sup>4p<sup>1</sup></div>
+<div class="radius" style="display:none">123</div>
+<div id="id31eNeg" class="eNeg" style="display:none">1.81</div>
+<div id="id31ionizationE1" class="ionizationE1" style="display:none">578.8</div>
+</td>
+
+<td id="id32" class="elementCell" style="z-index:5" onclick="highlight('id32')">
+<div class="atomicNum">32</div>
+<div class="symbol">Ge</div>
+<div class="weight" style="display:block">72.64</div>
+<div class="eConfig" style="display:none">4s<sup>2</sup>4p<sup>2</sup></div>
+<div class="radius" style="display:none">120</div>
+<div id="id32eNeg" class="eNeg" style="display:none">2.01</div>
+<div id="id32ionizationE1" class="ionizationE1" style="display:none">762.2</div>
+</td>
+
+<td id="id33" class="elementCell" style="z-index:4" onclick="highlight('id33')">
+<div class="atomicNum">33</div>
+<div class="symbol">As</div>
+<div class="weight" style="display:block">74.92</div>
+<div class="eConfig" style="display:none">4s<sup>2</sup>4p<sup>3</sup></div>
+<div class="radius" style="display:none">120</div>
+<div id="id33eNeg" class="eNeg" style="display:none">2.01</div>
+<div id="id33ionizationE1" class="ionizationE1" style="display:none">944.5</div>
+</td>
+
+<td id="id34" class="elementCell" style="z-index:3" onclick="highlight('id34')">
+<div class="atomicNum">34</div>
+<div class="symbol">Se</div>
+<div class="weight" style="display:block">78.96</div>
+<div class="eConfig" style="display:none">4s<sup>2</sup>4p<sup>4</sup></div>
+<div class="radius" style="display:none">118</div>
+<div id="id34eNeg" class="eNeg" style="display:none">2.55</div>
+<div id="id34ionizationE1" class="ionizationE1" style="display:none">941.0</div>
+</td>
+
+<td id="id35" class="elementCell" style="z-index:2" onclick="highlight('id35')">
+<div class="atomicNum">35</div>
+<div class="symbol">Br</div>
+<div class="weight" style="display:block">79.90</div>
+<div class="eConfig" style="display:none">4s<sup>2</sup>4p<sup>5</sup></div>
+<div class="radius" style="display:none">117</div>
+<div id="id35eNeg" class="eNeg" style="display:none">2.96</div>
+<div id="id35ionizationE1" class="ionizationE1" style="display:none">1139.9</div>
+</td>
+
+<td id="id36" class="elementCell" style="z-index:1" onclick="highlight('id36')">
+<div class="atomicNum">36</div>
+<div class="symbol">Kr</div>
+<div class="weight" style="display:block">83.79</div>
+<div class="eConfig" style="display:none">4s<sup>2</sup>4p<sup>6</sup></div>
+<div class="radius" style="display:none">116</div>
+<div id="id36eNeg" class="eNeg" style="display:none">-</div>
+<div id="id36ionizationE1" class="ionizationE1" style="display:none">1350.8</div>
+</td>
+
+</tr>    <!-- End row 4 -->
+
+<tr>    <!-- Begin row 5 -->
+
+<td class="rowLabelCell">
+<div class="rowLabel" onclick="row5Highlight()">5</div>
+</td>
+
+<td id="id37" class="elementCell" style="z-index:18" onclick="highlight('id37')">
+<div class="atomicNum">37</div>
+<div class="symbol">Rb</div>
+<div class="weight" style="display:block">85.47</div>
+<div class="eConfig" style="display:none">5s<sup>1</sup></div>
+<div class="radius" style="display:none">215</div>
+<div id="id37eNeg" class="eNeg" style="display:none">0.82</div>
+<div id="id37ionizationE1" class="ionizationE1" style="display:none">403.0</div>
+</td>
+
+<td id="id38" class="elementCell" style="z-index:17" onclick="highlight('id38')">
+<div class="atomicNum">38</div>
+<div class="symbol">Sr</div>
+<div class="weight" style="display:block">87.62</div>
+<div class="eConfig" style="display:none">5s<sup>2</sup></div>
+<div class="radius" style="display:none">190</div>
+<div id="id38eNeg" class="eNeg" style="display:none">0.95</div>
+<div id="id38ionizationE1" class="ionizationE1" style="display:none">549.5</div>
+</td>
+
+<td id="id39" class="elementCell" style="z-index:16" onclick="highlight('id39')">
+<div class="atomicNum">39</div>
+<div class="symbol">Y</div>
+<div class="weight" style="display:block">88.91</div>
+<div class="eConfig" style="display:none">5s<sup>2</sup>4d<sup>1</sup></div>
+<div class="radius" style="display:none">176</div>
+<div id="id39eNeg" class="eNeg" style="display:none">1.22</div>
+<div id="id39ionizationE1" class="ionizationE1" style="display:none">599.9</div>
+</td>
+
+<td id="id40" class="elementCell" style="z-index:15" onclick="highlight('id40')">
+<div class="atomicNum">40</div>
+<div class="symbol">Zr</div>
+<div class="weight" style="display:block">91.22</div>
+<div class="eConfig" style="display:none">5s<sup>2</sup>4d<sup>2</sup></div>
+<div class="radius" style="display:none">164</div>
+<div id="id40eNeg" class="eNeg" style="display:none">1.33</div>
+<div id="id40ionizationE1" class="ionizationE1" style="display:none">640.1</div>
+</td>
+
+<td id="id41" class="elementCell" style="z-index:14" onclick="highlight('id41')">
+<div class="atomicNum">41</div>
+<div class="symbol">Nb</div>
+<div class="weight" style="display:block">92.91</div>
+<div class="eConfig" style="display:none">5s<sup>1</sup>4d<sup>4</sup></div>
+<div class="radius" style="display:none">156</div>
+<div id="id41eNeg" class="eNeg" style="display:none">1.6</div>
+<div id="id41ionizationE1" class="ionizationE1" style="display:none">652.1</div>
+</td>
+
+<td id="id42" class="elementCell" style="z-index:13" onclick="highlight('id42')">
+<div class="atomicNum">42</div>
+<div class="symbol">Mo</div>
+<div class="weight" style="display:block">95.96</div>
+<div class="eConfig" style="display:none">5s<sup>1</sup>4d<sup>5</sup></div>
+<div class="radius" style="display:none">146</div>
+<div id="id42eNeg" class="eNeg" style="display:none">2.16</div>
+<div id="id42ionizationE1" class="ionizationE1" style="display:none">684.3</div>
+</td>
+
+<td id="id43" class="elementCell" style="z-index:12" onclick="highlight('id43')">
+<div class="atomicNum">43</div>
+<div class="symbol">Tc</div>
+<div class="weight" style="display:block">(98)</div>
+<div class="eConfig" style="display:none">5s<sup>1</sup>4d<sup>6</sup></div>
+<div class="radius" style="display:none">138</div>
+<div id="id43eNeg" class="eNeg" style="display:none">2.10</div>
+<div id="id43ionizationE1" class="ionizationE1" style="display:none">702.4</div>
+</td>
+
+<td id="id44" class="elementCell" style="z-index:11" onclick="highlight('id44')">
+<div class="atomicNum">44</div>
+<div class="symbol">Ru</div>
+<div class="weight" style="display:block">101.1</div>
+<div class="eConfig" style="display:none">5s<sup>1</sup>4d<sup>7</sup></div>
+<div class="radius" style="display:none">136</div>
+<div id="id44eNeg" class="eNeg" style="display:none">2.2</div>
+<div id="id44ionizationE1" class="ionizationE1" style="display:none">710.2</div>
+</td>
+
+<td id="id45" class="elementCell" style="z-index:10" onclick="highlight('id45')">
+<div class="atomicNum">45</div>
+<div class="symbol">Rh</div>
+<div class="weight" style="display:block">102.9</div>
+<div class="eConfig" style="display:none">5s<sup>1</sup>4d<sup>8</sup></div>
+<div class="radius" style="display:none">134</div>
+<div id="id45eNeg" class="eNeg" style="display:none">2.28</div>
+<div id="id45ionizationE1" class="ionizationE1" style="display:none">719.7</div>
+</td>
+
+<td id="id46" class="elementCell" style="z-index:9" onclick="highlight('id46')">
+<div class="atomicNum">46</div>
+<div class="symbol">Pd</div>
+<div class="weight" style="display:block">106.4</div>
+<div class="eConfig" style="display:none">4d<sup>10</sup></div>
+<div class="radius" style="display:none">130</div>
+<div id="id46eNeg" class="eNeg" style="display:none">2.20</div>
+<div id="id46ionizationE1" class="ionizationE1" style="display:none">804.4</div>
+</td>
+
+<td id="id47" class="elementCell" style="z-index:8" onclick="highlight('id47')">
+<div class="atomicNum">47</div>
+<div class="symbol">Ag</div>
+<div class="weight" style="display:block">107.9</div>
+<div class="eConfig" style="display:none">5s<sup>1</sup>4d<sup>10</sup></div>
+<div class="radius" style="display:none">136</div>
+<div id="id47eNeg" class="eNeg" style="display:none">1.93</div>
+<div id="id47ionizationE1" class="ionizationE1" style="display:none">731.0</div>
+</td>
+
+<td id="id48" class="elementCell" style="z-index:7" onclick="highlight('id48')">
+<div class="atomicNum">48</div>
+<div class="symbol">Cd</div>
+<div class="weight" style="display:block">112.4</div>
+<div class="eConfig" style="display:none">5s<sup>2</sup>4d<sup>10</sup></div>
+<div class="radius" style="display:none">140</div>
+<div id="id48eNeg" class="eNeg" style="display:none">1.69</div>
+<div id="id48ionizationE1" class="ionizationE1" style="display:none">867.8</div>
+</td>
+
+<td id="id49" class="elementCell" style="z-index:6" onclick="highlight('id49')">
+<div class="atomicNum">49</div>
+<div class="symbol">In</div>
+<div class="weight" style="display:block">114.8</div>
+<div class="eConfig" style="display:none">5s<sup>2</sup>5p<sup>1</sup></div>
+<div class="radius" style="display:none">142</div>
+<div id="id49eNeg" class="eNeg" style="display:none">1.78</div>
+<div id="id49ionizationE1" class="ionizationE1" style="display:none">558.3</div>
+</td>
+
+<td id="id50" class="elementCell" style="z-index:5" onclick="highlight('id50')">
+<div class="atomicNum">50</div>
+<div class="symbol">Sn</div>
+<div class="weight" style="display:block">118.7</div>
+<div class="eConfig" style="display:none">5s<sup>2</sup>5p<sup>2</sup></div>
+<div class="radius" style="display:none">140</div>
+<div id="id50eNeg" class="eNeg" style="display:none">1.96</div>
+<div id="id50ionizationE1" class="ionizationE1" style="display:none">708.6</div>
+</td>
+
+<td id="id51" class="elementCell" style="z-index:4" onclick="highlight('id51')">
+<div class="atomicNum">51</div>
+<div class="symbol">Sb</div>
+<div class="weight" style="display:block">121.8</div>
+<div class="eConfig" style="display:none">5s<sup>2</sup>5p<sup>3</sup></div>
+<div class="radius" style="display:none">140</div>
+<div id="id51eNeg" class="eNeg" style="display:none">2.05</div>
+<div id="id51ionizationE1" class="ionizationE1" style="display:none">830.6</div>
+</td>
+
+<td id="id52" class="elementCell" style="z-index:3" onclick="highlight('id52')">
+<div class="atomicNum">52</div>
+<div class="symbol">Te</div>
+<div class="weight" style="display:block">127.6</div>
+<div class="eConfig" style="display:none">5s<sup>2</sup>5p<sup>4</sup></div>
+<div class="radius" style="display:none">137</div>
+<div id="id52eNeg" class="eNeg" style="display:none">2.10</div>
+<div id="id52ionizationE1" class="ionizationE1" style="display:none">869.3</div>
+</td>
+
+<td id="id53" class="elementCell" style="z-index:2" onclick="highlight('id53')">
+<div class="atomicNum">53</div>
+<div class="symbol">I</div>
+<div class="weight" style="display:block">126.9</div>
+<div class="eConfig" style="display:none">5s<sup>2</sup>5p<sup>5</sup></div>
+<div class="radius" style="display:none">136</div>
+<div id="id53eNeg" class="eNeg" style="display:none">2.66</div>
+<div id="id53ionizationE1" class="ionizationE1" style="display:none">1008.4</div>
+</td>
+
+<td id="id54" class="elementCell" style="z-index:1" onclick="highlight('id54')">
+<div class="atomicNum">54</div>
+<div class="symbol">Xe</div>
+<div class="weight" style="display:block">131.3</div>
+<div class="eConfig" style="display:none">5s<sup>2</sup>5p<sup>6</sup></div>
+<div class="radius" style="display:none">136</div>
+<div id="id54eNeg" class="eNeg" style="display:none">2.60</div>
+<div id="id54ionizationE1" class="ionizationE1" style="display:none">1170.3</div>
+</td>
+
+</tr>    <!-- End row 5 -->
+
+<tr>    <!-- Begin row 6 -->
+
+<td class="rowLabelCell">
+<div class="rowLabel" onclick="row6Highlight()">6</div>
+</td>
+
+<td id="id55" class="elementCell" style="z-index:18" onclick="highlight('id55')">
+<div class="atomicNum">55</div>
+<div class="symbol">Cs</div>
+<div class="weight" style="display:block">132.9</div>
+<div class="eConfig" style="display:none">6s<sup>1</sup></div>
+<div class="radius" style="display:none">238</div>
+<div id="id55eNeg" class="eNeg" style="display:none">0.79</div>
+<div id="id55ionizationE1" class="ionizationE1" style="display:none">375.7</div>
+</td>
+
+<td id="id56" class="elementCell" style="z-index:17" onclick="highlight('id56')">
+<div class="atomicNum">56</div>
+<div class="symbol">Ba</div>
+<div class="weight" style="display:block">137.3</div>
+<div class="eConfig" style="display:none">6s<sup>2</sup></div>
+<div class="radius" style="display:none">206</div>
+<div id="id56eNeg" class="eNeg" style="display:none">0.89</div>
+<div id="id56ionizationE1" class="ionizationE1" style="display:none">502.8</div>
+</td>
+
+<td id="idLn" class="LnAcCell" style="z-index:16" onclick="highlight('idLn')">
+<div class="symbol">*</div>
+</td>
+
+<td id="id72" class="elementCell" style="z-index:15" onclick="highlight('id72')">
+<div class="atomicNum">72</div>
+<div class="symbol">Hf</div>
+<div class="weight" style="display:block">178.5</div>
+<div class="eConfig" style="display:none">6s<sup>2</sup>5d<sup>2</sup></div>
+<div class="radius" style="display:none">164</div>
+<div id="id72eNeg" class="eNeg" style="display:none">1.3</div>
+<div id="id72ionizationE1" class="ionizationE1" style="display:none">658.5</div>
+</td>
+
+<td id="id73" class="elementCell" style="z-index:14" onclick="highlight('id73')">
+<div class="atomicNum">73</div>
+<div class="symbol">Ta</div>
+<div class="weight" style="display:block">180.9</div>
+<div class="eConfig" style="display:none">6s<sup>2</sup>5d<sup>3</sup></div>
+<div class="radius" style="display:none">158</div>
+<div id="id73eNeg" class="eNeg" style="display:none">1.5</div>
+<div id="id73ionizationE1" class="ionizationE1" style="display:none">728.4</div>
+</td>
+
+<td id="id74" class="elementCell" style="z-index:13" onclick="highlight('id74')">
+<div class="atomicNum">74</div>
+<div class="symbol">W</div>
+<div class="weight" style="display:block">183.9</div>
+<div class="eConfig" style="display:none">6s<sup>2</sup>5d<sup>4</sup></div>
+<div class="radius" style="display:none">150</div>
+<div id="id74eNeg" class="eNeg" style="display:none">1.7</div>
+<div id="id74ionizationE1" class="ionizationE1" style="display:none">758.8</div>
+</td>
+
+<td id="id75" class="elementCell" style="z-index:12" onclick="highlight('id75')">
+<div class="atomicNum">75</div>
+<div class="symbol">Re</div>
+<div class="weight" style="display:block">186.2</div>
+<div class="eConfig" style="display:none">6s<sup>2</sup>5d<sup>5</sup></div>
+<div class="radius" style="display:none">141</div>
+<div id="id75eNeg" class="eNeg" style="display:none">1.9</div>
+<div id="id75ionizationE1" class="ionizationE1" style="display:none">755.8</div>
+</td>
+
+<td id="id76" class="elementCell" style="z-index:11" onclick="highlight('id76')">
+<div class="atomicNum">76</div>
+<div class="symbol">Os</div>
+<div class="weight" style="display:block">190.2</div>
+<div class="eConfig" style="display:none">6s<sup>2</sup>5d<sup>6</sup></div>
+<div class="radius" style="display:none">136</div>
+<div id="id76eNeg" class="eNeg" style="display:none">2.2</div>
+<div id="id76ionizationE1" class="ionizationE1" style="display:none">814.2</div>
+</td>
+
+<td id="id77" class="elementCell" style="z-index:10" onclick="highlight('id77')">
+<div class="atomicNum">77</div>
+<div class="symbol">Ir</div>
+<div class="weight" style="display:block">192.2</div>
+<div class="eConfig" style="display:none">6s<sup>2</sup>5d<sup>7</sup></div>
+<div class="radius" style="display:none">132</div>
+<div id="id77eNeg" class="eNeg" style="display:none">2.2</div>
+<div id="id77ionizationE1" class="ionizationE1" style="display:none">865.2</div>
+</td>
+
+<td id="id78" class="elementCell" style="z-index:9" onclick="highlight('id78')">
+<div class="atomicNum">78</div>
+<div class="symbol">Pt</div>
+<div class="weight" style="display:block">195.1</div>
+<div class="eConfig" style="display:none">6s<sup>1</sup>5d<sup>9</sup></div>
+<div class="radius" style="display:none">130</div>
+<div id="id78eNeg" class="eNeg" style="display:none">2.2</div>
+<div id="id78ionizationE1" class="ionizationE1" style="display:none">864.4</div>
+</td>
+
+<td id="id79" class="elementCell" style="z-index:8" onclick="highlight('id79')">
+<div class="atomicNum">79</div>
+<div class="symbol">Au</div>
+<div class="weight" style="display:block">197.0</div>
+<div class="eConfig" style="display:none">6s<sup>1</sup>5d<sup>10</sup></div>
+<div class="radius" style="display:none">130</div>
+<div id="id79eNeg" class="eNeg" style="display:none">2.4</div>
+<div id="id79ionizationE1" class="ionizationE1" style="display:none">890.1</div>
+</td>
+
+<td id="id80" class="elementCell" style="z-index:7" onclick="highlight('id80')">
+<div class="atomicNum">80</div>
+<div class="symbol">Hg</div>
+<div class="weight" style="display:block">200.5</div>
+<div class="eConfig" style="display:none">6s<sup>2</sup>5d<sup>10</sup></div>
+<div class="radius" style="display:none">132</div>
+<div id="id80eNeg" class="eNeg" style="display:none">1.9</div>
+<div id="id80ionizationE1" class="ionizationE1" style="display:none">1007.1</div>
+</td>
+
+<td id="id81" class="elementCell" style="z-index:6" onclick="highlight('id81')">
+<div class="atomicNum">81</div>
+<div class="symbol">Tl</div>
+<div class="weight" style="display:block">204.38</div>
+<div class="eConfig" style="display:none">6s<sup>2</sup>6p<sup>1</sup></div>
+<div class="radius" style="display:none">144</div>
+<div id="id81eNeg" class="eNeg" style="display:none">1.8</div>
+<div id="id81ionizationE1" class="ionizationE1" style="display:none">589.3</div>
+</td>
+
+<td id="id82" class="elementCell" style="z-index:5" onclick="highlight('id82')">
+<div class="atomicNum">82</div>
+<div class="symbol">Pb</div>
+<div class="weight" style="display:block">207.2</div>
+<div class="eConfig" style="display:none">6s<sup>2</sup>6p<sup>2</sup></div>
+<div class="radius" style="display:none">145</div>
+<div id="id82eNeg" class="eNeg" style="display:none">1.8</div>
+<div id="id82ionizationE1" class="ionizationE1" style="display:none">715.6</div>
+</td>
+
+<td id="id83" class="elementCell" style="z-index:4" onclick="highlight('id83')">
+<div class="atomicNum">83</div>
+<div class="symbol">Bi</div>
+<div class="weight" style="display:block">209.0</div>
+<div class="eConfig" style="display:none">6s<sup>2</sup>6p<sup>3</sup></div>
+<div class="radius" style="display:none">150</div>
+<div id="id83eNeg" class="eNeg" style="display:none">1.9</div>
+<div id="id83ionizationE1" class="ionizationE1" style="display:none">702.9</div>
+</td>
+
+<td id="id84" class="elementCell" style="z-index:3" onclick="highlight('id84')">
+<div class="atomicNum">84</div>
+<div class="symbol">Po</div>
+<div class="weight" style="display:block">(209)</div>
+<div class="eConfig" style="display:none">6s<sup>2</sup>6p<sup>4</sup></div>
+<div class="radius" style="display:none">142</div>
+<div id="id84eNeg" class="eNeg" style="display:none">2.0</div>
+<div id="id84ionizationE1" class="ionizationE1" style="display:none">811.8</div>
+</td>
+
+<td id="id85" class="elementCell" style="z-index:2" onclick="highlight('id85')">
+<div class="atomicNum">85</div>
+<div class="symbol">At</div>
+<div class="weight" style="display:block">(210)</div>
+<div class="eConfig" style="display:none">6s<sup>2</sup>6p<sup>5</sup></div>
+<div class="radius" style="display:none">148</div>
+<div id="id85eNeg" class="eNeg" style="display:none">2.2</div>
+<div id="id85ionizationE1" class="ionizationE1" style="display:none">-</div>
+</td>
+
+<td id="id86" class="elementCell" style="z-index:1" onclick="highlight('id86')">
+<div class="atomicNum">86</div>
+<div class="symbol">Rn</div>
+<div class="weight" style="display:block">(222)</div>
+<div class="eConfig" style="display:none">6s<sup>2</sup>6p<sup>6</sup></div>
+<div class="radius" style="display:none">146</div>
+<div id="id86eNeg" class="eNeg" style="display:none">-</div>
+<div id="id86ionizationE1" class="ionizationE1" style="display:none">1037.1</div>
+</td>
+
+</tr>    <!-- End row 6 -->
+
+<tr>    <!-- Begin row 7 -->
+
+<td class="rowLabelCell">
+<div class="rowLabel" onclick="row7Highlight()">7</div>
+</td>
+
+<td id="id87" class="elementCell" style="z-index:18" onclick="highlight('id87')">
+<div class="atomicNum">87</div>
+<div class="symbol">Fr</div>
+<div class="weight" style="display:block">(223)</div>
+<div class="eConfig" style="display:none">7s<sup>1</sup></div>
+<div class="radius" style="display:none">242</div>
+<div id="id87eNeg" class="eNeg" style="display:none">0.7</div>
+<div id="id87ionizationE1" class="ionizationE1" style="display:none">393.0</div>
+</td>
+
+<td id="id88" class="elementCell" style="z-index:17" onclick="highlight('id88')">
+<div class="atomicNum">88</div>
+<div class="symbol">Ra</div>
+<div class="weight" style="display:block">(226)</div>
+<div class="eConfig" style="display:none">7s<sup>2</sup></div>
+<div class="radius" style="display:none">211</div>
+<div id="id88eNeg" class="eNeg" style="display:none">0.9</div>
+<div id="id88ionizationE1" class="ionizationE1" style="display:none">509.3</div>
+</td>
+
+<td id="idAc" class="LnAcCell" style="z-index:16" onclick="highlight('idAc')">
+<div class="symbol">**</div>
+</td>
+
+<td id="id104" class="elementCell" style="z-index:15" onclick="highlight('id104')">
+<div class="atomicNum">104</div>
+<div class="symbol">Rf</div>
+<div class="weight" style="display:block">(267)</div>
+<div class="eConfig" style="display:none">7s<sup>2</sup>6d<sup>2</sup></div>
+<div class="radius" style="display:none">157</div>
+<div id="id104eNeg" class="eNeg" style="display:none">-</div>
+<div id="id104ionizationE1" class="ionizationE1" style="display:none">578.9</div>
+</td>
+
+<td id="id105" class="elementCell" style="z-index:14" onclick="highlight('id105')">
+<div class="atomicNum">105</div>
+<div class="symbol">Db</div>
+<div class="weight" style="display:block">(268)</div>
+<div class="eConfig" style="display:none">7s<sup>2</sup>6d<sup>3</sup></div>
+<div class="radius" style="display:none">149</div>
+<div id="id105eNeg" class="eNeg" style="display:none">-</div>
+<div id="id105ionizationE1" class="ionizationE1" style="display:none">-</div>
+</td>
+
+<td id="id106" class="elementCell" style="z-index:13" onclick="highlight('id106')">
+<div class="atomicNum">106</div>
+<div class="symbol">Sg</div>
+<div class="weight" style="display:block">(269)</div>
+<div class="eConfig" style="display:none">7s<sup>2</sup>6d<sup>4</sup></div>
+<div class="radius" style="display:none">143</div>
+<div id="id106eNeg" class="eNeg" style="display:none">-</div>
+<div id="id106ionizationE1" class="ionizationE1" style="display:none">-</div>
+</td>
+
+<td id="id107" class="elementCell" style="z-index:12" onclick="highlight('id107')">
+<div class="atomicNum">107</div>
+<div class="symbol">Bh</div>
+<div class="weight" style="display:block">(270)</div>
+<div class="eConfig" style="display:none">7s<sup>2</sup>6d<sup>5</sup></div>
+<div class="radius" style="display:none">141</div>
+<div id="id107eNeg" class="eNeg" style="display:none">-</div>
+<div id="id107ionizationE1" class="ionizationE1" style="display:none">-</div>
+</td>
+
+<td id="id108" class="elementCell" style="z-index:11" onclick="highlight('id108')">
+<div class="atomicNum">108</div>
+<div class="symbol">Hs</div>
+<div class="weight" style="display:block">(277)</div>
+<div class="eConfig" style="display:none">7s<sup>2</sup>6d<sup>6</sup></div>
+<div class="radius" style="display:none">134</div>
+<div id="id108eNeg" class="eNeg" style="display:none">-</div>
+<div id="id108ionizationE1" class="ionizationE1" style="display:none">-</div>
+</td>
+
+<td id="id109" class="elementCell" style="z-index:10" onclick="highlight('id109')">
+<div class="atomicNum">109</div>
+<div class="symbol">Mt</div>
+<div class="weight" style="display:block">(278)</div>
+<div class="eConfig" style="display:none">7s<sup>2</sup>6d<sup>7</sup></div>
+<div class="radius" style="display:none">129</div>
+<div id="id109eNeg" class="eNeg" style="display:none">-</div>
+<div id="id109ionizationE1" class="ionizationE1" style="display:none">-</div>
+</td>
+
+<td id="id110" class="elementCell" style="z-index:9" onclick="highlight('id110')">
+<div class="atomicNum">110</div>
+<div class="symbol">Ds</div>
+<div class="weight" style="display:block">(281)</div>
+<div class="eConfig" style="display:none">7s<sup>2</sup>6d<sup>8</sup></div>
+<div class="radius" style="display:none">128</div>
+<div id="id110eNeg" class="eNeg" style="display:none">-</div>
+<div id="id110ionizationE1" class="ionizationE1" style="display:none">-</div>
+</td>
+
+<td id="id111" class="elementCell" style="z-index:8" onclick="highlight('id111')">
+<div class="atomicNum">111</div>
+<div class="symbol">Rg</div>
+<div class="weight" style="display:block">(282)</div>
+<div class="eConfig" style="display:none">7s<sup>1</sup>6d<sup>10</sup></div>
+<div class="radius" style="display:none">121</div>
+<div id="id111eNeg" class="eNeg" style="display:none">-</div>
+<div id="id111ionizationE1" class="ionizationE1" style="display:none">-</div>
+</td>
+
+<td id="id112" class="elementCell" style="z-index:7" onclick="highlight('id112')">
+<div class="atomicNum">112</div>
+<div class="symbol">Cn</div>
+<div class="weight" style="display:block">(285)</div>
+<div class="eConfig" style="display:none">7s<sup>2</sup>6d<sup>10</sup></div>
+<div class="radius" style="display:none">122</div>
+<div id="id112eNeg" class="eNeg" style="display:none">-</div>
+<div id="id112ionizationE1" class="ionizationE1" style="display:none">-</div>
+</td>
+
+<td id="id113" class="elementCell" style="z-index:6" onclick="highlight('id113')">
+<div class="atomicNum">113</div>
+<div class="symbol">Nh</div>
+<div class="weight" style="display:block">(286)</div>
+<div class="eConfig" style="display:none">7s<sup>2</sup>7p<sup>1</sup></div>
+<div class="radius" style="display:none">136</div>
+<div id="id113eNeg" class="eNeg" style="display:none">-</div>
+<div id="id113ionizationE1" class="ionizationE1" style="display:none">-</div>
+</td>
+
+<td id="id114" class="elementCell" style="z-index:5" onclick="highlight('id114')">
+<div class="atomicNum">114</div>
+<div class="symbol">Fl</div>
+<div class="weight" style="display:block">(289)</div>
+<div class="eConfig" style="display:none">7s<sup>2</sup>7p<sup>2</sup></div>
+<div class="radius" style="display:none">143</div>
+<div id="id114eNeg" class="eNeg" style="display:none">-</div>
+<div id="id114ionizationE1" class="ionizationE1" style="display:none">-</div>
+</td>
+
+<td id="id115" class="elementCell" style="z-index:4" onclick="highlight('id115')">
+<div class="atomicNum">115</div>
+<div class="symbol">Mc</div>
+<div class="weight" style="display:block">(289)</div>
+<div class="eConfig" style="display:none">7s<sup>2</sup>7p<sup>3</sup></div>
+<div class="radius" style="display:none">162</div>
+<div id="id115eNeg" class="eNeg" style="display:none">-</div>
+<div id="id115ionizationE1" class="ionizationE1" style="display:none">-</div>
+</td>
+
+<td id="id116" class="elementCell" style="z-index:3" onclick="highlight('id116')">
+<div class="atomicNum">116</div>
+<div class="symbol">Lv</div>
+<div class="weight" style="display:block">(293)</div>
+<div class="eConfig" style="display:none">7s<sup>2</sup>7p<sup>4</sup></div>
+<div class="radius" style="display:none">175</div>
+<div id="id116eNeg" class="eNeg" style="display:none">-</div>
+<div id="id116ionizationE1" class="ionizationE1" style="display:none">-</div>
+</td>
+
+<td id="id117" class="elementCell" style="z-index:2" onclick="highlight('id117')">
+<div class="atomicNum">117</div>
+<div class="symbol">Ts</div>
+<div class="weight" style="display:block">(294)</div>
+<div class="eConfig" style="display:none">7s<sup>2</sup>7p<sup>5</sup></div>
+<div class="radius" style="display:none">165</div>
+<div id="id117eNeg" class="eNeg" style="display:none">-</div>
+<div id="id117ionizationE1" class="ionizationE1" style="display:none">-</div>
+</td>
+
+<td id="id118" class="elementCell" style="z-index:1" onclick="highlight('id118')">
+<div class="atomicNum">118</div>
+<div class="symbol">Og</div>
+<div class="weight" style="display:block">(294)</div>
+<div class="eConfig" style="display:none">7s<sup>2</sup>7p<sup>6</sup></div>
+<div class="radius" style="display:none">157</div>
+<div id="id118eNeg" class="eNeg" style="display:none">-</div>
+<div id="id118ionizationE1" class="ionizationE1" style="display:none">-</div>
+</td>
+
+</tr>    <!-- End row 7 -->
+
+<tr>    <!-- Begin spacer row -->
+
+<td height="6px"></td>    <!-- Height can be adjusted to help the entire periodic table fit on a projector screen -->
+
+</tr>    <!-- End spacer row -->
+
+<tr>    <!-- Begin Lanthanides row -->
+
+<td class="rowLabelCell">
+</td>
+
+<td colspan="3">
+<div class="groupLabel2" onclick="LanthanidesHighlight()">Lanthanides*</div>
+</td>
+
+<td id="id57" class="elementCell" style="z-index:15" onclick="highlight('id57')">
+<div class="atomicNum">57</div>
+<div class="symbol">La</div>
+<div class="weight" style="display:block">138.9</div>
+<div class="eConfig" style="display:none">6s<sup>2</sup>5d<sup>1</sup></div>
+<div class="radius" style="display:none">194</div>
+<div id="id57eNeg" class="eNeg" style="display:none">1.10</div>
+<div id="id57ionizationE1" class="ionizationE1" style="display:none">538.1</div>
+</td>
+
+<td id="id58" class="elementCell" style="z-index:14" onclick="highlight('id58')">
+<div class="atomicNum">58</div>
+<div class="symbol">Ce</div>
+<div class="weight" style="display:block">140.1</div>
+<div class="eConfig" style="display:none">4f<sup>1</sup>5d<sup>1</sup></div>
+<div class="radius" style="display:none">184</div>
+<div id="id58eNeg" class="eNeg" style="display:none">1.12</div>
+<div id="id58ionizationE1" class="ionizationE1" style="display:none">534.4</div>
+</td>
+
+<td id="id59" class="elementCell" style="z-index:13" onclick="highlight('id59')">
+<div class="atomicNum">59</div>
+<div class="symbol">Pr</div>
+<div class="weight" style="display:block">140.9</div>
+<div class="eConfig" style="display:none">4f<sup>3</sup>5d<sup>0</sup></div>
+<div class="radius" style="display:none">190</div>
+<div id="id59eNeg" class="eNeg" style="display:none">1.13</div>
+<div id="id59ionizationE1" class="ionizationE1" style="display:none">528.1</div>
+</td>
+
+<td id="id60" class="elementCell" style="z-index:12" onclick="highlight('id60')">
+<div class="atomicNum">60</div>
+<div class="symbol">Nd</div>
+<div class="weight" style="display:block">144.2</div>
+<div class="eConfig" style="display:none">4f<sup>4</sup>5d<sup>0</sup></div>
+<div class="radius" style="display:none">188</div>
+<div id="id60eNeg" class="eNeg" style="display:none">1.14</div>
+<div id="id60ionizationE1" class="ionizationE1" style="display:none">533.1</div>
+</td>
+
+<td id="id61" class="elementCell" style="z-index:11" onclick="highlight('id61')">
+<div class="atomicNum">61</div>
+<div class="symbol">Pm</div>
+<div class="weight" style="display:block">(145)</div>
+<div class="eConfig" style="display:none">4f<sup>5</sup>5d<sup>0</sup></div>
+<div class="radius" style="display:none">186</div>
+<div id="id61eNeg" class="eNeg" style="display:none">-</div>
+<div id="id61ionizationE1" class="ionizationE1" style="display:none">538.6</div>
+</td>
+
+<td id="id62" class="elementCell" style="z-index:10" onclick="highlight('id62')">
+<div class="atomicNum">62</div>
+<div class="symbol">Sm</div>
+<div class="weight" style="display:block">150.4</div>
+<div class="eConfig" style="display:none">4f<sup>6</sup>5d<sup>0</sup></div>
+<div class="radius" style="display:none">185</div>
+<div id="id62eNeg" class="eNeg" style="display:none">1.17</div>
+<div id="id62ionizationE1" class="ionizationE1" style="display:none">544.5</div>
+</td>
+
+<td id="id63" class="elementCell" style="z-index:9" onclick="highlight('id63')">
+<div class="atomicNum">63</div>
+<div class="symbol">Eu</div>
+<div class="weight" style="display:block">152.0</div>
+<div class="eConfig" style="display:none">4f<sup>7</sup>5d<sup>0</sup></div>
+<div class="radius" style="display:none">183</div>
+<div id="id63eNeg" class="eNeg" style="display:none">-</div>
+<div id="id63ionizationE1" class="ionizationE1" style="display:none">547.1</div>
+</td>
+
+<td id="id64" class="elementCell" style="z-index:8" onclick="highlight('id64')">
+<div class="atomicNum">64</div>
+<div class="symbol">Gd</div>
+<div class="weight" style="display:block">157.2</div>
+<div class="eConfig" style="display:none">4f<sup>7</sup>5d<sup>1</sup></div>
+<div class="radius" style="display:none">182</div>
+<div id="id64eNeg" class="eNeg" style="display:none">1.20</div>
+<div id="id64ionizationE1" class="ionizationE1" style="display:none">593.4</div>
+</td>
+
+<td id="id65" class="elementCell" style="z-index:7" onclick="highlight('id65')">
+<div class="atomicNum">65</div>
+<div class="symbol">Tb</div>
+<div class="weight" style="display:block">158.9</div>
+<div class="eConfig" style="display:none">4f<sup>9</sup>5d<sup>0</sup></div>
+<div class="radius" style="display:none">181</div>
+<div id="id65eNeg" class="eNeg" style="display:none">-</div>
+<div id="id65ionizationE1" class="ionizationE1" style="display:none">565.8</div>
+</td>
+
+<td id="id66" class="elementCell" style="z-index:6" onclick="highlight('id66')">
+<div class="atomicNum">66</div>
+<div class="symbol">Dy</div>
+<div class="weight" style="display:block">162.5</div>
+<div class="eConfig" style="display:none">4f<sup>10</sup>5d<sup>0</sup></div>
+<div class="radius" style="display:none">180</div>
+<div id="id66eNeg" class="eNeg" style="display:none">1.22</div>
+<div id="id66ionizationE1" class="ionizationE1" style="display:none">573.0</div>
+</td>
+
+<td id="id67" class="elementCell" style="z-index:5" onclick="highlight('id67')">
+<div class="atomicNum">67</div>
+<div class="symbol">Ho</div>
+<div class="weight" style="display:block">164.9</div>
+<div class="eConfig" style="display:none">4f<sup>11</sup>5d<sup>0</sup></div>
+<div class="radius" style="display:none">179</div>
+<div id="id67eNeg" class="eNeg" style="display:none">1.23</div>
+<div id="id67ionizationE1" class="ionizationE1" style="display:none">581.0</div>
+</td>
+
+<td id="id68" class="elementCell" style="z-index:4" onclick="highlight('id68')">
+<div class="atomicNum">68</div>
+<div class="symbol">Er</div>
+<div class="weight" style="display:block">167.3</div>
+<div class="eConfig" style="display:none">4f<sup>12</sup>5d<sup>0</sup></div>
+<div class="radius" style="display:none">177</div>
+<div id="id68eNeg" class="eNeg" style="display:none">1.24</div>
+<div id="id68ionizationE1" class="ionizationE1" style="display:none">589.3</div>
+</td>
+
+<td id="id69" class="elementCell" style="z-index:3" onclick="highlight('id69')">
+<div class="atomicNum">69</div>
+<div class="symbol">Tm</div>
+<div class="weight" style="display:block">168.9</div>
+<div class="eConfig" style="display:none">4f<sup>13</sup>5d<sup>0</sup></div>
+<div class="radius" style="display:none">177</div>
+<div id="id69eNeg" class="eNeg" style="display:none">1.25</div>
+<div id="id69ionizationE1" class="ionizationE1" style="display:none">596.7</div>
+</td>
+
+<td id="id70" class="elementCell" style="z-index:2" onclick="highlight('id70')">
+<div class="atomicNum">70</div>
+<div class="symbol">Yb</div>
+<div class="weight" style="display:block">173.0</div>
+<div class="eConfig" style="display:none">4f<sup>14</sup>5d<sup>0</sup></div>
+<div class="radius" style="display:none">178</div>
+<div id="id70eNeg" class="eNeg" style="display:none">-</div>
+<div id="id70ionizationE1" class="ionizationE1" style="display:none">603.4</div>
+</td>
+
+<td id="id71" class="elementCell" style="z-index:1" onclick="highlight('id71')">
+<div class="atomicNum">71</div>
+<div class="symbol">Lu</div>
+<div class="weight" style="display:block">175.0</div>
+<div class="eConfig" style="display:none">4f<sup>14</sup>5d<sup>1</sup></div>
+<div class="radius" style="display:none">174</div>
+<div id="id71eNeg" class="eNeg" style="display:none">1.0</div>
+<div id="id71ionizationE1" class="ionizationE1" style="display:none">523.5</div>
+</td>
+
+</tr>    <!-- End Lanthanides row -->
+
+<tr>    <!-- Begin Actinides row -->
+
+<td class="rowLabelCell">
+</td>
+
+<td colspan="3">
+<div class="groupLabel2" onclick="ActinidesHighlight()">Actinides**</div>
+</td>
+
+<td id="id89" class="elementCell" style="z-index:15" onclick="highlight('id89')">
+<div class="atomicNum">89</div>
+<div class="symbol">Ac</div>
+<div class="weight" style="display:block">(227)</div>
+<div class="eConfig" style="display:none">7s<sup>2</sup>6d<sup>1</sup></div>
+<div class="radius" style="display:none">201</div>
+<div id="id89eNeg" class="eNeg" style="display:none">1.1</div>
+<div id="id89ionizationE1" class="ionizationE1" style="display:none">498.8</div>
+</td>
+
+<td id="id90" class="elementCell" style="z-index:14" onclick="highlight('id90')">
+<div class="atomicNum">90</div>
+<div class="symbol">Th</div>
+<div class="weight" style="display:block">232</div>
+<div class="eConfig" style="display:none">5f<sup>0</sup>6d<sup>2</sup></div>
+<div class="radius" style="display:none">190</div>
+<div id="id90eNeg" class="eNeg" style="display:none">1.3</div>
+<div id="id90ionizationE1" class="ionizationE1" style="display:none">608.5</div>
+</td>
+
+<td id="id91" class="elementCell" style="z-index:13" onclick="highlight('id91')">
+<div class="atomicNum">91</div>
+<div class="symbol">Pa</div>
+<div class="weight" style="display:block">231</div>
+<div class="eConfig" style="display:none">5f<sup>2</sup>6d<sup>1</sup></div>
+<div class="radius" style="display:none">184</div>
+<div id="id91eNeg" class="eNeg" style="display:none">1.5</div>
+<div id="id91ionizationE1" class="ionizationE1" style="display:none">568.3</div>
+</td>
+
+<td id="id92" class="elementCell" style="z-index:12" onclick="highlight('id92')">
+<div class="atomicNum">92</div>
+<div class="symbol">U</div>
+<div class="weight" style="display:block">238</div>
+<div class="eConfig" style="display:none">5f<sup>3</sup>6d<sup>1</sup></div>
+<div class="radius" style="display:none">183</div>
+<div id="id92eNeg" class="eNeg" style="display:none">1.7</div>
+<div id="id92ionizationE1" class="ionizationE1" style="display:none">597.6</div>
+</td>
+
+<td id="id93" class="elementCell" style="z-index:11" onclick="highlight('id93')">
+<div class="atomicNum">93</div>
+<div class="symbol">Np</div>
+<div class="weight" style="display:block">(237)</div>
+<div class="eConfig" style="display:none">5f<sup>4</sup>6d<sup>1</sup></div>
+<div class="radius" style="display:none">180</div>
+<div id="id93eNeg" class="eNeg" style="display:none">1.3</div>
+<div id="id93ionizationE1" class="ionizationE1" style="display:none">604.5</div>
+</td>
+
+<td id="id94" class="elementCell" style="z-index:10" onclick="highlight('id94')">
+<div class="atomicNum">94</div>
+<div class="symbol">Pu</div>
+<div class="weight" style="display:block">(244)</div>
+<div class="eConfig" style="display:none">5f<sup>6</sup>6d<sup>0</sup></div>
+<div class="radius" style="display:none">180</div>
+<div id="id94eNeg" class="eNeg" style="display:none">1.3</div>
+<div id="id94ionizationE1" class="ionizationE1" style="display:none">581.4</div>
+</td>
+
+<td id="id95" class="elementCell" style="z-index:9" onclick="highlight('id95')">
+<div class="atomicNum">95</div>
+<div class="symbol">Am</div>
+<div class="weight" style="display:block">(243)</div>
+<div class="eConfig" style="display:none">5f<sup>7</sup>6d<sup>0</sup></div>
+<div class="radius" style="display:none">173</div>
+<div id="id95eNeg" class="eNeg" style="display:none">-</div>
+<div id="id95ionizationE1" class="ionizationE1" style="display:none">576.4</div>
+</td>
+
+<td id="id96" class="elementCell" style="z-index:8" onclick="highlight('id96')">
+<div class="atomicNum">96</div>
+<div class="symbol">Cm</div>
+<div class="weight" style="display:block">(247)</div>
+<div class="eConfig" style="display:none">5f<sup>7</sup>6d<sup>1</sup></div>
+<div class="radius" style="display:none">168</div>
+<div id="id96eNeg" class="eNeg" style="display:none">-</div>
+<div id="id96ionizationE1" class="ionizationE1" style="display:none">578.1</div>
+</td>
+
+<td id="id97" class="elementCell" style="z-index:7" onclick="highlight('id97')">
+<div class="atomicNum">97</div>
+<div class="symbol">Bk</div>
+<div class="weight" style="display:block">(247)</div>
+<div class="eConfig" style="display:none">5f<sup>9</sup>6d<sup>0</sup></div>
+<div class="radius" style="display:none">168</div>
+<div id="id97eNeg" class="eNeg" style="display:none">-</div>
+<div id="id97ionizationE1" class="ionizationE1" style="display:none">598.0</div>
+</td>
+
+<td id="id98" class="elementCell" style="z-index:6" onclick="highlight('id98')">
+<div class="atomicNum">98</div>
+<div class="symbol">Cf</div>
+<div class="weight" style="display:block">(251)</div>
+<div class="eConfig" style="display:none">5f<sup>10</sup>6d<sup>0</sup></div>
+<div class="radius" style="display:none">168</div>
+<div id="id98eNeg" class="eNeg" style="display:none">-</div>
+<div id="id98ionizationE1" class="ionizationE1" style="display:none">606.1</div>
+</td>
+
+<td id="id99" class="elementCell" style="z-index:5" onclick="highlight('id99')">
+<div class="atomicNum">99</div>
+<div class="symbol">Es</div>
+<div class="weight" style="display:block">(252)</div>
+<div class="eConfig" style="display:none">5f<sup>11</sup>6d<sup>0</sup></div>
+<div class="radius" style="display:none">165</div>
+<div id="id99eNeg" class="eNeg" style="display:none">-</div>
+<div id="id99ionizationE1" class="ionizationE1" style="display:none">619.4</div>
+</td>
+
+<td id="id100" class="elementCell" style="z-index:4" onclick="highlight('id100')">
+<div class="atomicNum">100</div>
+<div class="symbol">Fm</div>
+<div class="weight" style="display:block">(257)</div>
+<div class="eConfig" style="display:none">5f<sup>12</sup>6d<sup>0</sup></div>
+<div class="radius" style="display:none">167</div>
+<div id="id100eNeg" class="eNeg" style="display:none">-</div>
+<div id="id100ionizationE1" class="ionizationE1" style="display:none">627.2</div>
+</td>
+
+<td id="id101" class="elementCell" style="z-index:3" onclick="highlight('id101')">
+<div class="atomicNum">101</div>
+<div class="symbol">Md</div>
+<div class="weight" style="display:block">(258)</div>
+<div class="eConfig" style="display:none">5f<sup>13</sup>6d<sup>0</sup></div>
+<div class="radius" style="display:none">173</div>
+<div id="id101eNeg" class="eNeg" style="display:none">-</div>
+<div id="id101ionizationE1" class="ionizationE1" style="display:none">634.9</div>
+</td>
+
+<td id="id102" class="elementCell" style="z-index:2" onclick="highlight('id102')">
+<div class="atomicNum">102</div>
+<div class="symbol">No</div>
+<div class="weight" style="display:block">(259)</div>
+<div class="eConfig" style="display:none">5f<sup>14</sup>6d<sup>0</sup></div>
+<div class="radius" style="display:none">176</div>
+<div id="id102eNeg" class="eNeg" style="display:none">-</div>
+<div id="id102ionizationE1" class="ionizationE1" style="display:none">641.6</div>
+</td>
+
+<td id="id103" class="elementCell" style="z-index:1" onclick="highlight('id103')">
+<div class="atomicNum">103</div>
+<div class="symbol">Lr</div>
+<div class="weight" style="display:block">(262)</div>
+<div class="eConfig" style="display:none">5f<sup>14</sup>6d<sup>1</sup></div>
+<div class="radius" style="display:none">161</div>
+<div id="id103eNeg" class="eNeg" style="display:none">-</div>
+<div id="id103ionizationE1" class="ionizationE1" style="display:none">472.8</div>
+</td>
+
+</tr>    <!-- End Actinides row -->
+
+</table>
+</body>
+</html>

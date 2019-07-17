@@ -1,0 +1,65 @@
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.12/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.12/addons/p5.dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <script src="reversed.js"></script>
+    <script src="https://cdn.jsdelivr.net/quicksettings/3.0.2/quicksettings.min.js"></script>
+    <script src="./p5.gui.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.min.css">
+
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <!-- <a class="navbar-item" href="./dice.html">Dice</a> -->
+        <a class="navbar-item" href="./forward.html">Dice Sim</a>
+        <a class="navbar-item" href="./reversed.html">Reversed</a>
+        <a class="navbar-item" href="./equilibrium.html">Competition</a>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="hero section">
+        <h2 class="title">Reversed simulation</h2>
+        <p>We explored how different parameters changes the discarding (<i>forward</i>) mechanism.  What if --- what if the "dead" dice are allowed to come back to life, that is, if we introduce a <i>backward</i> mechanism?</p>
+        <p>In this simulation we start with 500 dice, all perished at the beginning and slowly coming back to life.  The graph will now show <i>both</i> components.</p>
+      </div>
+
+      <div class="section">
+        <div class="section box">
+          <div class="columns">
+            <div class="column is-one-quarter">
+              <div id="controls"></div>
+              <hr />
+              <textarea id="dataDisplay" rows="15">Round, Remain, Discarded</textarea>
+            </div>
+            <div class="column is-half">
+              <canvas class="box" id="myChart" width="600" height="600"></canvas>
+            </div>
+            <div class="column is-one-quarter">
+              <div id="guiPanel"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <div>
+            <div id="myContainer" width="1000"></div>
+          </div>
+        </div>
+      </div>
+
+  </body>
+  <footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>
+        <a href="http://www.jon.hk">Jon Chui</a> 2016-2017
+      </p>
+      <p>
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
+      </p>
+    </div>
+  </div>
+</footer>
+</html>

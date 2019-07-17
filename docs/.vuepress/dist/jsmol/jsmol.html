@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+
+<script type="text/javascript" src="JSmol.min.js">
+</script>
+
+<script>
+var Info = {
+  color: "#003476", // somehow JSmol lightens the color...
+  height: 600,
+  width: 600,
+  script: "load $caffeine",
+  use: "HTML5",
+  j2sPath: "j2s",
+  disableInitialConsole: true
+};
+
+Jmol.getApplet("myJmol", Info);
+
+</script>

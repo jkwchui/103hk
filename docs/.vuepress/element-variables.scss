@@ -1,0 +1,23 @@
+@import url("https://use.typekit.net/rfb7wlv.css");
+// @import url("../../node_modules/mapbox-gl/src/css/mapbox-gl.css");
+  
+/* theme color */
+$--color-primary: #0064a6;
+$--color-success: #009b90 !default;
+$--color-warning: #e6a23c !default;
+$--color-danger: #ad1644 !default;
+$--color-info: #909399 !default;
+
+body {
+  font-family: cronos-pro, sans-serif; 
+}
+
+p, li, ul {
+  font-family: cronos-pro, sans-serif; 
+  font-size: 19 px
+}
+
+/* icon font path, required */
+$--font-path: '~element-ui/lib/theme-chalk/fonts';
+
+@import "~element-ui/packages/theme-chalk/src/index";
