@@ -3,8 +3,8 @@ const moment = require('moment');
 const path = require("path");
 
 module.exports = {
-    title: 'jon.hk',
-    description: 'Jon Chui',
+    title: '香港民運資訊',
+    description: '',
     transpileDependencies: [
         'vue-echarts',
         'resize-detector'
@@ -33,17 +33,25 @@ module.exports = {
             //     link: '/'
             // },
             {
-                text: 'Chem',
-                link: '/chem/'
+                text: '逆權運動',
+                link: '/act/'
             },
             {
-                text: 'Jon',
-                link: '/jon/'
+                text: '地圖',
+                link: '/map/'
             },
             {
-                text: 'Sandbox',
-                link: '/sandbox/'
+                text: '民間團體',
+                link: '/org/'
             },
+            {
+                text: '傳媒',
+                link: '/media/'
+            },
+            // {
+            //     text: 'Sandbox',
+            //     link: '/sandbox/'
+            // },
             // {
             //     text: 'BabylonJS',
             //     link: '/babylonjs/'
@@ -79,173 +87,61 @@ module.exports = {
         ],
         sidebarDepth: 0,
         sidebar: {
-            '/chem/': [
-                // {
-                //         title: 'Home',
-                //         collapsable: false,
-                //         children: [
-                //             '/'
-                //         ]
-                //     },
+            '/map/': [
+                ['./', '7.21 中環 Central'],
                 {
-                    title: 'Course',
+                    title: '👁️ 地圖組 Observers',
+                    collapsable: false,
+                    children: [
+                        ['./obs/', 'How to'],
+                        ['./obs/gear/', '📂 What to bring'],
+                        // ['./obs/paper', '💯 Paperwork'],
+                        // ['./obs/study', '✏️ How to study'],
+                    ],
+                },
+            ],
+            '/act/': [
+                {
+                    title: '逆權運動',
                     collapsable: true,
                     children: [
-                        ['./course/', '📂 Info'],
-                        ['./course/paper', '💯 Paperwork'],
-                        ['./course/study', '✏️ How to study'],
+                        ['./goal/', ' 訴求'],
+                        ['./', '今期活動'],
+                        ['./prev/', ' 已住事件'],
                         {
-                            title: 'Syllabus',
-                            sidebarDepth: 0,
+                            title: '參與小冊子',
                             children: [
-                                ['./course/syllabus/', 'En 🇬🇧 🇺🇸 🇨🇦'],
-                                ['./course/syllabus/es', 'Es 🇲🇽 🇪🇸 🇦🇷']
+                                ['./info/march/', '遊行人仕'],
+                                ['./info/front/', '前線']
                             ]
                         },
                     ],
-                },
-                {
-                    title: 'Topics',
-                    children: [
-                        ['./topic/0/', '0 - Foundations'],
-                        ['./topic/1/', '1 - Stoichiometry'],
-                        ['./topic/11A/', '11A - Measurements'],
-                        ['./topic/2/', '2/12 - Atomic structure'],
-                        ['./topic/3/', '3/13 - Periodicity'],
-                        ['./topic/4/', '4/14 - Structure & Bonding'],
-                        ['./topic/5/', '5/15 - Energetics'],
-                        ['./topic/6/', '6/16 - Kinetics'],
-                        ['./topic/7/', '7/17 - Equilibrium'],
-                        ['./topic/8/', '8/18 - Acids & Bases'],
-                        ['./topic/9/', '9/19 - Redox'],
-                        ['./topic/10/', '10/20 - Organic Chemistry'],
-                        ['./topic/11B/', '11B/21 - Spectroscopy'],
-                        ['./topic/D/', 'D - Drugs & Medicine 💊'],
-                        // ['./topic/', ''],
-
-                    ]
-                },
-                {
-                    title: 'IA',
-                    children: [
-                        ['./IA/', 'Internal Assessment'],
-                        ['./IA/plan', '1. Planning'],
-                        ['./IA/critique-ex', '1B. Critique an Exploration'],
-                        {
-                            title: 'Inventory',
-                            children: [
-                                ['./IA/equipment', '🔬 Sensors and Equipment'],
-                                ['./IA/reagent', '🔥 Reagents'],
-                            ]
-                        }
-                    ]
-                },
-                {
-                    title: 'Skills',
-                    children: [
-                        {
-                            title: '💾 ICT',
-                            children: [
-                                ['./skills/analysis/spreadsheet/', '📊 Spreadsheet'],
-                                ['./skills/mol-model/', 'Molecular modeling'],
-                                ['./skills/database/', '📇 Exploring databases'],
-                            ]
-                        },
-                        {
-                            title: '🥼 Lab',
-                            children: [
-                                ['./skills/lab', 'Wet lab skills'],
-                                ['./skills/image-analysis/', 'Image analysis'],
-                            ]
-                        },
-                        {
-                            title: '✍️ Writing',
-                            children: [
-                                ['./skills/writing', 'On science writing'],
-                                // ['./skills/writing', 'On science writing'],
-                            ]
-                        }
-                    ],
-                },
-                {
-                    title: 'Resources',
-                    sidebarDepth: 0,
-                    children: [
-                        ['./resources/resources/', '🧳 Resources'],
-                        ['./resources/notes/', '📘 Notes'],
-                        ['./resources/tools/', '🔧 Tools'],
-                        {
-                            title: '🔤 Glossary',
-                            children: [
-                                ['./resources/glossary/', 'En 🇬🇧 🇺🇸 🇨🇦'],
-                                ['./resources/glossary/es', 'Es 🇲🇽 🇪🇸 🇦🇷'],
-                                ['./resources/glossary/fr', 'Fr 🇫🇷 🇨🇩 🇨🇦'],
-                                ['./resources/glossary/ja', 'Jp 🇯🇵'],
-                            ]
-                        },
-                        ['./resources/bestiary/', 'Bestiary'],
-                    ],
-                },
-                // {
-                //     title: 'Sandbox',
-                //     children: [
-                //         './sandbox/fa/',
-                //         './sandbox/bootstrap/',
-                //         './sandbox/chart/',
-                //         './sandbox/math/',
-                //         './sandbox/pug/'
-                //     ]
-                // },
+                }
             ],
-
-            '/jon/': [{
-                title: 'About',
-                collapsable: true,
-                children: [
-                    ['./', 'Bio'],
-                    ['./website', '🗄️ Website'],
-                    ['./colophon', '⌨️ Colophon'],
-                    ['./registry', '💰 Registry of interests'],
-                ],
-            },
-               /* {
-                    title: 'Essays',
-                    children: [
-                        ['./essays/about-website/', 'About website'],
-                    ],
-                },*/
+            '/org/': [
                 {
-                    title: 'Guides',
+                    title: '民間團體',
+                    collapsable: true,
                     children: [
-                        ['./guides/', 'Guides'],
+                        ['./', '民間團體'],
+                        ['./religious/', ' 宗教界'],
+                        ['./district/', ' 地區工作'],
+                        ['./politics/', ' 政治'],
+                        ['./academic/', ' 學術界'],
+                        ['./prof/', ' 專業人士'],
+                        // ['./prof', ' 專業人士'],
                     ],
-                },
-                {
-                    title: 'Anki',
-                    children: [
-                        ['./anki/', 'Anki'],
-                    ],
-                },
-                {
-                    title: 'Teaching',
-                    sidebarDepth: 0,
-                    children: [
-                        ['./teaching/', 'Teaching'],
-                        ['./teaching/priorities', '1. Priorities'],
-                        ['./teaching/habits', '2A. Habits'],
-                        ['./teaching/techniques', '2B. Techniques'],
-                        ['./teaching/plays', '3. Plays'],
-                    ],
-                },
+                }
             ],
-
-            '/sandbox/': [{
-                title: 'Sandbox',
-                children: [
-                    ['./', 'All features'],
-                    ['./airtable/', 'Airtable pull'],
-                ],
-            }, ]
+            '/media/': [
+                {
+                    title: '傳媒',
+                    collapsable: true,
+                    children: [
+                        ['./', '傳媒']
+                    ]
+                }
+            ]
         },
         displayAllHeaders: true,
     },
@@ -275,27 +171,45 @@ module.exports = {
         //     }
         // ],
         '@vuepress/active-header-links',
-        '@vuepress/medium-zoom',
+        // '@vuepress/medium-zoom',
         '@vuepress/back-to-top',
-        '@vuepress/pwa',
-        [ 
-            '@vuepress/google-analytics',
-            {
-              'ga': 'UA-134636637-1' // UA-00000000-0
+        {
+            '@vuepress/pwa': {
+                serviceWorker: true,
+                updatePopup: {
+                    message: "有可更新項目",
+                    buttonText: "更新頁面"
+                }
             }
-        ],
+        },
+        // [ 
+        //     '@vuepress/google-analytics',
+        //     {
+        //       'ga': 'UA-134636637-1' // UA-00000000-0
+        //     }
+        // ],
+        {
+            '@vuepress/medium-zoom': {
+                selector: 'img.zoom-custom-imgs',
+                // medium-zoom options here
+                // See: https://github.com/francoischalifour/medium-zoom#options
+                options: {
+                    margin: 16
+                }
+            }
+        },
         [
             'vuepress-plugin-smooth-scroll',
             { 'vuepress-plugin-smooth-scroll': true }
         ],
-        [
-            '@goy/svg-icons',
-            {
-                // Specific the folder with absolute path
-                // where your gonna put svg icons in
-                svgsDir: `${__dirname}/svgs`
-            }
-        ],
+        // [
+        //     '@goy/svg-icons',
+        //     {
+        //         // Specific the folder with absolute path
+        //         // where your gonna put svg icons in
+        //         svgsDir: `${__dirname}/svgs`
+        //     }
+        // ],
         'tabs'
         // 'flowchart',
     ],
