@@ -3,7 +3,7 @@ home: true
 heroImage: logo.png
 heroText: 自己香港 自己救
 tagline: Let us save our Hong Kong in our own ways
-actionText: 兄弟爬山!
+actionText: 爬山了!
 actionLink: /act/
 features:
 - title: 逆權運動 2019 Protests
