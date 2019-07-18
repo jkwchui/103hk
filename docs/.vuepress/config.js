@@ -124,12 +124,14 @@ module.exports = {
                     children: [
                         ['./goal/', ' 訴求'],
                         ['./', '今期活動'],
-                        ['./prev/', ' 已住事件'],
+                        ['./prev/', '往事回顧'],
+                        ['./wall/', '各區連儂牆'],
                         {
                             title: '參與小冊子',
                             children: [
                                 ['./info/march/', '遊行人仕'],
-                                ['./info/front/', '前線']
+                                ['./info/front/', '前線'],
+                                ['./info/promo/', '文宣']
                             ]
                         },
                     ],
