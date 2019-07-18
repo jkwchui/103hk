@@ -33,6 +33,10 @@ module.exports = {
             //     link: '/'
             // },
             {
+                text: '引言',
+                link: '/intro/'
+            },
+            {
                 text: '逆權運動',
                 link: '/act/'
             },
@@ -87,6 +91,19 @@ module.exports = {
         ],
         sidebarDepth: 0,
         sidebar: {
+            '/intro/': [
+                ['./', '引言'],
+                {
+                    title: '關於網頁',
+                    collapsable: false,
+                    children: [
+                        ['./editor/', '編者的話'],
+                        // ['./obs/gear/', '📂 What to bring'],
+                        // ['./obs/paper', '💯 Paperwork'],
+                        // ['./obs/study', '✏️ How to study'],
+                    ],
+                },
+            ],
             '/map/': [
                 ['./', '7.21 中環 Central'],
                 {
