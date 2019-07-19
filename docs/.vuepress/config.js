@@ -89,7 +89,7 @@ module.exports = {
             //     ]
             // }
         ],
-        sidebarDepth: 0,
+        sidebarDepth: 1,
         sidebar: {
             '/intro/': [
                 ['./', '引言'],
@@ -110,8 +110,8 @@ module.exports = {
                     title: '👁️ 地圖組 Observers',
                     collapsable: false,
                     children: [
-                        ['./obs/', 'How to'],
-                        ['./obs/gear/', '📂 What to bring'],
+                        ['./obs/', '程序資訊'],
+                        ['./obs/gear/', '裝備'],
                         // ['./obs/paper', '💯 Paperwork'],
                         // ['./obs/study', '✏️ How to study'],
                     ],
@@ -131,9 +131,10 @@ module.exports = {
                             children: [
                                 ['./info/march/', '遊行人仕'],
                                 ['./info/front/', '前線'],
-                                ['./info/promo/', '文宣']
+                                ['./info/promo/', '文宣'],
                             ]
                         },
+                        ['./info/help/', '我要援助']
                     ],
                 }
             ],
