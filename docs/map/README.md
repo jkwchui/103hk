@@ -1,13 +1,24 @@
-# 7.21 即時地圖 Real time map
+# 7.21 實時地圖 Real time map
 
-![Central map](/image/map/721-map-blank-nogrid.png)
+::: warning 報料 Report an event
 
-最近更新 last updated: 18.07.2019
+如有現場突發情況,可以向這個 [tg channel](https://t.me/scottscout) 報料.  
 
-::: tip 報料 Report an event
-
-We monitor the following channels:
-
-You can also report directly to the open telegram group: [t.me/721map-open](t.me/721map-open)  We prioritize submissions with photos or videos as fact checks.
+In addition to our own runners, we also monitor [this tg channel](https://t.me/scottscout).
 
 :::
+
+## 地圖 Map
+
+![Central map](/image/map/721SouthornTamar-blank-grid.jpg)
+
+## 現場資訊 Events
+
+<Foldable>
+
+| 時間 | 區域 | 地點 | 事項 |
+|:---:|:---:|:----:|:----|
+| | | | |
+
+</Foldable>
+

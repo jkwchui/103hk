@@ -1,6 +1,29 @@
-# 地圖組資訊 Info for observers
+# 地圖組 Runners
+
+## 狀態 Status
+
+![Zones monitored](/image/map/721SouthornTamar-zoned.jpg)
+
+<Foldable>
+
+| 區域 | 狀態 |
+|:---:|:----:|
+| C1 | off |
+| A1 | off |
+| A2 | off |
+| B1 | off |
+| B2 | off |
+| D1 | off |
+| D2 | off |
+| D3 | off |
+
+</Foldable>
+
+## 資訊 Info
 
 **地圖組嘅單一目的係做一張精準嘅現場地圖**。 一張準確嘅地圖,可以方便所有的參與者、前線、記者互相溝通,同埋係一個冇大台帶領嘅情況下各自做正確嘅決定。
+
+We are a single-purpose group, and the focus is on an accurate, real-time map.  This facilitates communication by protestors, front-line, and reporters, and help them make correct decisions individually.
 
 基本運作流程 (以下用612大概兩點半左右嘅情況做例子):
 
@@ -29,15 +52,11 @@ I hope to order some embroidered caps and T-shirts for you, so you can more easi
 
 ## 通信層面
 
-We will communicate mostly through the closed telegram group here.
-
-My tg is [@hongkong103](https://t.me/hongkong103).  You will have my phone number for urgent text/calls when we meet.
+We will communicate mostly through the closed telegram group.  From there you have my phone number for urgent text/calls.
 
 ## 負責區域
 
-I propose we (you) distribute yourselves into 10x10 areas for patrolling.  I estimate that you will be able to cover this distance in 5 minutes, and so you will be able to walk out-in-out in 15 minutes cycles.  We end *out* because you probably need to be somewhat away from the crowd to have reception.
-
-I further propose, when possible, we have a "floater".
+I propose we (you) pick a zone for patrolling.  I further propose, when possible, we have a "floater".  Please coordinate yourselves in the group.
 
 Refrain from being "too involved".  We need you to do what you are doing.  Please stay safe.  If you are confronted, explain if it is reasonable.  Get to safe locations.  The map is not as important as you are.
 

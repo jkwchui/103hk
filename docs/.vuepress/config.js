@@ -105,9 +105,9 @@ module.exports = {
                 },
             ],
             '/map/': [
-                ['./', '7.21 中環 Central'],
+                ['./', '7.21 地圖'],
                 {
-                    title: '👁️ 地圖組 Observers',
+                    title: '👁️ 地圖組 Runners',
                     collapsable: false,
                     children: [
                         ['./obs/', '程序資訊'],
