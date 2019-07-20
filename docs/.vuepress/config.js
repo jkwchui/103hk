@@ -28,10 +28,6 @@ module.exports = {
         docsDir: 'docs',
         // repo: 'jkwchui/chem-jon-hk',
         nav: [
-            // {
-            //     text: 'Home',
-            //     link: '/'
-            // },
             {
                 text: '引言',
                 link: '/intro/'
@@ -44,38 +40,14 @@ module.exports = {
                 text: '地圖',
                 link: '/map/'
             },
-            {
-                text: '民間團體',
-                link: '/org/'
-            },
-            {
-                text: '傳媒',
-                link: '/media/'
-            },
             // {
-            //     text: 'Sandbox',
-            //     link: '/sandbox/'
+            //     text: '民間團體',
+            //     link: '/org/'
             // },
             // {
-            //     text: 'BabylonJS',
-            //     link: '/babylonjs/'
+            //     text: '傳媒',
+            //     link: '/media/'
             // },
-            // {
-            //     text: 'pdf',
-            //     link: '/pdf/'
-            // },
-            // {
-            //     text: 'Syllabus',
-            //     link: '/Syllabus/'
-            // },
-            // {
-            //     text: 'Table',
-            //     link: '/Table/'
-            // }
-            // {
-            //     text: 'Admin',
-            //     link: '/admin/#/',
-            // }
             // {
             //     text: 'Languages',
             //     items: [{
@@ -202,12 +174,12 @@ module.exports = {
                 }
             }
         },
-        // [ 
-        //     '@vuepress/google-analytics',
-        //     {
-        //       'ga': 'UA-134636637-1' // UA-00000000-0
-        //     }
-        // ],
+        [ 
+            '@vuepress/google-analytics',
+            {
+              'ga': 'UA-134636637-2' // UA-00000000-0
+            }
+        ],
         {
             '@vuepress/medium-zoom': {
                 selector: 'img.zoom-custom-imgs',
