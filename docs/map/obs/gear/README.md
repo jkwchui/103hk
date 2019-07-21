@@ -9,4 +9,4 @@
 * **電話** phone
   * **後備電池** power bank
 
-如果自己打印空白地圖,可以用[這 PDF 版本](https://103.hk/image/map/721-map-blank-full.pdf)。
+如果自己打印空白地圖,可以用[這 PDF 版本](/image/721-blank.pdf)。
