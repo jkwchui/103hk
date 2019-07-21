@@ -1,6 +1,8 @@
 # 7.21 實時地圖 Real time map
+<!-- 
+我們會在 七月21號 下午三點左右 開始觀察現場情況。  We will start monitoring and updating the map from 3 pm on 7/21.  我哋條team好細, 希望可以做到每15分鐘更新一次。 -->
 
-我們會在 七月21號 下午三點左右 開始觀察現場情況。  We will start monitoring and updating the map from 3 pm on 7/21.  我哋條team好細, 希望可以做到每15分鐘更新一次。
+23:37 --- 多謝各位支持。將在十分鐘左右做最後一次更新。如有建議可tg @hongkong103.
 
 ::: warning 報料 Report an event
 
