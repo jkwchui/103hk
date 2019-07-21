@@ -18,6 +18,8 @@ In addition to our own runners, we also monitor [this tg channel](https://t.me/s
 
 <!-- <Foldable> -->
 
+sorry 實在冇時間更新兩仿，麻煩可看地圓
+
 座標地點可參考[空白地圖](/721-blank.jpg)。  如要事先列印, 可用[這PDF檔案](/721-blank.pdf)。
 
 
