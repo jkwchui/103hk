@@ -18,6 +18,8 @@ In addition to our own runners, we also monitor [this tg channel](https://t.me/s
 
 <!-- <Foldable> -->
 
+座標地點可參考[空白地圖](/721-blank.jpg)。  如要事先列印, 可用[這PDF檔案](/721-blank.pdf)。
+
 | 時間 | 地區 |       座標        |   地點   | 事項               |
 |:----:|:--:|:-----------------:|:------:|:-----------------|
 | 10:00 | 灣仔 | O20, Q19, R23-Q23 | 警察總部 | 警方已前後出入口部署兩米高水馬 |
