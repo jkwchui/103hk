@@ -2,7 +2,7 @@
 
 ## 7.21 大遊行
 
-![](/image/promo/721/iGiGniH.jpg)
+![](/image/promo/721/721-nurse-letter.jpg)
 
 **起點**: 銅鑼灣 維多利亞公園
 
