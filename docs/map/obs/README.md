@@ -99,8 +99,8 @@ I hope to order some embroidered caps and T-shirts for you, so you can more easi
         * Resonance arrow for bi-directional flow
       * draw triangles together with annotations for other observations
     3. Urgent/ spontaneous events (eg teargas/ black flag): message immediately with this template:
-        * Time | District | Coordinates on your map (Better with street name) | Event
-            * e.g. 14:00 | 金鐘 | G3 夏慤道 | 出黑旗
+        * Time | District | Map coordinates | Location (Better with street name) | Event
+            * e.g. 14:00 | 金鐘 | J10 | 夏慤道-添華道 | 出黑旗
         * Send pics / vids if you think it is important
     4. take picture of the map and send every 15 mins.  You will probably need to walk to less crowded places to have internet access.  
         * You may not need to send picture of map if not much is happening in the previous while: just use the same template as above to report isolated updates.

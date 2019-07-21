@@ -77,7 +77,17 @@ module.exports = {
                 },
             ],
             '/map/': [
-                ['./', '7.21 地圖'],
+                {
+                    title: '🗺️ 7.21 地圖',
+                    collapsable: false,
+                    children: [
+                        ['./', '地圖'],
+                        ['./use/', '使用方法'],
+                        ['./textonly/', '純文字版本'],
+                        // ['./obs/paper', '💯 Paperwork'],
+                        // ['./obs/study', '✏️ How to study'],
+                    ],
+                },
                 {
                     title: '👁️ 地圖組 Runners',
                     collapsable: false,
