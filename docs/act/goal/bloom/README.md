@@ -445,33 +445,248 @@ We shall never surrender.
 
 </Foldable>
 
-### 
+## 法律界 
 
 <Foldable>
 
-![](/image/bloom/.png)
+香港法律界的聲明
+
+7月21日晚，我們目睹在元朗發生了數十年來，對香港的法治和秩序，以及市民的自由最嚴重的衝擊。一個文明社會絕對不會容許香港市民成為一群有組織武裝暴徒的施襲對象。儘管香港警察未必與暴徒勾結，惟警方對暴徒視而不見，無疑更令人不安。
+
+我們不希望得出這個結論，這些質疑亦必須消除。鑑此，香港法律界促請行政長官根據《調查委員會條例》（香港法例第86章），成立調查委員會，就7月21日於元朗發生的事件並警方的不作為，展開全面和獨立的調查。7月21日在元朗發生的事件，是對香港法治的公然侮辱，必須立即採取行動，讓本港和國際社會恢復對警方的信心。特區政府 － 尤其律政司司長迄今的回應完全不足，亦缺乏實質內容。
+
+不幸的是，基於這些事件，香港市民已不再信任和尊重律政司司長。此聲明是向行政長官、律政司和律政司司長發出的公開呼籲，要求他們作為公眾利益的守護者，立即採取行動。
+
+我們期望特區政府、律政司司長和律政司就此聲明作即時和全面的回應。在沒有獨立調查的情況下，要揭示警方不作為的原因，除了對警務處處長採取法律行動，及／或對負責的警員就其涉嫌疏忽職守提出私人檢控之外，別無他法。
+
+The Statement of the Hong Kong Legal Profession
+
+On the night of July 21 in Yuen Long, we witnessed the most serious attack on the law and order in Hong Kong and civil liberties of the Hong Kong people in recent decades. A civilised society will not condone what happened to ordinary citizens of Hong Kong who had been subjected to organised violence by an armed mob. This is even more disturbing in light of circumstances which suggest, if not collusion, then a deliberate turning of a blind eye on the part of the Hong Kong Police Force (“the Police”).
+
+We do not wish to draw such conclusions. However, these suspicions must be laid to rest. In these circumstances, the Hong Kong Legal Profession urges the Chief Executive to forthwith appoint a Commission of Inquiry under the Commissions of Inquiry Ordinance (Cap. 86) to launch a full and independent inquiry into the events that took place in Yuen Long and the apparent inaction on the part of the Police. What we saw in Yuen Long on July 21 was a blatant affront to the Rule of Law in Hong Kong and action must be taken immediately to restore confidence in the institution and the Police, both locally and internationally.
+
+The response so far from the Hong Kong Government, and in particular, the Secretary for Justice has been wholly inadequate and lacking in substance.
+
+Unfortunately, in light of these events, although, the Secretary for Justice no longer commands the trust and respect of the Hong Kong people. This statement is an open call for immediate action on the part of the Chief Executive, the Department of Justice and the Secretary for Justice, who is supposed to be the guardian of the public interest in Hong Kong.
+
+We expect an immediate and full response from the Government, the Secretary for Justice and the Department of Justice. In the absence of an independent inquiry, there would be little alternative but to consider legal action against the Commissioner of Police and/or private prosecutions against the officers in charge for neglect of their duty in order to bring to light the reasons for the inaction of the Police.
+
+發起人 Initiators:
+陳景生 Chan King Sang Edward SC (1975)
+梁家傑 Leong Kah Kit Alan SC (1983)
+夏偉志 Harris Graham Anthony SC (1985)
+彭耀鴻 Pang Yiu Hung Robert SC (1988)
+潘熙 Pun Hei Hectar SC (1995)
+查錫我 Char Shik Ngor Stephen (2007)
+鄭瑞泰 Cheng Shui Tai (1995)
+張達明 Cheung Tat Ming Eric (1989)
+張惠儀 Cheung Wai Yee Betty (1996)
+張耀良 Cheung Yiu Leung (1993)
+關尚義 Clancey John Joseph (1997)
+何俊麒 Ho Chun Ki Frederick (2000)
+何俊仁 Ho Chun Yan Albert (1977)
+郭憬憲 Kwok King Hin Douglas (1998)
+林洋鋐 Lam Kenneth (2008)
+廖成利 Liu Sing Lee Bruce (1994) 
+文浩正 Man Ho Ching Jonathan (2004)
+吳思諾 Ng Sze Nok Senia (2014)
+潘淑瑛 Poon Suk Ying Debora (2000)
+石書銘 Shek Randy Shu Ming (2008)
+譚俊傑 Tam Chun Kit Jeffrey (2009)
+韋智達 Vidler Michael John (1992)
+黃鶴鳴 Wong Hok Ming Alan (2004)
+王學今 Wong Huk Kam (2001)
+黃國桐 Wong Kwok Tung Daniel (1986)
+黃瑞紅 Wong Shui Hung Linda (2002)
+黃宇逸 Wong Yu Yat Anson (2015)
+葉海琅 Yip Hoi Long Richard (2011)
+阮陳淑怡 Yuen Chan Suk Yee Helena (1981)
+郭榮鏗 Kwok Wing Hang Dennis (2006)
+<!-- 
+![](/image/bloom/.png) -->
 
 :::tip 原文
 
-[]()
+[立場新聞 香港法律界的聲明：促成立調查委員會　查 721 元朗事件及警方不作為](https://thestandnews.com/politics/%E9%A6%99%E6%B8%AF%E6%B3%95%E5%BE%8B%E7%95%8C%E7%9A%84%E8%81%B2%E6%98%8E-%E4%BF%83%E6%88%90%E7%AB%8B%E8%AA%BF%E6%9F%A5%E5%A7%94%E5%93%A1%E6%9C%83-%E6%9F%A5-721-%E5%85%83%E6%9C%97%E4%BA%8B%E4%BB%B6%E5%8F%8A%E8%AD%A6%E6%96%B9%E4%B8%8D%E4%BD%9C%E7%82%BA/)
 
 :::
 
 </Foldable>
 
-### 
+## 前政府官員及社會人士 
 
 <Foldable>
 
-![](/image/bloom/.png)
+**政府主動促進和解 各方堅守和平克制**
+
+《逃犯條例》修訂自六月起引發連串大型公眾遊行和抗議行動，由於特區政府的回應和民眾訴求之間存在落差，接連的和平遊行或請願常演變成警民衝突，暴力在惡性升級，警民關係超越臨界線，危險境況已在滑坡邊上，大眾憂心忡忡。
+
+我們是一群熱愛香港、長期參與香港發展，並以此地為家的香港人。眼見事態惡化，有感降溫之逼切，否則後果不堪設想。我們懇切呼籲各方當下必須克制，放下敵意，甚或暴力抗爭，再謀求走出困局之路。我們呼籲：
+
+**行政長官及特區政府**
+* 展現作為特區領袖的政治道德勇氣，從香港社會整體利益出發，以實際行動化解當前社會日深的矛盾；
+* 政治問題始終要政治解決，不把前線警務人員推向政見對立的前緣；
+* 政府帶動和解，成立法定獨立調查委員會，以較宏觀視野和範圍調查過去一個多月的衝突由來和過程。調查旨在尋找真相，並非針對任何一方，並在共同認識的真相基礎上，吸收經驗和教訓，走向和解，修補各方關係。調查過程期間，社會矛盾亦可開始緩和。倡議獨立調查委員會之框架，社會輿論趨向共識，我們懇請行政長官和特區政府再三考慮。
+
+**示威人士**
+* 我們理解眾多請願和示威人士目前的不滿和失望。
+* 市民和平、理性及非暴力表達意見的權利，是必須受到尊重和保護。
+* 我們懇請示威或請願人士縱有多大不滿，亦不要以危害人身及生命方式進行。社會議題的爭取總有其過程，能持續凝聚大多數人的支持才是成功關鍵。暴力每每帶來仇恨，不單分化社群，亦誘發更多暴力，使人偏離初心，主動或被動的流血、失去自由、甚至犧牲。
+
+**警務人員**
+* 我們感受警務人員的工作壓力和面臨的挑戰。
+* 警務管理層在制定應變指揮策略時，應以社會利益為依歸，尤其是在處理突發衝突，盡力避免矛盾進一步升級，並考慮對大多數市民的影響、無辜市民和示威者的反應，以及前線警務人員的安全。
+* 警務人員務必以專業紀律執行職務，維持警隊在市民心目中應有的良好形象。
+
+**新聞自由**
+* 新聞自由是香港的核心價值之一，我們呼籲各方必須尊重和保護。
+
+香港是我們珍視的家，近月來的事態發展，迫使我們直面社會何去何從的問題。警民本無辜，在這危急時刻，我們冀望行政長官和特區政府展現領導風範，以政治手段解決政治問題，儘速設立獨立調查委員會 。此乃減免武力衝突以至紓解社會危機之關鍵所在；各方務必克制，免讓仇恨蔓延 ，撕裂加深， 給香港重新出發的機會。
+
+聯署人（以個人名義）
+
+* 方敏生
+* 王維基
+* 李少南教授
+* 李芝蘭教授
+* 邢福增教授
+* 吳永順
+* 沈祖堯教授
+* 邱誠武
+* 林一星教授
+* 林本利博士
+* 林健枝教授
+* 林崇智牧師
+* 郭國全
+* 袁天佑牧師
+* 袁莎妮
+* 袁國勇教授
+* 陳恩明牧師
+* 陳智遠
+* 陳龍生教授
+* 陳韜文教授
+* 梁敬國
+* 梁萬福醫生
+* 莫宜端
+* 黃英琦
+* 葉根銓
+* 蒲錦昌牧師
+* 蔡元雲醫生
+* 蔡少綿
+* 盧龍光牧師
+* 戴健文
+* 蕭偉強
+* 關焯照博士
+* 羅永聰
+* 羅慶才牧師
+* 蘇鑰機教授
+
+（以姓氏筆劃序排列）
+
+2019年7月19日
+
+<!-- ![](/image/bloom/.png) -->
 
 :::tip 原文
 
-[]()
+[聯署公開信](https://www.facebook.com/zandra.mok/posts/10156415704226198)
 
 :::
 
 </Foldable>
+
+### 李國能 終審法院首任首席法官（1997-2010）
+
+<Foldable>
+
+1. 就如各位市民一樣，我非常關注近日因《逃犯條例》草案爭議而引起的事件。身為終審法院前任首席法官，我無意涉足政治領域。不過，有鑑於現時情况特殊，我希望有所建言，尤其當中不少議題都涉及法律角度。
+
+2. 總體而言，毫無疑問，政府犯下嚴重的政治判斷失誤。政府低估港人對內地法律制度的不信任，以及港人感到香港日趨「內地化」的關注。港人透過和平有序遊行所展現的投入感，令人印象深刻。草案即使在立法會取得大多數支持，中央仍支持放棄草案，展現了明智務實。
+
+3. 非法和暴力行為必須人人譴責，衝擊立法會的場面醜陋和令人震驚。在法治之下，這不可容忍。法律被故意違反，涉事者必須被法律追究。如果他們在公平審訊後被判罪成，法庭應考慮具阻嚇力的刑罰。
+
+**對特首的幾點意見**
+
+4. 特首已為政府處理事件的手法真誠道歉，應給她機會繼續服務社會。我尊重特首，因她有堅定不移服務公眾的決心。
+
+5. 在特首銳意改善管治的同時，我提出幾點意見。首先，身為領袖的她，下重要決定前，應鼓勵政府內部有廣泛討論，容許所有選項和觀點得到探討，小心衡量，從而作出更好的決定。
+
+6. 其次，在《基本法》之下，特首要對中央政府和香港特區負責。從港人的觀感看，她過度側重前者，她必須為港人更多發聲，並彰顯於人前。
+
+7. 第三，所有出任公職者，無論在行政、立法或司法機關服務，必須時刻銘記他們並非凌駕市民行使家長式管治。他們是人民公僕，應該謙卑服務，並應受到輿論監督。
+
+8. 社會持續有聲音要求政府撤回草案、成立獨立調查委員會，以及給予特赦。
+
+**政府應撤回草案**
+
+9. 政府已暫緩草案，並表示不會在今屆立法會會期於2020年9月完結前再度提交草案，屆時草案將失效。不過，有廣泛聲音要求政府立即撤回草案。暫緩和撤回在實際上並無分別，基於這個原因，以及撤回草案有助和解進程，政府現在應撤回草案。
+
+10. 即使面對廣泛要求，政府拒絕成立法定獨立調查委員會。政府表示，針對警方的投訴，應由獨立監察警方處理投訴委員會調查。
+
+11. 由法官領導的獨立調查委員會調查近期的事件，這機制能更有效地探明真相。獨立調查委員會被視為一項司法程序，聆訊是公開的，公眾和傳媒能夠出席。它能傳召證人。聆訊上的證據在誓言下提出，受絕對特權保障，並受盤問驗證，亦不會在之後的程序被用作針對證人，相關各方有權委任法律代表。政府在1997年之前或之後多次引用獨立調查委員會機制，成績令人滿意。
+
+**監警會效率不及調查委員會**
+
+12. 監警會是為人尊重的機構。然而，即使監警會有再良好的意願，它探明真相的效用，始終不及獨立調查委員會。監警會沒有獨立調查委員會的權力、保障和特點。再者，除了處理投訴個案，監警會只限於識別警方在常規或程序上的疏漏或缺失。
+
+13. 獨立調查委員會提交報告需要一定時間，例如最少9個月。這段時間可讓社會緩和氣氛。再者，在公開聆訊中，指控和申訴均會被公開和探討。這對社會有療癒作用，有助和解進程。
+
+14. 政府擔心警方士氣，我也對警隊抱高度尊重。由獨立調查委員會審視事件，短期內或對警方聲望有影響，但長遠而言能提升其聲望。獨立調查委員會是完全不偏不倚和公正的，它有機會還警方清白。即使對警方有所批評，警方也可透過行動，防範日後重蹈覆轍。聆訊過後，警隊便可翻開新一頁，向前邁進，能讓警方如其格言「光榮和關懷」，繼續做得更好。在沒有獨立調查委員會的情况下，社會對警方的不滿，很大可能會繼續加劇。
+
+**現階段特赦 並不恰當**
+
+15. 至於特赦示威者的建議，以此推論，基於平等原則，特赦也會適用於警務人員。在現階段特赦，即特首指示警方不再調查，並不恰當，與法治不符。社會上每一個人都受法律約束，這是一項基本原則。每個人都須遵守法律，沒有例外，守法之外不應有其他選擇。1977年，儘管當局曾就當年之前的貪污罪行予以部分特赦，但當時環境與今天截然不同。
+
+16. 總括而言，就如前人所說，時間主宰萬物，和解需要時間，今次大概也要一段長時間。在這過程，政府值得社會支持。
+
+作者是終審法院首任首席法官（1997-2010）
+
+編者按：文章標題為編輯所擬，文內小題及重點黑體為編輯所加；原文為英文，中文版本為本報所譯，原文見網址
+
+link.mingpao.com/59258.htm
+
+<!-- ![](/image/bloom/.png) -->
+
+:::tip 原文
+
+[明報 李國能：設獨立調查委員會 有助社會和解](https://news.mingpao.com/pns/%e8%a7%80%e9%bb%9e/article/20190709/s00012/1562610041530/%e6%9d%8e%e5%9c%8b%e8%83%bd-%e8%a8%ad%e7%8d%a8%e7%ab%8b%e8%aa%bf%e6%9f%a5%e5%a7%94%e5%93%a1%e6%9c%83-%e6%9c%89%e5%8a%a9%e7%a4%be%e6%9c%83%e5%92%8c%e8%a7%a3)
+
+:::
+
+</Foldable>
+
+## 商界
+
+### 香港總商會
+
+<Foldable>
+
+香港總商會強烈譴責昨天的暴力事件。面對社會持續分化，引起本地及國際社會關注香港對落實《基本法》和法治的承諾，本會促請各方合力儘快尋找方案，化解當前困局。解決逃犯條例爭議不果，再加上停滯不前的現狀，令公眾覺得訴求遭到漠視，激起民怨。
+
+社會撕裂內訌，市民相互對立，令遊行示威活動漸趨對抗性。我們尊重和平示威人士在過去數周發聲表達關注，他們展現的公民素質和守法精神，實在難得。然而，少數激進人士於和平示威活動後作出暴力行為，令社會震驚。衝擊立法會、圍堵警察總部、沙田暴力衝突，以及昨晚的上環騷亂和中聯辦遭受惡意破壞，均屬不能容忍。而最新在元朗的駭人襲擊無辜市民事件，發展至部分人士罔顧法紀、訴諸暴力，更令香港市民深表震驚和深惡痛絕。
+
+我們認為，要恢復社會安寧，並尋求解決問題根源的方法，政府及遊行示威人士可採取四項基本行動：
+
+* 理解社會各界都心繫香港，致力守護這個世界級城市賴以成功的要素，以及提升生活質素，為下一代締造安居樂業的環境。政府應立即擴大不同層面的公眾諮詢範圍，並**在政策制定過程中包容公眾意見**，以化解社會矛盾；
+
+* 認同雙方都要釋出誠意：**政府應正式撤回逃犯條例**；社會應譴責暴力行為，因為連串的暴力衝突已危害市民的日常生活和財產，並損害香港的國際形象。因此，我們必須**盡力確保日後的遊行活動能夠和平進行**；
+
+* 政府必須明瞭，問責制之設立旨在加強問責，故**在修例事件上表現不稱職的官員必須問責**；
+
+* **當局必須立刻成立調查委員會，獨立審視連串事件**，從而查找導致當前社會緊張關係的根源及事態不斷升級的緣由。委員會將提供一個不偏不倚的平台，審視所有指控和申訴。政府和社會各界領袖必須全力執行調查委員會提出的建議。
+
+我們以推動社會重新出發為目標，讓政府部門和執法機構得以重新發揮應有角色，以保障公眾安全、維持社會治安和推動經濟進步；而關心香港未來的市民亦能夠重新以和平的方式推動正面的改變。我們作為商界領袖、僱主和社會的一份子，將全力支持社會進步、重建互信。
+
+<!-- ![](/image/bloom/.png) -->
+
+:::tip 原文
+
+[香港總商會聲明](https://www.chamber.org.hk/en/media/press-releases_detail.aspx?ID=3638)
+
+:::
+
+</Foldable>
+
 
 ### 
 
