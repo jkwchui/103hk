@@ -78,12 +78,12 @@ module.exports = {
             ],
             '/map/': [
                 {
-                    title: '🗺️ 7.21 地圖',
+                    title: '🗺️ 7.27 元朗地圖',
                     collapsable: false,
                     children: [
                         ['./', '地圖'],
                         ['./use/', '使用方法'],
-                        ['./textonly/', '純文字版本'],
+                        // ['./textonly/', '純文字版本'],
                         // ['./obs/paper', '💯 Paperwork'],
                         // ['./obs/study', '✏️ How to study'],
                     ],
@@ -104,10 +104,16 @@ module.exports = {
                     title: '逆權運動',
                     collapsable: true,
                     children: [
-                        ['./goal/', ' 訴求'],
+                        {
+                            title: '訴求',
+                            children: [
+                                ['./goal/', '五大訴求'],
+                                ['./goal/bloom/', '遍地開花'],
+                            ]
+                        },
                         ['./', '今期活動'],
                         ['./prev/', '往事回顧'],
-                        ['./wall/', '各區連儂牆'],
+                        // ['./wall/', '各區連儂牆'],
                         {
                             title: '參與小冊子',
                             children: [
