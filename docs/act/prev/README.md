@@ -42,4 +42,26 @@
 
 ![](/image/promo/posters/717.png)
 
+## 7.27 大遊行
+
+<Foldable>
+
+![](/image/promo/727/727.jpeg)
+
+**起點**: 元朗水邊村遊樂場
+
+**時間**: 三點出發 (警察星期四而出**反對**通知書)
+
+**終點**: 元朗西鐵站
+
+**組織者**: 無組織
+
+**目的**: 香港人
+
+### 如何到集合地方
+
+![](/image/promo/727/727start.jpg)
+
+<Foldable>
+
 <!-- ![](/image/promo/posters/.png) -->
