@@ -14,6 +14,8 @@
 
 ![](/now.jpg =x400)
 
+![](/YTM-16.5-full.png)
+
 </center>
 <!-- ![](https://live.staticflickr.com/65535/48384696931_6932aac88f_b.jpg) -->
 
