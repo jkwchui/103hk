@@ -22,7 +22,7 @@
 
 ![](/now.jpg)
 
-![](/now-TST.jpg)
+<!-- ![](/now-TST.jpg) -->
 
 </center>
 
