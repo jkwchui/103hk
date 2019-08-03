@@ -1,4 +1,4 @@
-# 7.27 實時地圖 Real time map
+# 8.03 實時地圖 Real time map
 
 我們會在 八月3號 下午三點左右 開始觀察現場情況。  We will start monitoring and updating the map from 3 pm.  希望可以做到每15分鐘更新一次。  如有建議可tg [@hongkong103](https://t.me/hongkong103).
 
@@ -20,9 +20,10 @@
 
 ![](/now.jpg =x400)
 
-![](/YTM-16.5-full.png)
-
 </center>
+
+<!-- ![](/YTM-16.5-full.png) -->
+
 <!-- ![](https://live.staticflickr.com/65535/48384696931_6932aac88f_b.jpg) -->
 
 ## 現場資訊 Events
