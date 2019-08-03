@@ -18,7 +18,9 @@
 
 <center>
 
-![](/now.jpg =x400)
+![](/now.jpg)
+
+![](/now2.jpg)
 
 </center>
 
