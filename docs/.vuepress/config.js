@@ -30,7 +30,7 @@ module.exports = {
         // As a special case, the default locale can use '/' as its path.
         '/': {
           lang: 'zh-Hant', // this will be set as the lang attribute on <html>
-          title: '香港民主運動',
+          title: '香港民運資訊',
           description: ''
         },
         '/zh-S/': {
@@ -50,7 +50,7 @@ module.exports = {
                 // text for the language dropdown
                 selectText: '💬 語言 Languages',
                 // label for this locale in the language dropdown
-                label: '🇭🇰🇹🇼 繁體',
+                label: '繁體 🇭🇰🇹🇼',
                 // text for the edit-on-github link
                 // editLinkText: 'Edit this page on GitHub',
                 // config for Service Worker 
@@ -91,7 +91,7 @@ module.exports = {
                             collapsable: false,
                             children: [
                                 ['./editor/', '編者的話'],
-                                ['./103/', '為何103'],
+                                ['./103/', '103 的來由'],
                                 // ['./obs/gear/', '📂 What to bring'],
                                 // ['./obs/paper', '💯 Paperwork'],
                                 // ['./obs/study', '✏️ How to study'],
@@ -112,7 +112,8 @@ module.exports = {
                             collapsable: false,
                             children: [
                                 ['./obs/', '程序資訊'],
-                                ['./obs/gear/', '裝備'],
+                                // ['./obs/gear/', '建議裝備'],
+                                // ['./obs/', '程序資訊'],
                             ],
                         },
                     ],
@@ -176,13 +177,13 @@ module.exports = {
                 // text for the language dropdown
                 selectText: '💬 語言 Languages',
                 // label for this locale in the language dropdown
-                label: '🇨🇳 简体',
+                label: '简体 🇨🇳',
                 // text for the edit-on-github link
                 // editLinkText: 'Edit this page on GitHub',
                 // config for Service Worker 
                 serviceWorker: {
                     updatePopup: {
-                        message: "有可更新項目",
+                        message: "有可更新项目",
                         buttonText: "更新"
                     }
                 },
@@ -192,19 +193,19 @@ module.exports = {
                         link: '/zh-S/intro/'
                     },
                     {
-                        text: '逆權運動',
+                        text: '逆权运动',
                         link: '/zh-S/act/'
                     },
                     {
-                        text: '地圖',
+                        text: '地图',
                         link: '/zh-S/map/'
                     },
                     // {
-                    //     text: '民間團體',
+                    //     text: '民间团体',
                     //     link: '/org/'
                     // },
                     // {
-                    //     text: '傳媒',
+                    //     text: '传媒',
                     //     link: '/media/'
                     // },
                 ],
@@ -213,11 +214,11 @@ module.exports = {
                     '/zh-S/intro/': [
                         ['./', '引言'],
                         {
-                            title: '關於網頁',
+                            title: '关於网页',
                             collapsable: false,
                             children: [
-                                ['./editor/', '編者的話'],
-                                ['./103/', '為何103'],
+                                ['./editor/', '编者的话'],
+                                ['./103/', '为何103'],
                                 // ['./obs/gear/', '📂 What to bring'],
                                 // ['./obs/paper', '💯 Paperwork'],
                                 // ['./obs/study', '✏️ How to study'],
@@ -226,73 +227,73 @@ module.exports = {
                     ],
                     '/zh-S/map/': [
                         {
-                            title: '🗺️ 地圖',
+                            title: '🗺️ 地图',
                             collapsable: false,
                             children: [
-                                ['./', '地圖'],
+                                ['./', '地图'],
                                 // ['./use/', '使用方法'],
                             ],
                         },
                         {
-                            title: '地圖組',
+                            title: '地图组',
                             collapsable: false,
                             children: [
-                                ['./obs/', '程序資訊'],
-                                ['./obs/gear/', '裝備'],
+                                ['./obs/', '程序资讯'],
+                                ['./obs/gear/', '建议装备'],
                             ],
                         },
                     ],
                     '/zh-S/act/': [
                         {
-                            title: '逆權運動',
+                            title: '逆权运动',
                             collapsable: true,
                             children: [
                                 {
-                                    title: '訴求',
+                                    title: '诉求',
                                     children: [
-                                        ['./goal/why/', '為何抗爭'],
-                                        ['./goal/', '五大訴求'],
-                                        ['./goal/bloom/', '遍地開花'],
-                                        ['./goal/prev/', '往事回顧'],
-                                        ['./goal/vocab/', '抗爭詞彙'],
+                                        ['./goal/why/', '为何抗争'],
+                                        ['./goal/', '五大诉求'],
+                                        ['./goal/bloom/', '遍地开花'],
+                                        ['./goal/prev/', '往事回顾'],
+                                        ['./goal/vocab/', '抗争词彙'],
                                     ]
                                 },
-                                ['./', '今期活動'],
+                                ['./', '今期活动'],
                                 // ['./prev/', '往事回顧'],
                                 // ['./wall/', '各區連儂牆'],
                                 {
-                                    title: '參與小冊子',
+                                    title: '参与小册子',
                                     children: [
                                         ['./info/march/', '遊行人仕'],
-                                        ['./info/front/', '前線'],
+                                        ['./info/front/', '前线'],
                                         ['./info/promo/', '文宣'],
                                     ]
                                 },
-                                ['./info/help/', '我要援助']
+                                ['./info/help/', '我需援助']
                             ],
                         }
                     ],
                     '/zh-S/org/': [
                         {
-                            title: '民間團體',
+                            title: '民间团体',
                             collapsable: true,
                             children: [
-                                ['./', '民間團體'],
+                                ['./', '民间团体'],
                                 ['./religious/', ' 宗教界'],
-                                ['./district/', ' 地區工作'],
+                                ['./district/', ' 地区工作'],
                                 ['./politics/', ' 政治'],
-                                ['./academic/', ' 學術界'],
-                                ['./prof/', ' 專業人士'],
+                                ['./academic/', ' 学术界'],
+                                ['./prof/', ' 专业人士'],
                                 // ['./prof', ' 專業人士'],
                             ],
                         }
                     ],
                     '/zh-S/media/': [
                         {
-                            title: '傳媒',
+                            title: '传媒',
                             collapsable: true,
                             children: [
-                                ['./', '傳媒']
+                                ['./', '传媒']
                             ]
                         }
                     ]
@@ -302,7 +303,7 @@ module.exports = {
                 // text for the language dropdown
                 selectText: '💬 Languages 語言',
                 // label for this locale in the language dropdown
-                label: '🇬🇧🇺🇸🇨🇦🇦🇺 Eng',
+                label: 'Eng 🇬🇧🇺🇸🇨🇦🇦🇺',
                 // text for the edit-on-github link
                 // editLinkText: 'Edit this page on GitHub',
                 // config for Service Worker 
@@ -314,7 +315,7 @@ module.exports = {
                 },
                 nav: [
                     {
-                        text: 'Introduction',
+                        text: 'Intro',
                         link: '/en/intro/'
                     },
                     {
@@ -326,24 +327,24 @@ module.exports = {
                         link: '/en/map/'
                     },
                     // {
-                    //     text: '民間團體',
+                    //     text: 'Organizations',
                     //     link: '/org/'
                     // },
                     // {
-                    //     text: '傳媒',
+                    //     text: 'Media',
                     //     link: '/media/'
                     // },
                 ],
                 sidebarDepth: 1,
                 sidebar: {
                     '/en/intro/': [
-                        ['./', '引言'],
+                        ['./', 'Intro'],
                         {
-                            title: '關於網頁',
+                            title: 'About 103.hk',
                             collapsable: false,
                             children: [
-                                ['./editor/', '編者的話'],
-                                ['./103/', '為何103'],
+                                ['./editor/', "Editor's note"],
+                                ['./103/', 'Why 103?'],
                                 // ['./obs/gear/', '📂 What to bring'],
                                 // ['./obs/paper', '💯 Paperwork'],
                                 // ['./obs/study', '✏️ How to study'],
@@ -352,73 +353,74 @@ module.exports = {
                     ],
                     '/en/map/': [
                         {
-                            title: '🗺️ 地圖',
+                            title: '🗺️ Map',
                             collapsable: false,
                             children: [
-                                ['./', '地圖'],
-                                // ['./use/', '使用方法'],
+                                ['./', 'Map'],
+                                // ['./use/', 'Usage'],
                             ],
                         },
                         {
-                            title: '地圖組',
+                            title: 'Tech Info',
                             collapsable: false,
                             children: [
-                                ['./obs/', '程序資訊'],
-                                ['./obs/gear/', '裝備'],
+                                ['./obs/', 'How to'],
+                                // ['./obs/gear/', 'Gear'],
+                                ['./refl/', 'Reflections']
                             ],
                         },
                     ],
                     '/en/act/': [
                         {
-                            title: '逆權運動',
+                            title: 'Against Tyranny',
                             collapsable: true,
                             children: [
                                 {
-                                    title: '訴求',
+                                    title: 'Our Story',
                                     children: [
-                                        ['./goal/why/', '為何抗爭'],
-                                        ['./goal/', '五大訴求'],
-                                        ['./goal/bloom/', '遍地開花'],
-                                        ['./goal/prev/', '往事回顧'],
-                                        ['./goal/vocab/', '抗爭詞彙'],
+                                        ['./goal/why/', 'Why we protest'],
+                                        ['./goal/', 'Our Five Demands'],
+                                        ['./goal/bloom/', 'Who supports us'],
+                                        ['./goal/prev/', 'Reflections'],
+                                        ['./goal/vocab/', 'Q & A'],
                                     ]
                                 },
-                                ['./', '今期活動'],
+                                ['./', 'Current'],
                                 // ['./prev/', '往事回顧'],
                                 // ['./wall/', '各區連儂牆'],
                                 {
-                                    title: '參與小冊子',
+                                    title: 'Manual',
                                     children: [
-                                        ['./info/march/', '遊行人仕'],
-                                        ['./info/front/', '前線'],
-                                        ['./info/promo/', '文宣'],
+                                        ['./info/march/', 'Marching'],
+                                        ['./info/front/', 'Occupying'],
+                                        ['./info/promo/', 'Publicity'],
                                     ]
                                 },
-                                ['./info/help/', '我要援助']
+                                ['./info/help/', 'I need help']
                             ],
                         }
                     ],
                     '/en/org/': [
                         {
-                            title: '民間團體',
+                            title: 'Organizations',
                             collapsable: true,
                             children: [
-                                ['./', '民間團體'],
-                                ['./religious/', ' 宗教界'],
-                                ['./district/', ' 地區工作'],
-                                ['./politics/', ' 政治'],
-                                ['./academic/', ' 學術界'],
-                                ['./prof/', ' 專業人士'],
+                                ['./', 'Organizations'],
+                                ['./religious/', ' Religious'],
+                                ['./district/', ' Geographical'],
+                                ['./politics/', ' Political'],
+                                ['./academic/', ' Academic'],
+                                ['./prof/', ' Professional'],
                                 // ['./prof', ' 專業人士'],
                             ],
                         }
                     ],
                     '/media/': [
                         {
-                            title: '傳媒',
+                            title: 'Media',
                             collapsable: true,
                             children: [
-                                ['./', '傳媒']
+                                ['./', 'Media']
                             ]
                         }
                     ]

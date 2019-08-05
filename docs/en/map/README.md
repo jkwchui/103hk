@@ -1,20 +1,20 @@
-# 7.27 實時地圖 Real time map
+# Real time map
 
-我們會在 八月3號 下午三點左右 開始觀察現場情況。  We will start monitoring and updating the map from 3 pm.  希望可以做到每15分鐘更新一次。  如有建議可tg [@hongkong103](https://t.me/hongkong103).
+*Aug 3 2019 (Mongkok)* We will start monitoring and updating the map from 3 pm, and hope to provide updates every 15 min.  You can direct your suggestions to [@hongkong103](https://t.me/hongkong103).
 
-::: warning 蒐集資料
+::: warning Sources
 
-想幫手蒐集資料嘅朋友,可以加入我哋嘅[公開tg group](https://t.me/map728)。 我哋同時亦會監察live頻道以及其他tg組。
-
-:::
-
-::: tip 使用方法
-
-由於現場人多時候上網斷斷續續, 未必每一位朋友都可以下載到最新嘅地圖。  請各位**善用 AirDrop 傳遞**:  由於 AirDrop 唔係用 wifi, 一個人下載後 可以用這個方式 傳遞現場身邊嘅朋友到。地圖左下角 有地圖最近更新時間 可以用來做比較。
+We have a small group of runners providing eyes on the ground, and integrate streams of information from various public Telegram groups and live broadcast.
 
 :::
 
-## 地圖 Map
+::: tip Usage
+
+Wifi access is poor in crowds, and not everyone can download the latest map (about 1 Mb compressed).  **We suggest using AirDrop once you succeeded in downloading our hi-res image**.  AirDrop uses Bluetooth instead of Wifi and can be an effective way to ripple information.  A timestamp is present in each version of the map for comparison.
+
+:::
+
+## Map
 
 <center>
 
@@ -25,13 +25,13 @@
 </center>
 <!-- ![](https://live.staticflickr.com/65535/48384696931_6932aac88f_b.jpg) -->
 
-## 現場資訊 Events
+## Events
 
 <!-- <Foldable> -->
 
 <!-- 座標地點可參考[空白地圖](/721-blank.jpg)。  如要事先列印, 可用[這PDF檔案](/721-blank.pdf)。 -->
 
-| 時間  |  地區  |      座標      |                 地點                 | 事項                                             |
+| Time  |  District  |      Coordinates      |                 Location                 | Event                                             |
 |:-----:|:------:|:--------------:|:------------------------------------:|:-------------------------------------------------|
 |       |        |                |                                      |                                                  |
 |       |        |                |                                      |                                                  |
