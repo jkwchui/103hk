@@ -1,12 +1,14 @@
 # 8.03 實時地圖 Real time map
 
-我們會在 八月3號 下午三點左右 開始觀察現場情況。  We will start monitoring and updating the map from 3 pm.  希望可以做到每15分鐘更新一次。  如有建議可tg [@hongkong103](https://t.me/hongkong103).
+八月4號 星期日 我哋應該唔夠人手做地圖 對唔住.
 
-::: warning 蒐集資料
+<!-- 我們會在 八月3號 下午三點左右 開始觀察現場情況。  We will start monitoring and updating the map from 3 pm.  希望可以做到每15分鐘更新一次。  如有建議可tg [@hongkong103](https://t.me/hongkong103). -->
+
+<!-- ::: warning 蒐集資料
 
 想幫手蒐集資料嘅朋友,可以加入我哋嘅[公開tg group](https://t.me/map728)。 我哋同時亦會監察live頻道以及其他tg組。
 
-:::
+::: -->
 
 ::: tip 使用方法
 
