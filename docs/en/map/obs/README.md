@@ -2,7 +2,10 @@
 
 ## Status
 
-We have no impending operations.
+We will be mapping:
+
+* 8.10 - Central (kids+parents rally),
+* 8.11 - Island East
 
 <!-- 721 -->
 
@@ -42,6 +45,12 @@ The mapping team is a single-purpose group, focussed on providing an accurate, r
 We formed as a response to the HKPF's tactic of bottling civilians and subsequent indiscrimate violence, most prominently displayed in 7.14 siege of Shatin.
 
 We have no expertise and have never done this before.  We learn as we go.  Our reflections can be found [here](../refl/).
+
+::: warning Recruiting
+
+We can't do every event because there's only a few of us.  If you are serious about helping, please write us.
+
+:::
 
 <!-- 
 

@@ -1,11 +1,13 @@
-# 編者的話
+# Why "103.hk"?
 
-* 我冇野講
-* 我要搵律師(不限次數)
-* 我通知屋企人(不限次數)
-* 律師來到前我唔會簽任何名或錄口供
-* 我要紙筆寫低今日發生既野
-* 我肚餓要食野
-* 我口渴想飲水
-* 我唔舒服需要睇醫生/驗傷
-* 我要向值日官投訴(看住佢係簿上寫下記錄，包括涉事PC編號、時地人事)
+Different languages count with different units.  English uses
+
+* "ten" - 10
+* "hundred" - 100
+* "thousand" - 1,000
+
+...and have no words for 10,000 ("ten" "thousand").  Chinese have an additional unit for 10,000 (萬; (canto) maan6).
+
+On 9 June 2019 1,030,000 people --- 103 萬 --- unified in a peaceful march against the Extradition Bill.  This would, to everyone's surprise, be surpassed the very next week by another march a week later.
+
+103 symbolizes an awakening of our collective political consciousness, and the beginning of the struggle between the People of Hong Kong and a government that responds only to Beijing.

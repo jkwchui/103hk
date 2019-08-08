@@ -1,13 +1,15 @@
-# 引言 Intro
+# Intro
 
-民間運動冇大台,有冇大台嘅優點 但亦代表有很多資訊散落並重複在不同版面、群組、媒體中間。 小編希望可以建設 103.hk 為一個普及的資訊站, 收集並發佈一些需要長期置頂嘅資訊。 大部份內容皆為轉發, 將盡量注明出處, 如有失誤可以聯絡我以便較正。
+The Hong Kong counter-power movement initiates from the grass-root and remains leaderless throughout.  The people coordinates through rapid flow of information in streams of Telegram / Whatsapp groups, online forums, social media.  This makes the movement agile, and allows for the flourishing of ideas, but also a complete lack of an entry point for the uninitiated.
 
-其中最想建設的 是一張精準可靠 的即時地圖。 過往數星期 每次在現場 都會見到、感覺到 很迷惘; 前線手足需要知道大體局勢是怎麼樣, 但所見的只有身邊的事情。 要去、要留、要走可以向哪邊走, 各位有一張這樣的地圖 就可以各自做參考。
+Since the Beijing rule in 1997, press freedom eroded through direct and indirect interventions, and the majority of publication and public TV channels are owned by pro-Beijing businessmen.  (As an example, the only English language newspaper in Hong Kong, the South China Morning Post (SCMP) is fully owned by the China Alibaba group.)  And then, the media tends to focus on the sensational aspects and little is reported internationally on the tens of other peaceful marches, sit-ins, and strikes.
 
-技術性上, 103.hk 是一個放在 內容分發網絡(content delivery network, CDN) 的 靜態網站 (static site), 理論上 是比較可靠、難攻擊 的結構。 但小編並非專業IT人, 如有缺失 還請多多見諒、指教。
+Together with the vast, state-funded global propaganda campaigns, the people --- despite being the majority --- has very limited voice internationally.  If it is difficult to understand the movement for the Chinese reader that is not part of the movement, it is impossible for those speaking a different language.  103.hk tries to provide translations and some representation of what the majority of Hong Kong thinks.
 
-最後, 在一個風雨飄搖的時候, 想感謝大家擇善固執, 一次又一次地 用自己嘅方法 為香港前途作出種種付出及犧牲。 自己香港自己救。香港人加油!
+We do not want or expect you to just believe us, and will try to source English-language press when possible.  If this is not available we will source Chinese media.
 
-<small>*中學教師、正宗沙田柚*</small>
+Between the Eggs and the High wall, we chose to side with the Eggs.  We are a small group of citizens trying to do what we can. Our team is tiny and we have no professions.  Please forgive us for our mistakes, and we welcome corrections and help.
+
+<small>*science teacher*</small>
 
 **之柔** [@hongkong103](https://t.me/hongkong103)

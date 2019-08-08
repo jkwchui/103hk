@@ -319,7 +319,7 @@ module.exports = {
                         link: '/en/intro/'
                     },
                     {
-                        text: 'Against Tyranny',
+                        text: 'Protests',
                         link: '/en/act/'
                     },
                     {
@@ -372,7 +372,7 @@ module.exports = {
                     ],
                     '/en/act/': [
                         {
-                            title: 'Against Tyranny',
+                            title: 'Counterpower Movement',
                             collapsable: true,
                             children: [
                                 {

@@ -1,5 +1,14 @@
 # Real time map
 
+## Status
+
+We will be mapping:
+
+* 8.10 - Central (kids+parents rally),
+* 8.11 - Island East
+
+## 8.30 Kowloon West
+
 *Aug 3 2019 (Mongkok)* We will start monitoring and updating the map from 3 pm, and hope to provide updates every 15 min.  You can direct your suggestions to [@hongkong103](https://t.me/hongkong103).
 
 ::: warning Sources
