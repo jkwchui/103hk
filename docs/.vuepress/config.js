@@ -92,6 +92,7 @@ module.exports = {
                             children: [
                                 ['./editor/', '編者的話'],
                                 ['./103/', '103 的來由'],
+                                ['./help/', '我想幫手'],
                                 // ['./obs/gear/', '📂 What to bring'],
                                 // ['./obs/paper', '💯 Paperwork'],
                                 // ['./obs/study', '✏️ How to study'],
@@ -345,6 +346,7 @@ module.exports = {
                             children: [
                                 ['./editor/', "Editor's note"],
                                 ['./103/', 'Why 103?'],
+                                ['./help/', 'How you can help'],
                                 // ['./obs/gear/', '📂 What to bring'],
                                 // ['./obs/paper', '💯 Paperwork'],
                                 // ['./obs/study', '✏️ How to study'],
