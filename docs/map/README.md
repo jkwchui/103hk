@@ -1,8 +1,10 @@
-# 8.03 實時地圖 Real time map
+# 8.10-8.11 實時地圖 Real time map
 
-八月4號 星期日 我哋應該唔夠人手做地圖 對唔住.
+## 狀態
 
-<!-- 我們會在 八月3號 下午三點左右 開始觀察現場情況。  We will start monitoring and updating the map from 3 pm.  希望可以做到每15分鐘更新一次。  如有建議可tg [@hongkong103](https://t.me/hongkong103). -->
+我們將會在 八月10號 上午十時半 開始報 「守護孩子未來」親子集會/遊行 現場情況。希望可以做到每15分鐘更新一次。  如有建議可tg [@hongkong103](https://t.me/hongkong103).
+
+在 八月11日 我們會為港島東大遊行做組織地圖的服務。詳情稍後公布。
 
 <!-- ::: warning 蒐集資料
 
@@ -18,11 +20,9 @@
 
 ## 地圖 Map
 
-23:30 已經轉戰再去黃大仙. last update.
-
 <center>
 
-![](/now.jpg)
+![](/now.png)
 
 <!-- ![](/now-TST.jpg) -->
 

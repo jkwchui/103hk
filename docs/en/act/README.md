@@ -1,34 +1,58 @@
-# 今期活動
+# Upcoming Activities
 
-## 7.27 大遊行
+## 8.10 Guarding Our Children's Future: Families Rally
 
 <Center>
 
-![](/image/promo/803/803-promo.jpg =x300)
+![](/image/promo/810/810-En.jpeg =x450)
 
 </Center>
 
-**起點**: 旺角 晏架街足球場
+**Meet at**: Edinburgh Place, Central.  We will be doing some art and crafts *before* the rally.  We have limited supplies for drawing, so pleasebring some memo papers and color pens if you can.  Some artists will be helping us draw!
 
-**時間**: 兩點半集合 三點出發 (有不反對通知書)
+**Time**: 10:30 am - 12 noon
 
-**終點**: 櫻桃街公園
+**Route**: The route is flat, and takes about 20 minutes (longer with children).  The organizers have checked and the route is suitable for baby-strollers.  You will be supported by more than 35 marshalls and the mapping team at 103.hk.
+
+**To**: Government HQ
+
+This is an outdoor activity with limited cover.  Remember your parasols, water, and sunscreens.
+
+**Attire**: Make it colorful!  It doesn't matter whether the sky is blue or white or black or gray, we'll keep the children's world bright like the rainbow 👗👚👘🧦🥾👟🌂🕶🎒
 
 <!-- **組織者**: 無組織 -->
 
 <!-- **目的**: 香港人 -->
 
-### 如何到集合地方
+<!-- ### 如何到集合地方
 
-![](/image/promo/803/803-start.jpg)
+![](/image/promo/803/803-start.jpg) -->
 
-### 休息站
+<!-- ### 休息站
 
-![](/image/map/803/803-rests.jpg)
+![](/image/map/803/803-rests.jpg) -->
 
-### 衣着、裝備
+## 8.11 Island East March
+
+<Center>
+
+<!-- ![](/image/promo/810/810-En.jpeg) -->
+
+</Center>
+
+**Meet at**: Victoria Park, Causeway Bay
+
+**Time**: Meet at 1 pm
+
+**To**: Java Road Football Pitch
+
+More info to follow.
+
+### Attire / Safety Equipment
 
 <!-- ![](/image/promo/727/727gear.jpeg) -->
+
+[Sorry, will be translating soon!]
 
 為了保護自己**以及身邊的同行者**, 請穿着 **黑色T恤** 及 **口罩**。 過往在上水元朗的時候, 不名人士主動用近距離拍照來引起衝突 製造混亂。 大家都戴口罩，會大大減低每一個人被落手或者衝突 嘅機會。
 

@@ -2,14 +2,14 @@
 
 ## Status
 
-We will be mapping:
+We will be preparing maps for the
 
-* 8.10 - Central (kids+parents rally),
-* 8.11 - Island East
+* 8.10 - Central (kids+parents walk and activities)
+* 8.11 - Island East.  Details TBA.
 
-## 8.30 Kowloon West
+## Map
 
-*Aug 3 2019 (Mongkok)* We will start monitoring and updating the map from 3 pm, and hope to provide updates every 15 min.  You can direct your suggestions to [@hongkong103](https://t.me/hongkong103).
+We will start monitoring and updating the map from 10 am, and hope to provide updates every 15 min.  You can direct your suggestions to [@hongkong103](https://t.me/hongkong103).
 
 ::: warning Sources
 
@@ -27,9 +27,9 @@ Wifi access is poor in crowds, and not everyone can download the latest map (abo
 
 <center>
 
-![](/now.jpg =x400)
+![](/now.png)
 
-![](/YTM-16.5-full.png)
+<!-- ![](/YTM-16.5-full.png) -->
 
 </center>
 <!-- ![](https://live.staticflickr.com/65535/48384696931_6932aac88f_b.jpg) -->

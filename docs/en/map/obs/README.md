@@ -2,10 +2,10 @@
 
 ## Status
 
-We will be mapping:
+We will be preparing maps for the
 
-* 8.10 - Central (kids+parents rally),
-* 8.11 - Island East
+* 8.10 - Central (kids+parents rally), starting from 10:30 am, and
+* 8.11 - Island East.  Details TBA.
 
 <!-- 721 -->
 
