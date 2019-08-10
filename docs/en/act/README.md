@@ -1,6 +1,10 @@
 # Upcoming Activities
 
-## 8.10 Guarding Our Children's Future: Families Rally
+A variety of activities are occurring across Hong Kong.  A most up-to-date compilation is prepared by the Kwan Kung Temple group (click on "Campaign Schedule"):
+
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRdrTMYQgTNZ81yw-meyfpjdHL4rWzFTRf-H0qEcjiuG9QjqGk1H47e2sql50EFYflEj-PXX-glXOxm/pubhtml#;embedded=true" width="800" height="1000"></iframe>
+
+<!-- ## 8.10 Guarding Our Children's Future: Families Rally
 
 <Center>
 
@@ -18,7 +22,7 @@
 
 This is an outdoor activity with limited cover.  Remember your parasols, water, and sunscreens.
 
-**Attire**: Make it colorful!  It doesn't matter whether the sky is blue or white or black or gray, we'll keep the children's world bright like the rainbow 👗👚👘🧦🥾👟🌂🕶🎒
+**Attire**: Make it colorful!  It doesn't matter whether the sky is blue or white or black or gray, we'll keep the children's world bright like the rainbow 👗👚👘🧦🥾👟🌂🕶🎒 -->
 
 <!-- **組織者**: 無組織 -->
 
@@ -32,7 +36,7 @@ This is an outdoor activity with limited cover.  Remember your parasols, water, 
 
 ![](/image/map/803/803-rests.jpg) -->
 
-## 8.11 Island East March
+## 8.11 Island East
 
 <Center>
 
@@ -44,7 +48,7 @@ This is an outdoor activity with limited cover.  Remember your parasols, water, 
 
 **Time**: Meet at 1 pm
 
-**To**: Java Road Football Pitch
+<!-- **To**: Java Road Football Pitch -->
 
 More info to follow.
 

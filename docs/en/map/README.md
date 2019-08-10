@@ -1,21 +1,21 @@
 # Real time map
 
-## Status
-
-We will be preparing maps for the
-
-* 8.10 - Central (kids+parents walk and activities)
-* 8.11 - Island East.  Details TBA.
-
 ## Map
 
-We will start monitoring and updating the map from 10 am, and hope to provide updates every 15 min.  You can direct your suggestions to [@hongkong103](https://t.me/hongkong103).
+On 8.11 we will start monitoring and updating the map from 1 pm.  We update the map every 15 min, more frequently when urgent events are occurring.  However, we evaluate the sources before manually painting the maps, so there exists an unavoidable lag of 3-5 minutes.
 
-::: warning Sources
+There are now groups that provide fully automated maps, which complements our approach.  You can find some links here:
+
+* [HKMap.live](https://hkmap.live/)
+* [(source?) custom Google Map](https://www.google.com/maps/d/viewer?mid=1oirckYcAXB-6S2W-oMDN6uKSd8s4sy5l)
+
+With respect to our work, you can direct your suggestions to [@hongkong103](https://t.me/hongkong103).
+
+<!-- ::: warning Sources
 
 We have a small group of runners providing eyes on the ground, and integrate streams of information from various public Telegram groups and live broadcast.
 
-:::
+::: -->
 
 ::: tip Usage
 
@@ -24,8 +24,6 @@ Wifi access is poor in crowds, and not everyone can download the latest map (abo
 :::
 
 ## Map
-
-12:55 - we're finished for the day!
 
 <center>
 
@@ -36,15 +34,15 @@ Wifi access is poor in crowds, and not everyone can download the latest map (abo
 </center>
 <!-- ![](https://live.staticflickr.com/65535/48384696931_6932aac88f_b.jpg) -->
 
-## Events
+<!-- ## Events -->
 
 <!-- <Foldable> -->
 
 <!-- 座標地點可參考[空白地圖](/721-blank.jpg)。  如要事先列印, 可用[這PDF檔案](/721-blank.pdf)。 -->
-
+<!-- 
 | Time  |  District  |      Coordinates      |                 Location                 | Event                                             |
 |:-----:|:------:|:--------------:|:------------------------------------:|:-------------------------------------------------|
 |       |        |                |                                      |                                                  |
 |       |        |                |                                      |                                                  |
 |       |        |                |                                      |                                                  |
-|       |        |                |                                      |                                                  |
+|       |        |                |                                      |                                                  | -->

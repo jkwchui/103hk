@@ -1,6 +1,11 @@
 # 今期活動
 
-## 8.10 守護孩子未來
+逆權活動多不勝數, 關公廟·民間新聞處為大家準備了一個最詳細且不斷更新的活動表(請按"Campaign Schedule"的藍色字):
+
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRdrTMYQgTNZ81yw-meyfpjdHL4rWzFTRf-H0qEcjiuG9QjqGk1H47e2sql50EFYflEj-PXX-glXOxm/pubhtml#;embedded=true" width="800" height="1000"></iframe>
+
+
+<!-- ## 8.10 守護孩子未來
 
 <Center>
 
@@ -25,15 +30,15 @@
 
 <!-- **目的**: 香港人 -->
 
-### 如何到集合地方
+<!-- ### 如何到集合地方 -->
 
 <!-- ![](/image/promo/803/803-start.jpg) -->
 
-### 休息站
+<!-- ### 休息站
 
-<!-- ![](/image/map/803/803-rests.jpg) -->
+![](/image/map/803/803-rests.jpg) -->
 
-## 8.11 港島東大遊行
+## 8.11 港島東 集會
 
 <Foldable>
 
@@ -45,9 +50,9 @@
 
 **起點**: 銅鑼灣 維多利亞公園
 
-**時間**: 下午一時 集合
+**時間**: 下午一時
 
-**終點**: 渣華道足球場
+<!-- **終點**: 渣華道足球場 -->
 
 ### 衣着、裝備
 
