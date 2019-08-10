@@ -25,9 +25,11 @@ Wifi access is poor in crowds, and not everyone can download the latest map (abo
 
 ## Map
 
+12:55 - we're finished for the day!
+
 <center>
 
-![](https://live.staticflickr.com/65535/48496972087_c97e5e5d02_k_d.jpg)
+![](https://live.staticflickr.com/65535/48496972087_5949daea8a_o_d.jpg)
 
 <!-- ![](/YTM-16.5-full.png) -->
 
