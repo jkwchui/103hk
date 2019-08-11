@@ -4,7 +4,7 @@
 
 On 8.11 we will start monitoring and updating the map from 1 pm.  We update the map every 15 min, more frequently when urgent events are occurring.  However, we evaluate the sources before manually painting the maps, so there exists an unavoidable lag of 3-5 minutes.
 
-Please subscribe to telegram group at: https://t.me/RealTimeMapHK
+Please subscribe to our telegram group at: https://t.me/RealTimeMapHK for map updates
 
 There are now groups that provide fully automated maps, which complements our approach.  You can find some links here:
 
