@@ -29,7 +29,7 @@ TG: https://t.me/RealTimeMapHK
 
 <center>
 
-![](https://live.staticflickr.com/65535/48509314102_ce0ea0a9e9_z_d.jpg)
+![](https://live.staticflickr.com/65535/48509314102_961c20eaad_k_d.jpg)
 
 ![](https://live.staticflickr.com/65535/48507735186_dd0a48a9a6_k_d.jpg)
 
