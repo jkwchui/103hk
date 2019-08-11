@@ -27,7 +27,7 @@
 
 <center>
 
-![](https://live.staticflickr.com/65535/48507735186_92021b9192_k_d.jpg)
+![](https://live.staticflickr.com/65535/48507735186_a5f84b0327_k_d.jpg)
 
 <!-- ![](/now-TST.jpg) -->
 
