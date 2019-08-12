@@ -2,9 +2,7 @@
 
 ## 狀態
 
-在 八月11日 我們會為港島東大遊行做組織地圖的服務。 下午一時開始, 一般每15分鐘更新一次, 在有突發事件應急時會更密切更新。 但我們的組圖方式是以人手覆核然後繪圖,時間上會遲三至五分鐘左右。
-
-TG: https://t.me/RealTimeMapHK
+在 八月12日 我們會為機場集會做組織地圖的服務。 下午一時開始, 一般每15分鐘更新一次, 在有突發事件應急時會更密切更新。 但我們的組圖方式是以人手覆核然後繪圖,時間上會遲三至五分鐘左右。 圖片亦會在 telegram 發放: [@RealTimeMapHK](https://t.me/RealTimeMapHK)
 
 現在其他團隊已開發全程式自動化的實時地圖, 大家可以參考下列網址:
 
@@ -29,11 +27,11 @@ TG: https://t.me/RealTimeMapHK
 
 <center>
 
-![](https://live.staticflickr.com/65535/48511496177_78e0df0944_k_d.jpg)
+![](https://live.staticflickr.com/65535/48517274861_d760c6f986_o_d.jpg)
 
-![](https://live.staticflickr.com/65535/48507735186_7d6ad7df04_k_d.jpg)
+<!-- ![](https://live.staticflickr.com/65535/48507735186_7d6ad7df04_k_d.jpg)
 
-![](https://live.staticflickr.com/65535/48509314102_e8cdc03479_k_d.jpg)
+![](https://live.staticflickr.com/65535/48509314102_e8cdc03479_k_d.jpg) -->
 
 </center>
 

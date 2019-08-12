@@ -2,7 +2,7 @@
 
 ## Map
 
-On 8.11 we will start monitoring and updating the map from 1 pm.  We update the map every 15 min, more frequently when urgent events are occurring.  However, we evaluate the sources before manually painting the maps, so there exists an unavoidable lag of 3-5 minutes.
+On 8.12 we will start monitoring and updating the map from 1 pm.  We update the map every 15 min, more frequently when urgent events are occurring.  However, we evaluate the sources before manually painting the maps, so there exists an unavoidable lag of 3-5 minutes.  The maps are also posted as Telegram messages on the channel [@RealTimeMapHK](https://t.me/RealTimeMapHK).
 
 Please subscribe to our telegram group at: https://t.me/RealTimeMapHK for map updates.
 
@@ -29,11 +29,8 @@ Wifi access is poor in crowds, and not everyone can download the latest map (abo
 
 <center>
 
-![](https://live.staticflickr.com/65535/48511496177_78e0df0944_k_d.jpg)
+![](https://live.staticflickr.com/65535/48517274861_d760c6f986_o_d.jpg)
 
-![](https://live.staticflickr.com/65535/48507735186_7d6ad7df04_k_d.jpg)
-
-![](https://live.staticflickr.com/65535/48509314102_e8cdc03479_k_d.jpg)
 
 </center>
 <!-- ![](https://live.staticflickr.com/65535/48384696931_6932aac88f_b.jpg) -->
