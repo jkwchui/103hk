@@ -1,29 +1,25 @@
 # Our Demands
 
-我們代表香港市民發表聲明，6月9日及6月16日市民謹以和平、理性、非暴力的原則進行遊行集會表達訴求。然而政府一眾官員選擇漠視民意，以香港警隊作為磨心破壞警民關係，屢次令香港蒙羞更使執法人員失去公信力。今日一切行動均為爭取以下五大訴求：
+We speak on behalf of Hong Kong citizens.  From March, including millions-strong rallies on June 9th and 16th, citizens protested expressed their demands on the basis of peaceful, rational and non-violent principles. However, the government officials have chosen to neglect public opinion and used the Hong Kong Police force as a cause to deteriorate the police-citizen relationship; repetitively put HK to shame and resulting in law enforcers losing their credibility.
 
-Our five demands are:
+All actions we take are for the following five demands:
 
-1. **Complete withdrawal of the extradition bill from the legislative process**。  撤回《2019年逃犯及刑事事宜相互法律協助法例（修訂）條例草案》（即《逃犯條例》）
+Our 5 demands are:
 
-2. **Retraction of the "riot" characterisation**。 警方於6月12日晚上發出的反對集會通知書，其中列明警方將當日「集會定性為暴動」故此我們要求政府明確撤回6月12日遊行示威的暴動定性。
+1. **Complete withdrawal of the extradition bill from the legislative process**.  Withdraw the “Fugitive Offenders and Mutual Legal Assistance in Criminal Matters Legislation (Amendment) Bill 2019” (Fugitive Offenders Ordinance)
 
-3. **Release and exoneration of arrested protesters**。 連日以來的遊行示威中有多名示威者被警方拘捕，我們要求警方釋放「由6月9日至政府承諾此項訴求當日」的所有示威者，並且永不追究，包括但不限於以下兩項：
-  **(一)** 不以任何形式、任何罪名拘捕、控告任何示威者
-  **(二)** 確保所有示威者不被任何國家機構侵害人身自由以及財產利益
+2. **Retraction of the "riot" characterisation** The police issued an objection letter on July 12th at night, in which the letter characterised the gathering as a “riot”, hence we demand the government to retract the riot characterisation of the July 12th protest transparently.
 
-4. **Establishment of an independent commission of inquiry into police conduct and use of force during the protests**。 於連日以來的遊行示威中，不論軍裝、便裝、防暴警察以及速龍小隊亦沒有在執勤時佩戴委任証，在市民要求下亦不出示委任証，違反警察通例。
-另外警方多次以過分武力驅趕示威者，包括在示威者後退時使用警棍、胡椒噴劑、 催淚彈等驅逐正在和平退去的示威者，甚至圍毆落單且沒有反抗的示威者。又以警棍、胡椒噴劑襲擊穿上反光衣及已表明身份的記者，更甚有立法會議員亦遭襲擊。警方多次在不反對通知書生效期間無理驅散合法示威者，包圍中信大廈外兩邊施放催淚彈，險致人踩人意外。旺角以及沙田兩次示威當中警方以圍堵方式意圖作困獸鬥，令兩次和平示威演變成警民衝突。警方在沙田衝突中無視新城市廣場為私人地方衝入依然正常營運商場作出人群管制，令不少在商場消費的市民受驚警方在整個示威的人群控制策略，前線警務人員的行動令香港市民非常失望且恐懼，警務人員應維護法紀而非破壞一方。
+3. **Release and exoneration of arrested protesters** Over the days of demonstrations and protests, many protestors were arrested by the police. We demand the the release of all protestors from “June 9th to the day the government satisfies this appeal”. Also, the government must promise to never condemn protestors further, including but not limited to the following two items:
 
-5. **Implementation of universal suffrage for Legislative Council and Chief Executive elections**。  政府在連日以來的遊行示威多次漠視民意，甚至有與香港市民作對之嫌，所以問題根本在於香港政府本身，我們要求政府以行政命令解散立法會、立即實行香港人一人一票普選立法會議員及行政長官。
+    1. All protestors are not to be arrested nor accused under any form of offence. 
+    2. Ensure all protestors’ personal freedom, property, and benefits are not violated by any state agencies.
 
-鑑於政府現時一直拒絕回應示威者訴求，令到事態惡化，警民關係繃緊，加劇社會撕裂，甚至已經有五人因此條例以死控訴，我們要求政府正面回應五大訴求。
+4. **Establishment of an independent commission of inquiry into police conduct and use of force during the protests**. During the demonstrations in the past few days, regardless of military, casual, riot police or special tactical squad did not have an on-duty identification during operation. They did not provide their identification under requests of citizens which violates the police general order for public inspection. In addition, the police repeatedly used excessive force to disperse protestors, which includes circumstances such as: deploying pepper spray, tear gas, batons to disperse peacefully retreating protestors or even mauled isolated protestors in groups that did not show resistance. Furthermore, policemen attacked the press that are distinguished clearly with their reflective vests with batons, pepper spray; even a legislative council member were assaulted. The police on many occasions unreasonably dispersed legal demonstrators during the period when the non-objection letter was still in force. They besieged and released tear gas on both sides of the Citic Tower which almost caused a stampede. On both the Mong Kok and Shatin demonstrations, the police attempted to trap protestors, escalating the event into police-citizen conflict. The police disregarded the New Town Plaza’s private property status, and forced their way into the mall to takeover crowd control. The tactics of crowd control deployed by the police caused substantial shock to consumers in which the frontline policemen’s operation were especially disappointing for the people of Hong Kong. The police force should uphold the law and not be the one violating it. 
 
-在政府達到五大訴求前我們不會罷休， 並且會以一切方法令政府達到我們簡單且合理的訴求，但只要政府能夠達到我們簡單且合理的訴求，一眾示威者可以回復正常生活，香港人民就可以回復安定的生活，社會撕裂就會停止，犧牲者就可以得到安寧。
+5. **Implementation of universal suffrage for Legislative Council and Chief Executive elections**。 The government’s ignores the public opinion as usual and is suspected to be opposing Hong Kong citizens. Evidently, the problem lies in the Hong Kong government itself. We demand the government to immediately disband the legislative council by administrative order and immediately execute universal suffrage in electing legislative council member and the chief executive.
 
-我們一眾香港人在此要求香港政府正面回應五大訴求。
-
-:::tip 原文
+:::tip 原文 Source
 
 [Woah, LIHKG 17 Jul 2019](https://lihkg.com/thread/1327035/)
 
