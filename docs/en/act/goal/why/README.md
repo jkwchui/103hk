@@ -76,12 +76,13 @@ First, we urge you to learn about the issue and establish your own understanding
 
 103.hk tries to be a gentle introduction for you, but we do not expect you to take our word for it.  We suggest the following sources:
 
-* As a primer, Wikipedia is an up-to-date, neutral source: https://en.wikipedia.org/wiki/2019_Hong_Kong_anti-extradition_bill_protests
-* South China Morning Post is owned by the Alibaba group and has a pro-Beijing bias, but is essentially the only English-language paper that has extensive coverage: https://www.scmp.com/
-* Hong Kong Free Press (https://www.hongkongfp.com/) is an independent organization with more opinion pieces than reporting, but it complements SCMP in understanding the issue.
-* with regard to international press, the Guardian overs more Hong Kong news than most publications (https://www.theguardian.com/world/hong-kong)
-* for "insider perspectives", Quartz (https://qz.com/re/hong-kong/) have a team that reports on Hong Kong events
-* a "live" channel is present on Reddit regarding developments: https://www.reddit.com/live/133sixros7tu5/
+* As a primer, Wikipedia is an up-to-date, neutral source: the page about the HK protests are [here](https://en.wikipedia.org/wiki/2019_Hong_Kong_anti-extradition_bill_protests)
+* [South China Morning Post](https://www.scmp.com/) is owned by the Alibaba group and has a pro-Beijing bias, but is essentially the only English-language paper that has extensive coverage.
+* [Hong Kong Free Press](https://www.hongkongfp.com/) is an independent organization with more opinion pieces than reporting, but it complements SCMP in understanding the issue.
+* With regard to international press, [the Guardian](https://www.theguardian.com/world/hong-kong) covers more Hong Kong news than most publications
+* for "insider perspectives", [Quartz](https://qz.com/re/hong-kong/) have a team that reports on Hong Kong events
+* [a "live" channel](https://www.reddit.com/live/133sixros7tu5/) is present on Reddit regarding developments
+<!-- * A complete listing of pro-CCP media can be found [here](https://bitbucket.org/TheCrypticMan/hong-kong-protests/wiki/2019%20attempted%20'Black%20Revolution) We encourage you to select an issue (*e.g.*, ) -->
 
 ## I understood and I want to help
 
@@ -92,16 +93,16 @@ First, please let your friends and family know about the situation in Hong Kong.
 Then, if you are living in a democratic country, you can contact your local representative and ask them to speak out in solidarity with the Hong Kong protestors.
 
 * USA:
-  * https://www.house.gov/representatives/find-your-representative
-  * https://www.senate.gov/senators/How_to_correspond_senators.htm
+  * [Representative](https://www.house.gov/representatives/find-your-representative)
+  * [Senate](https://www.senate.gov/senators/How_to_correspond_senators.htm)
 
-* UK: https://www.parliament.uk/get-involved/contact-your-mp/
+* [UK MP](https://www.parliament.uk/get-involved/contact-your-mp/)
 
-* Canada: https://www.ourcommons.ca/Search/en/members-of-parliament
+* [Canada](https://www.ourcommons.ca/Search/en/members-of-parliament)
 
-* Australia: https://www.aph.gov.au/senators_and_members/guidelines_for_contacting_senators_and_members
+* [Australia](https://www.aph.gov.au/senators_and_members/guidelines_for_contacting_senators_and_members)
 
-* New Zealand: https://www.govt.nz/browse/engaging-with-government/members-of-parliament/
+* [New Zealand](https://www.govt.nz/browse/engaging-with-government/members-of-parliament/)
 
 Specific actions includes:
 
@@ -116,6 +117,16 @@ In the US, the *Hong Kong Human Rights and Democracy Act* of 2019 is an example 
 Suggestions from HKVOAAP on [this Reddit thread](https://www.reddit.com/r/HongKong/comments/cmfk8o/how_can_people_living_in_america_or_other/)
 
 :::
+
+### Express Your Support at Global Lennon Walls
+
+The struggle is a marathon, a war of attrition.  Your kind words and solidarity means a lot to people directly involved.
+
+### I want to raise public awareness... but I am shy
+
+Decide on one issue you wish to speak out about, *e.g.*, one aspect of police brutality.  Investigate it thoroughly.  While you are in a queue, bus, or metro, have a "phone conversation"... with yourself :)  
+
+Loud enough that others can hear what you say and not so loud to be irritating.
 
 ### Donations
 
