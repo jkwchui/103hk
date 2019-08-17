@@ -4,8 +4,7 @@
 
 We will be preparing maps for the
 
-* 8.10 - Central (kids+parents rally), starting from 10:30 am, and
-* 8.11 - Island East.  Details TBA.
+* 8.18 Victoria Park Rally
 
 <!-- 721 -->
 

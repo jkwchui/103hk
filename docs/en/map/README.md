@@ -23,13 +23,11 @@ Wifi access is poor in crowds, and not everyone can download the latest map (abo
 
 :::
 
-## 8。12 Map
-
-7 pm - more updates only if the situation changes.
+## 8.18 Map
 
 <center>
 
-![](https://live.staticflickr.com/65535/48517274861_7b5c1019e7_k_d.jpg)
+![](https://live.staticflickr.com/65535/48558444661_1f2c667428_k_d.jpg)
 
 
 </center>

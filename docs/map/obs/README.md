@@ -1,18 +1,14 @@
-# 地圖組 Runners
+# 地圖組
 
-## 狀態 Status
+## 狀態
 
-![](/image/map/721SouthornTamar-zoned.jpg)
+在集會開始時, 大量人流應該集中在維多利亞公園.
+
+![](https://live.staticflickr.com/65535/48558497106_37b17d0fac_k_d.jpg)
+
+打後... 自己執生. 請和控制室緊密聯系.
 
 <!-- <Foldable> -->
-
-|   |       C       |       A       |       B       |        D         |
-|:-:|:-------------:|:-------------:|:-------------:|:----------------:|
-| 1 | to 9 pm (val) | to 7 pm (rig) | all-day (SCm) |  to 10 p (f_r)   |
-| 2 |      --       | to 6:30 (ken) | all-day (R_o) |  all-day (e_n)   |
-| 3 |      --       |      --       |      --       | until 9 pm (hh2) |
-
-
 
 <!-- 
 | 區域 | 狀態 |   |
@@ -31,115 +27,109 @@
 
 ## 簡介 Intro
 
-<Foldable>
+**地圖組嘅單一目的係做一張精準嘅現場地圖**。 一張準確嘅地圖,可以方便所有的參與者、前線、記者互相溝通, 同埋係一個冇大台帶領嘅情況下各自做正確嘅決定。
 
-**地圖組嘅單一目的係做一張精準嘅現場地圖**。 一張準確嘅地圖,可以方便所有的參與者、前線、記者互相溝通,同埋係一個冇大台帶領嘅情況下各自做正確嘅決定。
+## Procedures
 
-We are a single-purpose group, and the focus is on an accurate, real-time map.  This facilitates communication by protestors, front-line, and reporters, and help them make correct decisions individually.
+Our team is organized into two main groups, the *觀察員*, and the *控制室*.  Their roles are as follows:
 
-基本運作流程 (以下用612大概兩點半左右嘅情況做例子):
+* **觀察員**: the runners team serves as our eyes, and use a number of methods to relay on-the-ground observations precisely and concisely to the 控制室.
+* **控制室**: there are two roles in the control room, the **組合員** and the **Mapper**:
+  * **組合員**: the 組合員 funnel different streams of information from diverse formats (*e.g.,* runners, Telegram channels, live broadcasts) into an unified format in a single location
+  * **畫家**: 畫家 draws the map (duh!) and pushes it to the consumers (through 103.hk, and various Telegram channels)
 
-1. 現場各位觀察者 先在 紙張空白地圖 上面 mark 低自己區域嘅人流部署
+::: tip 
 
-![annotated map](/image/map/721-map-blank-full.png)
+We detest police brutality, but we also refrain from using dehumanizing (*e.g.,* "dogs") and antagonistic language (*e.g.,* "sentries", "war room").
 
-2. 現場各位觀察者 行去上到網嘅地方,影低手上的地圖 send上 tg group
+:::
 
-![annotated map](/image/map/612-1430-map-scribble.png)
+The ideal operation can be summarized in the following graphic:
 
-1. 小編根據現場觀察者嘅資料,同埋其他哨兵channel, 整合為一張地圖
+<center>
 
-![full map](/image/map/612-1430-map-zh.png)
+<mermaid>
+graph TB
+    r1(觀察員 1) --> i1(組合員 1)
+    r2(觀察員 2) --> i1
+    ri(觀察員 i) --> i1
+    tg1(TG channel 1) --> i2(組合員 2)
+    tg2(TG channel 2) --> i2
+    tg3(TG channel j) --> i2
+    live1(Live 1) --> i3(組合員 3)
+    live2(Live 2) --> i3
+    livek(Live k) --> i3
+    i1 --> M(畫家)
+    i2 --> M
+    i3 --> M
+    M --> W(103.hk/map)
+    M --> tgout(TG channels)
+</mermaid>
 
-4. 小編 up 到 103.hk/map
-5. 大概每15分鐘重複一次
+</center>
 
-</Foldable>
+## 準備功夫
 
-## 運作流程 Procedures
+a. 下載以下五幅圖:
+* 上環: https://t.me/map728/3314
+* 中環: https://t.me/map728/3313
+* 金鐘-灣仔: https://t.me/map728/3311
+* 銅鑼灣: https://t.me/map728/3310
+* 天后 + key: https://t.me/map728/3316
 
-<!-- 有啲人面對面比較容易講,同埋可以分發文具同埋空白地圖。希望可以係 星期六 或 星期日早上,聚一聚講解當日流程。
+b1. 用電話繪圖: 先下載可在圖片上面繪畫的app (例如 iMarkup)
+b2. 人手繪畫: 把以上空白地圖列印, 放進塑膠protector.  到時用水性筆在膠面繪畫.
 
-I hope to be able to meet all of you to distribute printed maps and stationary for you, and explain some of the following in person.
+c. 建議: 後備電池, 水, 背包上貼着poster (流動宣傳版 🙂 )
 
-I hope to order some embroidered caps and T-shirts for you, so you can more easily get help to do what you do.  They will not arrive this weekend. -->
+## 報料方法
 
-[Text for now, graphics addition to come.]
+1. 請大家至少每10分鐘講下你附近咩情況 (突發事件即刻講)
 
-### Before
+2a. 最好可畫落 map, send 圖片. 例：https://t.me/map728/3040
 
-1.  Bring pen (ideally with different colours), a clipboard (so that you can write on the maps), powerbank, water, tape (for posters), umbrella and necessary equipment to protect yourself onsite.  See also [here](./gear/).
+2b. 文字格式為
+詳盡地點 / 發生咩事
+例: 告士打道-記利佐治街 / 出催淚彈
+例: 告士打道-記利佐治街 向西一條街 / YY -> 維園方向
+(見下小提示)
 
-2. Collect maps and posters (for location and time, see group pinned post; expect delays in travel!).  Download a copy of the images needed on your phone, incl. the legend.
+3a. 請幫手報人流密度
+* Y = 集會人士稀疏, YY = 密, YYY = 貼得好近好逼; 
+* 用 B = 鄉黑/藍絲, P = 警察.  
+* 例: PPP = 大量警察.
 
-### Initial setup
+3b. 及**人流方向**
+* -> 單箭嘴: 緩慢前進(有阻塞)
+* ->> 雙箭嘴: 正常行走速度
+* ->>> 三頭箭嘴: 急速/奔跑中
+* <-> 來回箭嘴: 無目的行走 / 巡邏中
+* no mvt: 企定定
 
-3. **Initial setup**
-   1. go to your chosen zone
-      * If you are in zones C (Central) or A (Admiralty), stay in your zone.  There is expected to be police blockages preventing passage from Wan Chai to Admiralty.
-   2. locate barricades / supply stations / first aid stations on maps. Photograph and post onto group.
-      * barricades: X
-      * Supply stations: S inside two circles
-      * First aid: fat cross inside two circles
-   3. Put up posters to publicize link
-   4. tell first aiders/ supplies team that we have this real-time map.  Ask if they have special requests.  Give [@hongkong103](https://t.me/hongkong103) as a point of contact.
+4. 如果其他地方有 first aid / 物資站請報，有封路 (警察 / 示威者) 都講低，記住報地點/座標
 
-### Ongoing
+5. 唔需要Forward 其他 telegram channel 嘅資訊，我地會mon 住live 同其他channel
 
-4. **Ongoing during the march** 
-   1. walk around (try to find a vantage point e.g., bridge) 
-   2. keep updating the map as needed.  This includes
-      * crowd density (**Y** = normal loose crowd, **YY** = arm distance btw ppl (e.g., normal march), **YYY** = shoulder-packed)
-        * Use B / BB / BBB for pro-regime forces
-      * police density (**P** = some police, **PP** = concentrated force)
-      * If people are moving, use arrows to indicate speed.  
-        * Single arrowhead for slow / congested flow,
-        * Double arrowhead for normal walking speed,
-        * Triple arrowhead for running speed (should be rare)
-        * Resonance arrow for bi-directional flow
-      * draw triangles together with annotations for other observations
-    3. Urgent/ spontaneous events (eg teargas/ black flag): message immediately with this template:
-        * Time | District | Map coordinates | Location (Better with street name) | Event
-            * e.g. 14:00 | 金鐘 | J10 | 夏慤道-添華道 | 出黑旗
-        * Send pics / vids if you think it is important
-    4. take picture of the map and send every 15 mins.  You will probably need to walk to less crowded places to have internet access.  
-        * You may not need to send picture of map if not much is happening in the previous while: just use the same template as above to report isolated updates.
+6. 如果有緊急情況，現場如果你知道其他安全路線/ 地方可報料
 
-Drink water, eat, go to bathroom, and rest in a mall when you can.  Use good taste and judgment.
+7. 我地會定時喺 https://t.me/RealTimeMapHK 及 103.hk/map 發佈地圖，有咩mark 錯mark 漏請講低
 
-You may be able to recruit temporary replacements on-site, when you need to take break, or when you need to go but this will leave an empty zone.
+8. 明白指示有啲複雜，到時執生，你睇到幾多就報幾多，最主要係人流/ 警察/ 封路同其他特發情況。有睇唔明我們控制室的伙記會向你要求澄清。
 
-Walking around with a clipboard, you will stand out and people will be staring.  **Smile, be your helpful charming enthusiastic selves, explain what you are doing.**  
+### 報地點方法
 
-You may also be confronted.  **Smile, be your helpful charming enthusiastic selves, explain what you are doing.**  Show that you are an info service and stay neutral in your emotions.  We need you to do what you are doing.  
+(1) 首先定點：
+［橫街-直街］或 ［號數 街道］（例：彌敦道-亞皆老街）
+(2) 再顯示範圍 (例： 彌敦道-亞皆老街 向東一條街 PPP 停泊10架警車)
+(例：14 記利佐治街 出催淚彈）
 
-Please stay safe.  Observe from safe locations.  The map is not as important as you are.
+::: danger 反面教材
 
-(Ask in the tg group if I am missing something)
-
-<!-- ## 通信層面
-
-We will communicate mostly through the closed telegram group.  From there you have my phone number for urgent text/calls. -->
-
-<!-- ## 負責區域
-
-I propose we (you) pick a zone for patrolling.  I further propose, when possible, we have a "floater".  Please coordinate yourselves in the group.
- -->
-<!-- 
-
-## 傳遞資訊
-
-You can relay information back in one of three ways:
-
-1. **take a picture of your annotated map**.  Most useful, esp if irregular shapes are involved (e.g., crowd)
-2. **Send a message**.  When things are calm, and you only need to update minor details (e.g., crowd density).  Please note 
-   1. the event,
-   2. the locality (street/ building) as well as 
-   3. the grid coordinates.  A complete example: "About 10 ppl moving up to the side of Bank of America, P30").
-3. **Send a message (as above), with a picture/video**.  This is useful for rapid, important developments (clashes, barricades, tear gas) that *cannot* wait for the 15 min updates. -->
-
-::: danger
-
-If the info is urgent, and you have no data, text me.
+* 花槽/垃圾桶隔離 (即係邊個同邊面?)
+* 匯豐前兩個街口 (唔知咩係前定後，匯豐可能唔只一間)
+* 軒尼詩道 (只有一條街名)
+* 影相但係相無明顯易認地標
+* 彌敦道巴士站 (成條街有好多巴士站)
+* 啲人由維園去金鐘 (盡量講埋經邊啲街，越仔細越好)
 
 :::

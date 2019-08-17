@@ -2,9 +2,15 @@
 
 ## What is happening in Hong Kong?
 
+<center>
+
+@[youtube](CsjiZD2E6h0)
+
+</center>
+
 The government of Hong Kong, headed by Carrie Lam, wished to modify a law from the handover era.  This modification is known as the China Extradition bill, and as initially drafted, would allow extradition to the one-party state, CCP (Chinese Communist Party) controlled China with minimal oversight.  
 
-The people of Hong Kong is alarmed, because China under the CCP routinely conducts show-trials, suppresses political dissidents, and have a record of torture and ignores human rights (e.g., Liu Xiaobo, Li Wongyang, Tibet, Uyghurs).  As a result, citizens marched in protest time and again:
+The people of Hong Kong are alarmed, because China under the CCP routinely conducts show-trials, suppresses political dissidents, and has a record of torture and ignoring human rights (e.g., Liu Xiaobo, Li Wongyang, Tibet, Uyghurs).  As a result, citizens marched in protest time and again:
 
 1. 10,000 on 31 Mar, 
 2. 130,000 on 28 Apr, and 
