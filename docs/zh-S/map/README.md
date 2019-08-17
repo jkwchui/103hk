@@ -38,7 +38,9 @@
 
 <!-- ![](https://live.staticflickr.com/65535/48384696931_6932aac88f_b.jpg) -->
 
-<!-- ## 现场资讯 Events -->
+## 现场资讯 Events
+
+<iframe class="airtable-embed" src="https://airtable.com/embed/shrU8AuL0XtX24pIf?backgroundColor=cyanLight&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
 
 <!-- <Foldable> -->
 
