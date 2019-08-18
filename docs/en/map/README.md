@@ -31,6 +31,8 @@ Causeway Bay
 
 ![](https://live.staticflickr.com/65535/48558444661_05f711ab54_o_d.jpg)
 
+![](https://live.staticflickr.com/65535/48564419586_5dffd7f77a_o_d.jpg)
+
 North Point
 
 ![](https://live.staticflickr.com/65535/48564163196_d9bcdf2073_o_d.jpg)
