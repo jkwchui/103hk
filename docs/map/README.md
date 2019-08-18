@@ -33,7 +33,7 @@
 
 金鐘
 
-![](https://live.staticflickr.com/65535/48564419586_03bd115bd1_o_d.jpg)
+![](https://live.staticflickr.com/65535/48564419586_3546bd39be_o_d.jpg)
 
 北角
 
