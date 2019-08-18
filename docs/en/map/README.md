@@ -27,7 +27,7 @@ Wifi access is poor in crowds, and not everyone can download the latest map (abo
 
 <center>
 
-![](https://live.staticflickr.com/65535/48558444661_5f633dbf92_o_d.jpg)
+![](https://live.staticflickr.com/65535/48558444661_4769f8904e_o_d.jpg)
 
 
 </center>
