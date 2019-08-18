@@ -33,7 +33,7 @@ Causeway Bay
 
 Admiralty
 
-![](https://live.staticflickr.com/65535/48564419586_6761673383_o_d.jpg)
+![](https://live.staticflickr.com/65535/48564419586_6a4a183fbf_o_d.jpg)
 
 North Point
 
