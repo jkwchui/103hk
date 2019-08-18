@@ -25,17 +25,19 @@
 
 ## 8.18 地圖
 
+21:30 - 感謝各位冒大雨 及 警方不合理安排 出來為香港以身出聲。 好感動。 The world is watching us stand strong together.
+
 <center>
 
-銅鑼灣
+**銅鑼灣**
 
-![](https://live.staticflickr.com/65535/48558444661_a7b7287ac7_o_d.jpg)
+![](https://live.staticflickr.com/65535/48558444661_792742e649_o_d.jpg)
 
-金鐘
+**金鐘**
 
 ![](https://live.staticflickr.com/65535/48564419586_aca79e9eb1_o_d.jpg)
 
-北角
+**北角**
 
 ![](https://live.staticflickr.com/65535/48564163196_75a2484c83_o_d.jpg)
 

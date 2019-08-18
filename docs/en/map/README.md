@@ -25,11 +25,13 @@ Wifi access is poor in crowds, and not everyone can download the latest map (abo
 
 ## 8.18 Map
 
+21:30 - last update.  Thank you all for coming out despite the torrent and unreasonable restrictions by the police.  We are very moved in the control room.  The world is watching us stand strong together.
+
 <center>
 
 Causeway Bay
 
-![](https://live.staticflickr.com/65535/48558444661_a7b7287ac7_o_d.jpg)
+![](https://live.staticflickr.com/65535/48558444661_792742e649_o_d.jpg)
 
 Admiralty
 

@@ -25,13 +25,15 @@
 
 ## 8.18 地图
 
-晚上七时：有突发情况更新
+晚上 21:30：有突发情况再更新
+
+21:30 - 感谢各位冒大雨 及 警方不合理安排 出来为香港以身出声。 好感动。 The world is watching us stand strong together.
 
 <center>
 
 銅鑼灣
 
-![](https://live.staticflickr.com/65535/48558444661_a7b7287ac7_o_d.jpg)
+![](https://live.staticflickr.com/65535/48558444661_792742e649_o_d.jpg)
 
 金鐘
 
