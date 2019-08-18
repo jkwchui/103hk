@@ -27,8 +27,13 @@
 
 <center>
 
+銅鑼灣
+
 ![](https://live.staticflickr.com/65535/48558444661_04d98c878f_o_d.jpg)
 
+北角
+
+![](https://live.staticflickr.com/65535/48564163196_d9bcdf2073_o_d.jpg)
 <!-- ![](https://live.staticflickr.com/65535/48507735186_7d6ad7df04_k_d.jpg)
 
 ![](https://live.staticflickr.com/65535/48509314102_e8cdc03479_k_d.jpg) -->

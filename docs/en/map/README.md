@@ -27,8 +27,13 @@ Wifi access is poor in crowds, and not everyone can download the latest map (abo
 
 <center>
 
+Causeway Bay
+
 ![](https://live.staticflickr.com/65535/48558444661_04d98c878f_o_d.jpg)
 
+North Point
+
+![](https://live.staticflickr.com/65535/48564163196_d9bcdf2073_o_d.jpg)
 
 </center>
 <!-- ![](https://live.staticflickr.com/65535/48384696931_6932aac88f_b.jpg) -->
