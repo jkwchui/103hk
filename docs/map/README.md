@@ -29,7 +29,7 @@
 
 銅鑼灣
 
-![](https://live.staticflickr.com/65535/48558444661_6881ba509b_o_d.jpg)
+![](https://live.staticflickr.com/65535/48558444661_7a896df927_o_d.jpg)
 
 北角
 
