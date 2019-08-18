@@ -31,11 +31,13 @@
 
 ![](https://live.staticflickr.com/65535/48558444661_05f711ab54_o_d.jpg)
 
-![](https://live.staticflickr.com/65535/48564419586_5dffd7f77a_o_d.jpg)
+金鐘
+
+![](https://live.staticflickr.com/65535/48564419586_03bd115bd1_o_d.jpg)
 
 北角
 
-![](https://live.staticflickr.com/65535/48564163196_d9bcdf2073_o_d.jpg)
+![](https://live.staticflickr.com/65535/48564163196_10de3971c9_o_d.jpg)
 
 </center>
 

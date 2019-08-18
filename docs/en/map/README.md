@@ -31,11 +31,13 @@ Causeway Bay
 
 ![](https://live.staticflickr.com/65535/48558444661_05f711ab54_o_d.jpg)
 
-![](https://live.staticflickr.com/65535/48564419586_5dffd7f77a_o_d.jpg)
+Admiralty
+
+![](https://live.staticflickr.com/65535/48564419586_03bd115bd1_o_d.jpg)
 
 North Point
 
-![](https://live.staticflickr.com/65535/48564163196_d9bcdf2073_o_d.jpg)
+![](https://live.staticflickr.com/65535/48564163196_10de3971c9_o_d.jpg)
 
 </center>
 <!-- ![](https://live.staticflickr.com/65535/48384696931_6932aac88f_b.jpg) -->
