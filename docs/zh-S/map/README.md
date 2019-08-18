@@ -29,7 +29,7 @@
 
 <center>
 
-![](https://live.staticflickr.com/65535/48558444661_0f7937a67b_o_d.jpg)
+![](https://live.staticflickr.com/65535/48558444661_ec9255c18c_o_d.jpg)
 
 
 </center>
