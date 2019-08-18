@@ -40,7 +40,11 @@
 
 ## 现场资讯 Events
 
+下表, 地图是我们组图时的资料库，讯息传递会快十分锺。
+
 <iframe class="airtable-embed" src="https://airtable.com/embed/shrU8AuL0XtX24pIf?backgroundColor=cyanLight&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+
+<iframe class="airtable-embed" src="https://airtable.com/embed/shrZw3gI6aGunu099?backgroundColor=cyanLight" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
 
 <!-- <Foldable> -->
 
