@@ -29,7 +29,7 @@ Wifi access is poor in crowds, and not everyone can download the latest map (abo
 
 Causeway Bay
 
-![](https://live.staticflickr.com/65535/48558444661_24d0367bb8_o_d.jpg)
+![](https://live.staticflickr.com/65535/48558444661_a7b7287ac7_o_d.jpg)
 
 Admiralty
 
