@@ -29,15 +29,15 @@ Wifi access is poor in crowds, and not everyone can download the latest map (abo
 
 Causeway Bay
 
-![](https://live.staticflickr.com/65535/48558444661_d3581ed289_o_d.jpg)
+![](https://live.staticflickr.com/65535/48558444661_b8d3491496_o_d.jpg)
 
 Admiralty
 
-![](https://live.staticflickr.com/65535/48564419586_7bfd580bbb_o_d.jpg)
+![](https://live.staticflickr.com/65535/48564419586_70ff5f4a34_o_d.jpg)
 
 North Point
 
-![](https://live.staticflickr.com/65535/48564163196_10de3971c9_o_d.jpg)
+![](https://live.staticflickr.com/65535/48564163196_75a2484c83_o_d.jpg)
 
 </center>
 <!-- ![](https://live.staticflickr.com/65535/48384696931_6932aac88f_b.jpg) -->
