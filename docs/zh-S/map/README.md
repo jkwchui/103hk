@@ -31,7 +31,7 @@
 
 銅鑼灣
 
-![](https://live.staticflickr.com/65535/48558444661_b8d3491496_o_d.jpg)
+![](https://live.staticflickr.com/65535/48558444661_24d0367bb8_o_d.jpg)
 
 金鐘
 
