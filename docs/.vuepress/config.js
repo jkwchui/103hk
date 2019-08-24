@@ -331,10 +331,10 @@ module.exports = {
                     //     text: 'Organizations',
                     //     link: '/org/'
                     // },
-                    // {
-                    //     text: 'Media',
-                    //     link: '/media/'
-                    // },
+                    {
+                        text: 'Media Database',
+                        link: '/en/media/'
+                    },
                 ],
                 sidebarDepth: 1,
                 sidebar: {
@@ -417,12 +417,13 @@ module.exports = {
                             ],
                         }
                     ],
-                    '/media/': [
+                    '/en/media/': [
                         {
                             title: 'Media',
-                            collapsable: true,
+                            collapsable: false,
                             children: [
-                                ['./', 'Media']
+                                ['./', 'Reporting'],
+                                ['./gallery/', 'Gallery']
                             ]
                         }
                     ]
