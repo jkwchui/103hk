@@ -35,7 +35,7 @@ export default {
     components: { },
     data () {
         return {
-            mapurl1: 'https://live.staticflickr.com/65535/48616049297_845983eacd_k_d.jpg', // <- MOSTLY EDIT ONLY THIS
+            mapurl1: 'https://live.staticflickr.com/65535/48616049297_f883181b4a_k_d.jpg', // <- MOSTLY EDIT ONLY THIS
             mapurl2: '',
             mapurl3: '',
         }
