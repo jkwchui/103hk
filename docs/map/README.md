@@ -29,7 +29,7 @@
 
 <!-- ![](/YTM-16.5-full.png) -->
 
-<!-- ![](https://live.staticflickr.com/65535/48616049297_0e1b1053be_k_d.jpg) -->
+[](https://live.staticflickr.com/65535/48616049297_0e1b1053be_k_d.jpg)
 
 ## 現場資訊 Events
 
