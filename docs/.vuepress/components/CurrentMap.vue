@@ -35,9 +35,9 @@ export default {
     components: { },
     data () {
         return {
-            mapurl1: 'https://live.staticflickr.com/65535/48558444661_792742e649_o_d.jpg', // <- MOSTLY EDIT ONLY THIS
-            mapurl2: 'https://live.staticflickr.com/65535/48558444661_792742e649_o_d.jpg',
-            mapurl3: 'https://live.staticflickr.com/65535/48558444661_792742e649_o_d.jpg',
+            mapurl1: 'https://live.staticflickr.com/65535/48615437242_8bc5121d64_o_d.jpg', // <- MOSTLY EDIT ONLY THIS
+            mapurl2: '',
+            mapurl3: '',
         }
     }
 }
