@@ -2,7 +2,7 @@
 
 ## Map
 
-On 8.18 we will start monitoring and updating the map from 2 pm.  We update the map every 15 min, more frequently when urgent events are occurring.  However, we evaluate the sources before manually painting the maps, so there exists an unavoidable lag of 3-5 minutes.  The maps are also posted as Telegram messages on the channel [@RealTimeMapHK](https://t.me/RealTimeMapHK).
+On 8.25 we will start monitoring and updating the map from 3 pm.  We update the map every 15 min, more frequently when urgent events are occurring.  However, we evaluate the sources before manually painting the maps, so there exists an unavoidable lag of 3-5 minutes.  The maps are also posted as Telegram messages on the channel [@RealTimeMapHK](https://t.me/RealTimeMapHK).
 
 There are now groups that provide fully automated maps, which complements our approach.  You can find some links here:
 
@@ -23,26 +23,9 @@ Wifi access is poor in crowds, and not everyone can download the latest map (abo
 
 :::
 
-## 8.18 Map
+## 8.25 Map
 
-21:30 - last update.  Thank you all for coming out despite the torrent and unreasonable restrictions by the police.  We are very moved in the control room.  The world is watching us stand strong together.
-
-<center>
-
-Causeway Bay
-
-![](https://live.staticflickr.com/65535/48558444661_792742e649_o_d.jpg)
-
-Admiralty
-
-![](https://live.staticflickr.com/65535/48564419586_aca79e9eb1_o_d.jpg)
-
-North Point
-
-![](https://live.staticflickr.com/65535/48564163196_75a2484c83_o_d.jpg)
-
-</center>
-<!-- ![](https://live.staticflickr.com/65535/48384696931_6932aac88f_b.jpg) -->
+<CurrentMap />
 
 ## Events
 

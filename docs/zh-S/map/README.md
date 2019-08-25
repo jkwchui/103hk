@@ -2,7 +2,7 @@
 
 ## 状态
 
-在 八月18日 我们会为港岛遊行做组织地图的服务。 下午二时开始, 一般每15分钟更新一次, 在有突发事件应急时会更密切更新。 但我们的组图方式是以人手覆核然後绘图,时间上会迟叁至五分钟左右。 Telegram 图: [@RealTimeMapHK](https://t.me/RealTimeMapHK)
+在 25 我们会为港岛遊行做组织地图的服务。 下午三时开始, 一般每15分钟更新一次, 在有突发事件应急时会更密切更新。 但我们的组图方式是以人手覆核然後绘图,时间上会迟叁至五分钟左右。 Telegram 图: [@RealTimeMapHK](https://t.me/RealTimeMapHK)
 
 现在其他团队已开发全程式自动化的实时地图, 大家可以参考下列网址:
 
@@ -23,27 +23,9 @@
 
 :::
 
-## 8.18 地图
+## 8.25 地图
 
-晚上 21:30：有突发情况再更新
-
-21:30 - 感谢各位冒大雨 及 警方不合理安排 出来为香港以身出声。 好感动。 The world is watching us stand strong together.
-
-<center>
-
-銅鑼灣
-
-![](https://live.staticflickr.com/65535/48558444661_792742e649_o_d.jpg)
-
-金鐘
-
-![](https://live.staticflickr.com/65535/48564419586_aca79e9eb1_o_d.jpg)
-
-北角
-
-![](https://live.staticflickr.com/65535/48564163196_75a2484c83_o_d.jpg)
-
-</center>
+<CurrentMap />
 
 <!-- ![](/YTM-16.5-full.png) -->
 
