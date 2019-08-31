@@ -6,25 +6,22 @@
         </p>
 
         <center>
-            <a target="_blank" :href="mapurl1">
-                <img :src="mapurl1" />
-            </a>
-
-            <!-- Zone 2 - UNCOMMENT AS NEEDED -->
-
             <a target="_blank" :href="mapurl2">
                 <img :src="mapurl2" />
             </a>
-            
-           
 
             <!-- Zone 3 -->
 
             <a target="_blank" :href="mapurl3">
                 <img :src="mapurl3" />
             </a>
-            
 
+            <!-- Zone 2 - UNCOMMENT AS NEEDED -->
+
+            <a target="_blank" :href="mapurl1">
+                <img :src="mapurl1" />
+            </a>
+            
         </center>
     </div>
 </template>
@@ -35,7 +32,7 @@ export default {
     data () {
         return {
             mapurl1: 'https://live.staticflickr.com/65535/48651241488_e2d2cd5cac_k_d.jpg', // <- MOSTLY EDIT ONLY  Sai wan
-            mapurl2: 'https://live.staticflickr.com/65535/48651829437_a4432883bf_k_d.jpg', //adminralty
+            mapurl2: 'https://live.staticflickr.com/65535/48651829437_e834ee2507_k_d.jpg', //adminralty
             mapurl3: 'https://live.staticflickr.com/65535/48651485078_997f703e10_k_d.jpg', // CWB
         }
     }
