@@ -10,13 +10,13 @@
                 <img :src="mapurl1" />
             </a>
 
-            <!-- Zone 2 - UNCOMMENT AS NEEDED
+            <!-- Zone 2 - UNCOMMENT AS NEEDED -->
 
             <a target="_blank" :href="mapurl2">
                 <img :src="mapurl2" />
             </a>
             
-            -->
+           
 
             <!-- Zone 3
 
@@ -36,7 +36,7 @@ export default {
     data () {
         return {
             mapurl1: 'https://live.staticflickr.com/65535/48651241488_e2d2cd5cac_k_d.jpg', // <- MOSTLY EDIT ONLY THIS
-            mapurl2: '',
+            mapurl2: 'https://live.staticflickr.com/65535/48651829437_003f9aeb0e_k_d.jpg',
             mapurl3: '',
         }
     }
