@@ -35,7 +35,7 @@ export default {
     data () {
         return {
             mapurl1: 'https://live.staticflickr.com/65535/48651241488_e2d2cd5cac_k_d.jpg', // <- MOSTLY EDIT ONLY  Sai wan
-            mapurl2: 'https://live.staticflickr.com/65535/48651829437_e8f5643ddc_k_d.jpg', //adminralty
+            mapurl2: 'https://live.staticflickr.com/65535/48651829437_68d42d6cb6_k_d.jpg', //adminralty
             mapurl3: 'https://live.staticflickr.com/65535/48651485078_e13d240fdc_k_d.jpg', // CWB
         }
     }
