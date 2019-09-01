@@ -32,7 +32,7 @@ export default {
     data () {
         return {
             mapurl1: 'https://live.staticflickr.com/65535/48656832433_51c3a56629_k_d.jpg', // <- MOSTLY EDIT ONLY  airport
-            mapurl2: 'https://live.staticflickr.com/65535/48657572227_5cc4da42d0_k_d.jpg', // inside terminal
+            mapurl2: 'https://live.staticflickr.com/65535/48657572227_95f014c655_k_d.jpg', // inside terminal
         }
     }
 }
