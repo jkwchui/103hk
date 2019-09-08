@@ -31,7 +31,7 @@ export default {
     components: { },
     data () {
         return {
-            mapurl1: 'https://live.staticflickr.com/65535/48697488216_3649b2001e_k_d.jpg', // <- MOSTLY EDIT ONLY  airport
+            mapurl1: 'https://live.staticflickr.com/65535/48697488216_46a88116d9_k_d.jpg', // <- MOSTLY EDIT ONLY  airport
             mapurl2: 'https://live.staticflickr.com/65535/48657572227_95f014c655_k_d.jpg', // inside terminal
         }
     }
