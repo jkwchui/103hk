@@ -33,7 +33,7 @@ export default {
     data () {
         return {
             mapurl1: 'https://live.staticflickr.com/65535/48697488216_297cfd29e6_k_d.jpg', // <- MOSTLY EDIT ONLY  airport
-            mapurl2: 'https://live.staticflickr.com/65535/48698238427_e5509bbd3c_k_d.jpg', // MTR
+            mapurl2: 'https://live.staticflickr.com/65535/48698238427_36a6b7839f_k_d.jpg', // MTR
         }
     }
 }
