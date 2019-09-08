@@ -2,7 +2,7 @@
 
 ## 状态
 
-在 八月31日 我们会为港岛遊行做组织地图的服务。 下午2时开始, 一般每15分钟更新一次, 在有突发事件应急时会更密切更新。 但我们的组图方式是以人手覆核然後绘图,时间上会迟叁至五分钟左右。 Telegram 图: [@RealTimeMapHK](https://t.me/RealTimeMapHK)
+在 9月8日 我们会为港岛遊行做组织地图的服务。 下午2时开始, 一般每15分钟更新一次, 在有突发事件应急时会更密切更新。 但我们的组图方式是以人手覆核然後绘图,时间上会迟叁至五分钟左右。 Telegram 图: [@RealTimeMapHK](https://t.me/RealTimeMapHK)
 
 现在其他团队已开发全程式自动化的实时地图, 大家可以参考下列网址:
 
@@ -23,7 +23,7 @@
 
 :::
 
-## 8.31 地图
+## 9.08 地图
 
 <CurrentMap />
 
@@ -31,13 +31,13 @@
 
 <!-- ![](https://live.staticflickr.com/65535/48384696931_6932aac88f_b.jpg) -->
 
-## 现场资讯 Events
+<!-- ## 现场资讯 Events
 
 下表, 地图是我们组图时的资料库，讯息传递会快十分锺。
 
 <iframe class="airtable-embed" src="https://airtable.com/embed/shrU8AuL0XtX24pIf?backgroundColor=cyanLight&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
 
-<iframe class="airtable-embed" src="https://airtable.com/embed/shrZw3gI6aGunu099?backgroundColor=cyanLight" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+<iframe class="airtable-embed" src="https://airtable.com/embed/shrZw3gI6aGunu099?backgroundColor=cyanLight" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe> -->
 
 <!-- <Foldable> -->
 
