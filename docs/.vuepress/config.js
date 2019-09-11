@@ -1,4 +1,3 @@
-
 const moment = require('moment');
 const path = require("path");
 
@@ -9,7 +8,7 @@ module.exports = {
     transpileDependencies: [
         'vue-echarts',
         'resize-detector'
-      ],
+    ],
     head: [
         ['link',
             {
@@ -29,14 +28,14 @@ module.exports = {
         // The key is the path for the locale to be nested under.
         // As a special case, the default locale can use '/' as its path.
         '/': {
-          lang: 'zh-Hant', // this will be set as the lang attribute on <html>
-          title: '香港民運資訊',
-          description: ''
+            lang: 'zh-Hant', // this will be set as the lang attribute on <html>
+            title: '香港民運資訊',
+            description: ''
         },
         '/zh-S/': {
-          lang: 'zh-Hans',
-          title: '香港民主运动',
-          description: ''
+            lang: 'zh-Hans',
+            title: '香港民主运动',
+            description: ''
         },
         '/en/': {
             lang: 'en',
@@ -60,8 +59,7 @@ module.exports = {
                         buttonText: "更新"
                     }
                 },
-                nav: [
-                    {
+                nav: [{
                         text: '引言',
                         link: '/intro/'
                     },
@@ -99,12 +97,12 @@ module.exports = {
                             ],
                         },
                     ],
-                    '/map/': [
-                        {
+                    '/map/': [{
                             title: '🗺️ 地圖',
                             collapsable: false,
                             children: [
                                 ['./', '地圖'],
+                                ['./MTR/', '港鐵尾班車']
                                 // ['./use/', '使用方法'],
                             ],
                         },
@@ -118,60 +116,53 @@ module.exports = {
                             ],
                         },
                     ],
-                    '/act/': [
-                        {
-                            title: '逆權運動',
-                            collapsable: true,
-                            children: [
-                                {
-                                    title: '訴求',
-                                    children: [
-                                        ['./goal/why/', '為何抗爭'],
-                                        ['./goal/', '五大訴求'],
-                                        ['./goal/bloom/', '遍地開花'],
-                                        ['./goal/prev/', '往事回顧'],
-                                        ['./goal/vocab/', '抗爭詞彙'],
-                                    ]
-                                },
-                                ['./', '今期活動'],
-                                // ['./prev/', '往事回顧'],
-                                // ['./wall/', '各區連儂牆'],
-                                {
-                                    title: '參與小冊子',
-                                    children: [
-                                        ['./info/march/', '遊行人仕'],
-                                        ['./info/front/', '前線'],
-                                        ['./info/promo/', '文宣'],
-                                    ]
-                                },
-                                ['./info/help/', '我要援助']
-                            ],
-                        }
-                    ],
-                    '/org/': [
-                        {
-                            title: '民間團體',
-                            collapsable: true,
-                            children: [
-                                ['./', '民間團體'],
-                                ['./religious/', ' 宗教界'],
-                                ['./district/', ' 地區工作'],
-                                ['./politics/', ' 政治'],
-                                ['./academic/', ' 學術界'],
-                                ['./prof/', ' 專業人士'],
-                                // ['./prof', ' 專業人士'],
-                            ],
-                        }
-                    ],
-                    '/media/': [
-                        {
-                            title: '傳媒',
-                            collapsable: true,
-                            children: [
-                                ['./', '傳媒']
-                            ]
-                        }
-                    ]
+                    '/act/': [{
+                        title: '逆權運動',
+                        collapsable: true,
+                        children: [{
+                                title: '訴求',
+                                children: [
+                                    ['./goal/why/', '為何抗爭'],
+                                    ['./goal/', '五大訴求'],
+                                    ['./goal/bloom/', '遍地開花'],
+                                    ['./goal/prev/', '往事回顧'],
+                                    ['./goal/vocab/', '抗爭詞彙'],
+                                ]
+                            },
+                            ['./', '今期活動'],
+                            // ['./prev/', '往事回顧'],
+                            // ['./wall/', '各區連儂牆'],
+                            {
+                                title: '參與小冊子',
+                                children: [
+                                    ['./info/march/', '遊行人仕'],
+                                    ['./info/front/', '前線'],
+                                    ['./info/promo/', '文宣'],
+                                ]
+                            },
+                            ['./info/help/', '我要援助']
+                        ],
+                    }],
+                    '/org/': [{
+                        title: '民間團體',
+                        collapsable: true,
+                        children: [
+                            ['./', '民間團體'],
+                            ['./religious/', ' 宗教界'],
+                            ['./district/', ' 地區工作'],
+                            ['./politics/', ' 政治'],
+                            ['./academic/', ' 學術界'],
+                            ['./prof/', ' 專業人士'],
+                            // ['./prof', ' 專業人士'],
+                        ],
+                    }],
+                    '/media/': [{
+                        title: '傳媒',
+                        collapsable: true,
+                        children: [
+                            ['./', '傳媒']
+                        ]
+                    }]
                 },
             },
             '/zh-S/': {
@@ -188,8 +179,7 @@ module.exports = {
                         buttonText: "更新"
                     }
                 },
-                nav: [
-                    {
+                nav: [{
                         text: '引言',
                         link: '/zh-S/intro/'
                     },
@@ -226,12 +216,12 @@ module.exports = {
                             ],
                         },
                     ],
-                    '/zh-S/map/': [
-                        {
+                    '/zh-S/map/': [{
                             title: '🗺️ 地图',
                             collapsable: false,
                             children: [
                                 ['./', '地图'],
+                                ['./MTR/', '港鐵尾班車']
                                 // ['./use/', '使用方法'],
                             ],
                         },
@@ -244,60 +234,53 @@ module.exports = {
                             ],
                         },
                     ],
-                    '/zh-S/act/': [
-                        {
-                            title: '逆权运动',
-                            collapsable: true,
-                            children: [
-                                {
-                                    title: '诉求',
-                                    children: [
-                                        ['./goal/why/', '为何抗争'],
-                                        ['./goal/', '五大诉求'],
-                                        ['./goal/bloom/', '遍地开花'],
-                                        ['./goal/prev/', '往事回顾'],
-                                        ['./goal/vocab/', '抗争词彙'],
-                                    ]
-                                },
-                                ['./', '今期活动'],
-                                // ['./prev/', '往事回顧'],
-                                // ['./wall/', '各區連儂牆'],
-                                {
-                                    title: '参与小册子',
-                                    children: [
-                                        ['./info/march/', '遊行人仕'],
-                                        ['./info/front/', '前线'],
-                                        ['./info/promo/', '文宣'],
-                                    ]
-                                },
-                                ['./info/help/', '我需援助']
-                            ],
-                        }
-                    ],
-                    '/zh-S/org/': [
-                        {
-                            title: '民间团体',
-                            collapsable: true,
-                            children: [
-                                ['./', '民间团体'],
-                                ['./religious/', ' 宗教界'],
-                                ['./district/', ' 地区工作'],
-                                ['./politics/', ' 政治'],
-                                ['./academic/', ' 学术界'],
-                                ['./prof/', ' 专业人士'],
-                                // ['./prof', ' 專業人士'],
-                            ],
-                        }
-                    ],
-                    '/zh-S/media/': [
-                        {
-                            title: '传媒',
-                            collapsable: true,
-                            children: [
-                                ['./', '传媒']
-                            ]
-                        }
-                    ]
+                    '/zh-S/act/': [{
+                        title: '逆权运动',
+                        collapsable: true,
+                        children: [{
+                                title: '诉求',
+                                children: [
+                                    ['./goal/why/', '为何抗争'],
+                                    ['./goal/', '五大诉求'],
+                                    ['./goal/bloom/', '遍地开花'],
+                                    ['./goal/prev/', '往事回顾'],
+                                    ['./goal/vocab/', '抗争词彙'],
+                                ]
+                            },
+                            ['./', '今期活动'],
+                            // ['./prev/', '往事回顧'],
+                            // ['./wall/', '各區連儂牆'],
+                            {
+                                title: '参与小册子',
+                                children: [
+                                    ['./info/march/', '遊行人仕'],
+                                    ['./info/front/', '前线'],
+                                    ['./info/promo/', '文宣'],
+                                ]
+                            },
+                            ['./info/help/', '我需援助']
+                        ],
+                    }],
+                    '/zh-S/org/': [{
+                        title: '民间团体',
+                        collapsable: true,
+                        children: [
+                            ['./', '民间团体'],
+                            ['./religious/', ' 宗教界'],
+                            ['./district/', ' 地区工作'],
+                            ['./politics/', ' 政治'],
+                            ['./academic/', ' 学术界'],
+                            ['./prof/', ' 专业人士'],
+                            // ['./prof', ' 專業人士'],
+                        ],
+                    }],
+                    '/zh-S/media/': [{
+                        title: '传媒',
+                        collapsable: true,
+                        children: [
+                            ['./', '传媒']
+                        ]
+                    }]
                 },
             },
             '/en/': {
@@ -314,8 +297,7 @@ module.exports = {
                         buttonText: "Refresh"
                     }
                 },
-                nav: [
-                    {
+                nav: [{
                         text: 'Intro',
                         link: '/en/intro/'
                     },
@@ -353,12 +335,12 @@ module.exports = {
                             ],
                         },
                     ],
-                    '/en/map/': [
-                        {
+                    '/en/map/': [{
                             title: '🗺️ Map',
                             collapsable: false,
                             children: [
                                 ['./', 'Map'],
+                                ['./MTR/', 'MTR last train']
                                 // ['./use/', 'Usage'],
                             ],
                         },
@@ -372,61 +354,54 @@ module.exports = {
                             ],
                         },
                     ],
-                    '/en/act/': [
-                        {
-                            title: 'Counterpower Movement',
-                            collapsable: true,
-                            children: [
-                                {
-                                    title: 'Our Story',
-                                    children: [
-                                        ['./goal/why/', 'Why we protest'],
-                                        ['./goal/', 'Our Five Demands'],
-                                        ['./goal/bloom/', 'Who supports us'],
-                                        ['./goal/prev/', 'Reflections'],
-                                        ['./goal/vocab/', 'Q & A'],
-                                    ]
-                                },
-                                ['./', 'Current'],
-                                // ['./prev/', '往事回顧'],
-                                // ['./wall/', '各區連儂牆'],
-                                {
-                                    title: 'Manual',
-                                    children: [
-                                        ['./info/march/', 'Marching'],
-                                        ['./info/front/', 'Occupying'],
-                                        ['./info/promo/', 'Publicity'],
-                                    ]
-                                },
-                                ['./info/help/', 'I need help']
-                            ],
-                        }
-                    ],
-                    '/en/org/': [
-                        {
-                            title: 'Organizations',
-                            collapsable: true,
-                            children: [
-                                ['./', 'Organizations'],
-                                ['./religious/', ' Religious'],
-                                ['./district/', ' Geographical'],
-                                ['./politics/', ' Political'],
-                                ['./academic/', ' Academic'],
-                                ['./prof/', ' Professional'],
-                                // ['./prof', ' 專業人士'],
-                            ],
-                        }
-                    ],
-                    '/en/media/': [
-                        {
-                            title: 'Media',
-                            collapsable: false,
-                            children: [
-                                ['./', 'Reporting'],
-                                ['./gallery/', 'Gallery']
-                            ]
-                        }
-                    ]
+                    '/en/act/': [{
+                        title: 'Counterpower Movement',
+                        collapsable: true,
+                        children: [{
+                                title: 'Our Story',
+                                children: [
+                                    ['./goal/why/', 'Why we protest'],
+                                    ['./goal/', 'Our Five Demands'],
+                                    ['./goal/bloom/', 'Who supports us'],
+                                    ['./goal/prev/', 'Reflections'],
+                                    ['./goal/vocab/', 'Q & A'],
+                                ]
+                            },
+                            ['./', 'Current'],
+                            // ['./prev/', '往事回顧'],
+                            // ['./wall/', '各區連儂牆'],
+                            {
+                                title: 'Manual',
+                                children: [
+                                    ['./info/march/', 'Marching'],
+                                    ['./info/front/', 'Occupying'],
+                                    ['./info/promo/', 'Publicity'],
+                                ]
+                            },
+                            ['./info/help/', 'I need help']
+                        ],
+                    }],
+                    '/en/org/': [{
+                        title: 'Organizations',
+                        collapsable: true,
+                        children: [
+                            ['./', 'Organizations'],
+                            ['./religious/', ' Religious'],
+                            ['./district/', ' Geographical'],
+                            ['./politics/', ' Political'],
+                            ['./academic/', ' Academic'],
+                            ['./prof/', ' Professional'],
+                            // ['./prof', ' 專業人士'],
+                        ],
+                    }],
+                    '/en/media/': [{
+                        title: 'Media',
+                        collapsable: false,
+                        children: [
+                            ['./', 'Reporting'],
+                            ['./gallery/', 'Gallery']
+                        ]
+                    }]
                 },
             },
         },
@@ -470,10 +445,10 @@ module.exports = {
                 }
             }
         },
-        [ 
+        [
             '@vuepress/google-analytics',
             {
-              'ga': 'UA-134636637-2' // UA-00000000-0
+                'ga': 'UA-134636637-2' // UA-00000000-0
             }
         ],
         {
@@ -488,7 +463,9 @@ module.exports = {
         },
         [
             'vuepress-plugin-smooth-scroll',
-            { 'vuepress-plugin-smooth-scroll': true }
+            {
+                'vuepress-plugin-smooth-scroll': true
+            }
         ],
         // [
         //     '@goy/svg-icons',
@@ -542,11 +519,13 @@ module.exports = {
             })
             md.use(require('markdown-it-sup'))
             md.use(require('markdown-it-sub'))
-            md.use(require('markdown-it-imsize'), { autofill: true })
+            md.use(require('markdown-it-imsize'), {
+                autofill: true
+            })
             // md.use(require('markdown-it-center-text'))
             md.use(require('markdown-it-implicit-figures'), {
-                dataType: true,  // <figure data-type="image">, default: false
-                figcaption: true,  // <figcaption>alternative text</figcaption>, default: false
+                dataType: true, // <figure data-type="image">, default: false
+                figcaption: true, // <figcaption>alternative text</figcaption>, default: false
                 tabindex: true, // <figure tabindex="1+n">..., default: false
                 link: true
             })
