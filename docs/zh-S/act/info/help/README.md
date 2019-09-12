@@ -9,10 +9,7 @@
 | **民陣 (民間人權陣線)**          | 6549 9452 (whatsapp/telegram/sms)                                     |                         |
 | **星火同盟**                     | [facebook](https://www.facebook.com/sparkalliancehk/)                 |                         |
 | **本土民主前線**                 | 5934 5588 (whatsapp/sms) 或 [@Hkibackup](https://t.me/hkibackup) （tg) |                         |
-| 伍展邦律師                       | [@hksup](https://t.me/hksup)（tg) / 5690 2877（whatsapp） / 2608 1400    |                         |
-| 韋智達律師                       | 9167 7091                                                             |                         |
-| 黃耀光律師                       | 2688 8765                                                             |                         |
-| 潘淑霞律師                       | 2526 3385 / 9629 2113                                                 |                         |
+
 
 如見抗爭者被捕，請大家連同以下資料，聯絡上述單位：
 1. 被捕者 中文姓名
