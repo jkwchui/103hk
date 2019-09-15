@@ -32,8 +32,8 @@ export default {
     components: { },
     data () {
         return {
-            mapurl1: 'https://live.staticflickr.com/65535/48697488216_297cfd29e6_k_d.jpg', // <- MOSTLY EDIT ONLY  airport
-            mapurl2: 'https://live.staticflickr.com/65535/48698238427_daf45c7f88_k_d.jpg', // MTR
+            mapurl1: 'https://live.staticflickr.com/65535/48735026793_d031f7422a_k_d.jpg', // <- MOSTLY EDIT ONLY CWB
+            mapurl2: 'https://live.staticflickr.com/65535/48735027008_2bfd82fc67_k_d.jpg', // MTR
         }
     }
 }

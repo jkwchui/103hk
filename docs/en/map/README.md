@@ -2,7 +2,7 @@
 
 ## Map
 
-On 9.08 we will start monitoring and updating the map from 2 pm.  We update the map every 15 min, more frequently when urgent events are occurring.  However, we evaluate the sources before manually painting the maps, so there exists an unavoidable lag of 3-5 minutes.  The maps are also posted as Telegram messages on the channel [@RealTimeMapHK](https://t.me/RealTimeMapHK).
+On 9.15 we will start monitoring and updating the map from 2 pm.  We update the map every 15 min, more frequently when urgent events are occurring.  However, we evaluate the sources before manually painting the maps, so there exists an unavoidable lag of 3-5 minutes.  The maps are also posted as Telegram messages on the channel [@RealTimeMapHK](https://t.me/RealTimeMapHK).
 
 There are now groups that provide fully automated maps, which complements our approach.  You can find some links here:
 
@@ -39,9 +39,9 @@ The following table and map shows our raw data entries.  These are more current 
 
 <!-- 座標地點可參考[空白地圖](/721-blank.jpg)。  如要事先列印, 可用[這PDF檔案](/721-blank.pdf)。 -->
 <!-- 
-| Time  |  District  |      Coordinates      |                 Location                 | Event                                             |
-|:-----:|:------:|:--------------:|:------------------------------------:|:-------------------------------------------------|
-|       |        |                |                                      |                                                  |
-|       |        |                |                                      |                                                  |
-|       |        |                |                                      |                                                  |
-|       |        |                |                                      |                                                  | -->
+| Time | District | Coordinates | Location | Event |     |
+|:----:|:--------:|:-----------:|:--------:|:------|-----|
+|      |          |             |          |       |     |
+|      |          |             |          |       |     |
+|      |          |             |          |       |     |
+|      |          |             |          |       | --> |
