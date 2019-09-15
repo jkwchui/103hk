@@ -32,8 +32,8 @@ export default {
     components: { },
     data () {
         return {
-            mapurl1: 'https://live.staticflickr.com/65535/48735026793_70716a1129_k_d.jpg', // <- CWB
-            mapurl2: 'https://live.staticflickr.com/65535/48735565191_7ca74ec60d_k_d.jpg', // <- Adm
+            mapurl1: 'https://live.staticflickr.com/65535/48735026793_21b2c9adad_k_d.jpg', // <- CWB
+            mapurl2: 'https://live.staticflickr.com/65535/48735565191_5f261c11e5_k_d.jpg', // <- Adm
             mapurl3: 'https://live.staticflickr.com/65535/48735027008_ffd8b55f1e_k_d.jpg', // MTR
         }
     }
