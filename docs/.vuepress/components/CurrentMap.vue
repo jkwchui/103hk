@@ -10,11 +10,7 @@
 
             <!-- Zone 3 -->
 
-            <!-- <a target="_blank" :href="mapurl3">
-                <img :src="mapurl3" />
-            </a> -->
 
-            <!-- Zone 2 - UNCOMMENT AS NEEDED -->
 
             <a target="_blank" :href="mapurl1">
                 <img :src="mapurl1" />
@@ -22,6 +18,10 @@
             
             <a target="_blank" :href="mapurl2">
                 <img :src="mapurl2" />
+            </a>
+
+            <a target="_blank" :href="mapurl3">
+                <img :src="mapurl3" />
             </a>
         </center>
     </div>
@@ -33,7 +33,8 @@ export default {
     data () {
         return {
             mapurl1: 'https://live.staticflickr.com/65535/48735026793_c4ec285df9_k_d.jpg', // <- CWB
-            mapurl2: 'https://live.staticflickr.com/65535/48735027008_2bfd82fc67_k_d.jpg', // MTR
+            mapurl2: 'https://live.staticflickr.com/65535/48735565191_2c053ae5ec_k_d.jpg', // <- Adm
+            mapurl3: 'https://live.staticflickr.com/65535/48735027008_2bfd82fc67_k_d.jpg', // MTR
         }
     }
 }
