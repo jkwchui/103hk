@@ -32,7 +32,7 @@ export default {
     components: { },
     data () {
         return {
-            mapurl1: 'https://live.staticflickr.com/65535/48735026793_b6f447d4c8_k_d.jpg', // <- CWB
+            mapurl1: 'https://live.staticflickr.com/65535/48735026793_b83e480ba2_k_d.jpg', // <- CWB
             mapurl2: 'https://live.staticflickr.com/65535/48735565191_5c337d9aa8_k_d.jpg', // <- Adm
             mapurl3: 'https://live.staticflickr.com/65535/48735027008_ffd8b55f1e_k_d.jpg', // MTR
         }
