@@ -33,7 +33,7 @@ export default {
     data () {
         return {
             mapurl1: 'https://live.staticflickr.com/65535/48735026793_c4ec285df9_k_d.jpg', // <- CWB
-            mapurl2: 'https://live.staticflickr.com/65535/48735565191_4e45e88d34_k_d.jpg', // <- Adm
+            mapurl2: 'https://live.staticflickr.com/65535/48735565191_3685b46995_k_d.jpg', // <- Adm
             mapurl3: 'https://live.staticflickr.com/65535/48735027008_ffd8b55f1e_k_d.jpg', // MTR
         }
     }
