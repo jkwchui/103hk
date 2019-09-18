@@ -42,18 +42,9 @@ export default {
 </script>
 
 
-<style lang="stylus">
+<style lang="stylus" scoped>
 
 @import '../../../node_modules/vue-foldable/dist/vue-foldable.css';
-
-.vue-foldable {
-  &.my { /* override */
-    .vue-foldable-mask {
-      /* tweak the mask's postion according to your view more's height */
-      bottom: 50px
-    }
-  }
-}
 
 .vue-foldable-container {
   transition: max-height 0.8s ease-in-out;
