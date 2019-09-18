@@ -32,7 +32,7 @@
 // import VueFoldable from '../../node_modules/vue-foldable/dist/vue-foldable'
 // import '../../node_modules/vue-foldable/dist/vue-foldable.css'
 
-import VueFoldable from '../../../node_modules/vue-foldable/dist/vue-foldable'
+import VueFoldable from '../../../node_modules/vue-foldable'
 
 export default {
   components: {
