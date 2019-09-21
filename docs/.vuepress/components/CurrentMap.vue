@@ -32,7 +32,7 @@ export default {
     components: { },
     data () {
         return {
-            mapurl1: 'https://live.staticflickr.com/65535/48768013196_9188c9486c_k_d.jpg', // <- Tuen Mun
+            mapurl1: 'https://live.staticflickr.com/65535/48768013196_f64c55c220_k_d.jpg', // <- Tuen Mun
             mapurl2: 'https://live.staticflickr.com/65535/48735565191_5c337d9aa8_k_d.jpg', // <- Adm
             mapurl3: 'https://live.staticflickr.com/65535/48768021896_fba91c163d_k_d.jpg', // MTR
         }
