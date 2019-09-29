@@ -10,9 +10,9 @@
 
             <!-- Zone 3 -->
 
-            <!-- <a target="_blank" :href="mapurl2">
+            <a target="_blank" :href="mapurl2">
                 <img :src="mapurl2" />
-            </a> -->
+            </a>
 
             <a target="_blank" :href="mapurl1">
                 <img :src="mapurl1" />
