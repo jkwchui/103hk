@@ -31,9 +31,9 @@ export default {
     data () {
         return {
             mapurl1: 'https://live.staticflickr.com/65535/48824575273_f747aa1d2c_k_d.jpg', // <- MK
-            mapurl2: 'https://live.staticflickr.com/65535/48824969862_dd39323a61_k_d.jpg', // <- WTS
+            mapurl2: 'https://live.staticflickr.com/65535/48824969862_c2757d117a_k_d.jpg', // <- WTS
             mapur13: 'https://live.staticflickr.com/65535/48824575273_9704dfdd75_k_d.jpg', // <- YMT
-            mapurl4: 'https://live.staticflickr.com/65535/48768021896_1b02c42361_k_d.jpg', // MTR
+            mapurl4: 'https://live.staticflickr.com/65535/48768021896_12684aff05_k_d.jpg', // MTR
         }
     }
 }
