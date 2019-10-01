@@ -31,8 +31,8 @@ export default {
     data () {
         return {
             mapurl1: 'https://live.staticflickr.com/65535/48824575273_ceac3fb635_k_d.jpg', // <- SSP
-            mapurl2: 'https://live.staticflickr.com/65535/48824969862_af8f088966_k_d.jpg', // <- WTS
-            mapurl3: 'https://live.staticflickr.com/65535/48768021896_2ca2cd2228_k_d.jpg', // MTR
+            mapurl2: 'https://live.staticflickr.com/65535/48824969862_a4ffc862a2_k_d.jpg', // <- WTS
+            mapurl3: 'https://live.staticflickr.com/65535/48768021896_9054de3fb7_k_d.jpg', // MTR
         }
     }
 }
