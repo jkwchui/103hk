@@ -32,7 +32,7 @@ export default {
         return {
             mapurl1: 'https://live.staticflickr.com/65535/48824575273_d850d7a1c4_k_d.jpg', // <- TST
             mapurl2: 'https://live.staticflickr.com/65535/48824969862_7f88f2a4dd_k_d.jpg', // <- WTS
-            mapur13: 'https://live.staticflickr.com/65535/48824575273_d0201a4837_k_d.jpg', // <- MK/YMT
+            mapur13: 'https://live.staticflickr.com/65535/48824575273_1cd46b2662_k_d.jpg', // <- MK/YMT
             mapurl4: 'https://live.staticflickr.com/65535/48768021896_780f47f677_k_d.jpg', // MTR
         }
     }
