@@ -2,12 +2,11 @@
 
 ## 狀態
 
-在 9月21日 我們會為遊行做組織地圖的服務。 下午2時開始, 一般每15分鐘更新一次, 在有突發事件應急時會更密切更新。 但我們的組圖方式是以人手覆核然後繪圖,時間上會遲三至五分鐘左右。 圖片亦會在 telegram 發放: [@RealTimeMapHK](https://t.me/RealTimeMapHK)
+在 10月1日 我們會為遊行做組織地圖的服務。 下午1時開始, 一般每15分鐘更新一次, 在有突發事件應急時會更密切更新。 但我們的組圖方式是以人手覆核然後繪圖,時間上會遲三至五分鐘左右。 圖片亦會在 telegram 發放: [@RealTimeMapHK](https://t.me/RealTimeMapHK)
 
 現在其他團隊已開發全程式自動化的實時地圖, 大家可以參考下列網址:
 
 * [HKMap.live](https://hkmap.live/)
-* [不清楚來源 custom Google Map](https://www.google.com/maps/d/viewer?mid=1oirckYcAXB-6S2W-oMDN6uKSd8s4sy5l)
 
 如對我們有建議可tg [@hongkong103](https://t.me/hongkong103).
 
@@ -23,7 +22,7 @@
 
 :::
 
-## 9.21 地圖
+## 10.1 九龍區 地圖
 
 <CurrentMap />
 
