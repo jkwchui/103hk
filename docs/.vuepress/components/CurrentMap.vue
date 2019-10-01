@@ -30,7 +30,7 @@ export default {
     components: { },
     data () {
         return {
-            mapurl1: 'https://live.staticflickr.com/65535/48824575273_c2d1d8bba0_k_d.jpg', // <- SSP
+            mapurl1: 'https://live.staticflickr.com/65535/48824575273_6a5d8f6b0f_k_d.jpg', // <- SSP
             mapurl2: 'https://live.staticflickr.com/65535/48824969862_af8f088966_k_d.jpg', // <- WTS
             mapurl3: 'https://live.staticflickr.com/65535/48768021896_2ca2cd2228_k_d.jpg', // MTR
         }
