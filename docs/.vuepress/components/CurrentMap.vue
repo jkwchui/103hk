@@ -30,7 +30,7 @@ export default {
     components: { },
     data () {
         return {
-            mapurl1: 'https://live.staticflickr.com/65535/48845740767_767f07037d_k_d.jpg', // <- kowloon
+            mapurl1: 'https://live.staticflickr.com/65535/48845740767_a232ed9da9_b_d.jpg', // <- kowloon
             mapurl2: 'https://live.staticflickr.com/65535/48768021896_12684aff05_k_d.jpg', // MTR
         }
     }
