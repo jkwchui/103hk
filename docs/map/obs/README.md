@@ -1,12 +1,21 @@
 # 地圖組
 
+## 底圖
+
+以下連結為高解像度地圖。 大家可以先下載到手機,在網絡不暢通的時候也容易找到路。 天橋以啡色表示, 隧道虛線。
+
+* [元朗](/image/map/basemap/元朗_YuenLong_z17.25.png)
+* [屯門](/image/map/basemap/屯門_TuenMun_z16.25.png)
+* [沙田-大圍](/image/map/basemap/沙田大圍_Shatin-TaiWai_z17.png.png)
+* [全九龍](/image/map/basemap/全九龍_Kowloon_z17.png)
+  * [尖沙咀-佐敦-紅磡](/image/map/basemap/尖沙咀-佐敦-紅磡_TST-Jordan-HH_z17.png)
+  * [旺角-油麻地](/image/map/basemap/旺角-油麻地_MK-YMT_z17.png)
+  * [深水埗-太子](/image/map/basemap/深水埗-太子_SSP-PE_z17.png)
+  * [黃大仙-九龍城](/image/map/basemap/黃大仙九龍城_WTS-KowloonCity_z17.png)
+* [港島北](/image/map/basemap/港島北地圖_HKIsland_z16.75.png)
+* [機場內部](/image/map/basemap/機場內部_airportInterior.pdf)
+
 ## 狀態
-
-在集會開始時, 大量人流應該集中在維多利亞公園.
-
-![](https://live.staticflickr.com/65535/48558497106_37b17d0fac_k_d.jpg)
-
-打後... 自己執生. 請和控制室緊密聯系.
 
 <!-- <Foldable> -->
 
