@@ -29,7 +29,7 @@ export default {
     components: { },
     data () {
         return {
-            mapurl1: 'https://live.staticflickr.com/65535/48927859477_a3a849e0a8_k_d.jpg', // <- kowloon MK
+            mapurl1: 'https://live.staticflickr.com/65535/48927859477_7931f08785_k_d.jpg', // <- kowloon MK
             mapurl2: 'https://live.staticflickr.com/65535/48927859477_1cbc6a2bf8_k_d.jpg', // <- TST
         }
     }
