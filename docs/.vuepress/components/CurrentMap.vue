@@ -8,19 +8,12 @@
         <center>
 
 
-            <!-- Zone 3 -->
+            <!-- Zone 1 -->
 
             <a target="_blank" :href="mapurl1">
                 <img :src="mapurl1" />
             </a>
 
-            <a target="_blank" :href="mapurl2">
-                <img :src="mapurl2" />
-            </a>
-
-            <a target="_blank" :href="mapurl3">
-                <img :src="mapurl3" />
-            </a>
         </center>
     </div>
 </template>
