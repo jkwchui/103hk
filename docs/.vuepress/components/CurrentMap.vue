@@ -30,7 +30,7 @@ export default {
     data () {
         return {
             mapurl1: 'https://live.staticflickr.com/65535/48927859477_a03ca963da_k_d.jpg', // <- kowloon MK
-            mapurl2: 'https://live.staticflickr.com/65535/48927859477_e069923a50_k_d.jpg', // <- TST
+            mapurl2: 'https://live.staticflickr.com/65535/48927859477_b14511e4b1_k_d.jpg', // <- TST
         }
     }
 }
