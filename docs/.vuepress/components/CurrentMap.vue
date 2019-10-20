@@ -14,6 +14,12 @@
                 <img :src="mapurl1" />
             </a>
 
+            <!-- Zone 2 -->
+
+            <a target="_blank" :href="mapurl2">
+                <img :src="mapurl2" />
+            </a>
+
         </center>
     </div>
 </template>
@@ -23,8 +29,8 @@ export default {
     components: { },
     data () {
         return {
-            mapurl1: 'https://live.staticflickr.com/65535/48927859477_0416e1e335_k_d.jpg', // <- kowloon
-            mapurl2: 'https://live.staticflickr.com/65535/48768021896_12684aff05_k_d.jpg', // MTR
+            mapurl1: 'https://live.staticflickr.com/65535/48927859477_62cd369174_k_d.jpg', // <- kowloon MK
+            mapurl2: 'https://live.staticflickr.com/65535/48768021896_12684aff05_k_d.jpg', // <- TST
         }
     }
 }
