@@ -20,17 +20,7 @@
                 <img :src="mapurl2" />
             </a>
            
-            <!-- Zone 3 -->
-
-            <a target="_blank" :href="mapurl3">
-                <img :src="mapurl3" />
-            </a>
             
-             <!-- Zone 4 -->
-
-            <a target="_blank" :href="mapurl4">
-                <img :src="mapurl4" />
-            </a>
             
         </center>
     </div>
@@ -42,9 +32,9 @@ export default {
     data () {
         return {
             mapurl1: 'https://live.staticflickr.com/65535/48999017173_851d52e4b1_k_d.jpg', // <- CWB/Wanchai
-            mapurl2: 'https://live.staticflickr.com/65535/48927859477_e5f3b5daa1_k_d.jpg', // <- Admiralty
-            mapurl3: 'https://live.staticflickr.com/65535/48927859477_20fc3d32e3_k_d.jpg', // <- SSP
-            mapurl4: 'https://live.staticflickr.com/65535/48927859477_e4ec29de21_b_d.jpg', // <- MTR
+            mapurl2: ' ', // <- Admiralty
+         
+            
         }
     }
 }
