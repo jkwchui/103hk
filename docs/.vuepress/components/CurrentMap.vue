@@ -32,7 +32,7 @@ export default {
     data () {
         return {
             mapurl1: 'https://live.staticflickr.com/65535/48999017173_b9a5d865ef_k_d.jpg', // <- CWB/Wanchai
-            mapurl2: 'https://live.staticflickr.com/65535/48999017173_4b84419e95_k_d.jpg', // <- Admiralty
+            mapurl2: 'https://live.staticflickr.com/65535/48999017173_38e0d533e0_k_d.jpg', // <- Admiralty
          
             
         }
