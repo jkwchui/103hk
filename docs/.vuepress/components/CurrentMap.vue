@@ -20,7 +20,12 @@
                 <img :src="mapurl2" />
             </a>
            
-            
+            <!-- Zone 3 -->
+
+            <a target="_blank" :href="mapurl3">
+                <img :src="mapurl3" />
+            </a>
+           
             
         </center>
     </div>
@@ -33,7 +38,7 @@ export default {
         return {
             mapurl1: 'https://live.staticflickr.com/65535/48999017173_b9a5d865ef_k_d.jpg', // <- CWB/Wanchai
             mapurl2: 'https://live.staticflickr.com/65535/48999017173_38e0d533e0_k_d.jpg', // <- Admiralty
-         
+            mapurl3: 'https://live.staticflickr.com/65535/48999017173_cdba2ccb57_k_d.jpg', // <- Central
             
         }
     }
