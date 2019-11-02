@@ -41,7 +41,7 @@ export default {
     components: { },
     data () {
         return {
-            mapurl1: 'https://live.staticflickr.com/65535/48999017173_a4bace62e7_k_d.jpg', // <- HK Island
+            mapurl1: 'https://live.staticflickr.com/65535/48999017173_3ac403b98b_k_d.jpg', // <- HK Island
             mapurl2: 'https://live.staticflickr.com/65535/48927859477_e5f3b5daa1_k_d.jpg', // <- TST
             mapurl3: 'https://live.staticflickr.com/65535/48927859477_20fc3d32e3_k_d.jpg', // <- SSP
             mapurl4: 'https://live.staticflickr.com/65535/48927859477_e4ec29de21_b_d.jpg', // <- MTR
