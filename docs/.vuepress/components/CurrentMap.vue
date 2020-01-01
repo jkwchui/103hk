@@ -36,7 +36,7 @@ export default {
     components: { },
     data () {
         return {
-            mapurl1: 'https://live.staticflickr.com/65535/49308733212_79db320e0d_o_d.png', // <- CWB/Wanchai
+            mapurl1: 'https://live.staticflickr.com/65535/49308733212_92f9147d67_o_d.png', // <- CWB/Wanchai
             mapurl2: 'https://live.staticflickr.com/65535/48999017173_38e0d533e0_k_d.jpg', // <- Admiralty
             mapurl3: 'https://live.staticflickr.com/65535/48999017173_cdba2ccb57_k_d.jpg', // <- Central
             
