@@ -15,11 +15,10 @@
             </a>
 
             <!-- Zone 2 -->
-<!--
             <a target="_blank" :href="mapurl2">
                 <img :src="mapurl2" />
             </a>
--->       
+            
             <!-- Zone 3 -->
 <!--
             <a target="_blank" :href="mapurl3">
@@ -36,8 +35,8 @@ export default {
     components: { },
     data () {
         return {
-            mapurl1: 'https://live.staticflickr.com/65535/49308733212_9f543ecf52_o_d.png', // <- CWB/Wanchai
-            mapurl2: 'https://live.staticflickr.com/65535/48999017173_38e0d533e0_k_d.jpg', // <- Admiralty
+            mapurl1: 'https://live.staticflickr.com/65535/49308379628_36027f75f1_o_d.png', // <- CWB/Wanchai
+            mapurl2: 'https://live.staticflickr.com/65535/49308733212_9f543ecf52_o_d.png', // <- Admiralty
             mapurl3: 'https://live.staticflickr.com/65535/48999017173_cdba2ccb57_k_d.jpg', // <- Central
             
         }
