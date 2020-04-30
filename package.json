@@ -41,7 +41,7 @@
     "chart.js": "^2.7.3",
     "echarts": "^4.1.0",
     "element-ui": "2.7.0",
-    "jquery": "^3.3.1",
+    "jquery": "^3.5.0",
     "mapbox-gl": "^0.54.0",
     "markdown-it-abbr": "^1.0.4",
     "markdown-it-attrs": "^2.3.2",
