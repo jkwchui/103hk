@@ -23,7 +23,7 @@
     "@vuepress/plugin-register-components": "^1.0.0-alpha.47",
     "acorn": "^6.0.7",
     "ajv": "^5.0.0",
-    "node-sass": "^4.11.0",
+    "node-sass": "^4.13.1",
     "npm": "^6.7.0",
     "pug": "^2.0.3",
     "pug-plain-loader": "^1.0.0",
